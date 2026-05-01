@@ -133,6 +133,22 @@
 
     <section class="press-section">
         <div class="container">
+            <span class="section-label">Exhibition Photos</span>
+            <div class="exhibition-gallery" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:2rem">
+                <div class="exhibition-photo">
+                    <img src="assets/exhibitions/Sem at exhibition.JPG" alt="Loh Ek Sem at exhibition" style="width:100%;aspect-ratio:4/3;object-fit:cover;border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(0,0,0,0.08)">
+                    <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--charcoal)">Loh Ek Sem at exhibition opening</p>
+                </div>
+                <div class="exhibition-photo">
+                    <img src="assets/exhibitions/Sem at exhibition 2.JPG" alt="Loh Ek Sem at exhibition" style="width:100%;aspect-ratio:4/3;object-fit:cover;border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(0,0,0,0.08)">
+                    <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--charcoal)">Viewing artwork with visitors</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="press-section" style="background:var(--paper)">
+        <div class="container">
             <span class="section-label">Press Coverage</span>
             <div class="press-list">
                 <div class="press-item">
@@ -146,6 +162,28 @@
                     <p>Review of Sem's work during the Opera Gallery representation period, noting the documentary quality of the kampung paintings.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="press-section">
+        <div class="container">
+            <span class="section-label">Newspaper Clippings Archive</span>
+            <p style="margin-bottom:2rem;font-size:0.95rem;color:var(--charcoal)">A selection of 39 archived newspaper clippings documenting exhibitions, reviews, and features from 1995–2010.</p>
+            <div class="clippings-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem;margin-top:2rem">
+                <div class="clipping-item"><img src="assets/newspaper-clippings/DSCN1908.JPG" alt="Newspaper clipping" style="width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid rgba(0,0,0,0.15);cursor:pointer" onclick="openClippingModal(this)"></div>
+                <div class="clipping-item"><img src="assets/newspaper-clippings/DSCN1909.JPG" alt="Newspaper clipping" style="width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid rgba(0,0,0,0.15);cursor:pointer" onclick="openClippingModal(this)"></div>
+                <div class="clipping-item"><img src="assets/newspaper-clippings/DSCN1910.JPG" alt="Newspaper clipping" style="width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid rgba(0,0,0,0.15);cursor:pointer" onclick="openClippingModal(this)"></div>
+                <div class="clipping-item"><img src="assets/newspaper-clippings/DSCN1911.JPG" alt="Newspaper clipping" style="width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid rgba(0,0,0,0.15);cursor:pointer" onclick="openClippingModal(this)"></div>
+                <div class="clipping-item"><img src="assets/newspaper-clippings/DSCN1912.JPG" alt="Newspaper clipping" style="width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid rgba(0,0,0,0.15);cursor:pointer" onclick="openClippingModal(this)"></div>
+                <div class="clipping-item"><img src="assets/newspaper-clippings/DSCN1913.JPG" alt="Newspaper clipping" style="width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid rgba(0,0,0,0.15);cursor:pointer" onclick="openClippingModal(this)"></div>
+                <div class="clipping-item"><img src="assets/newspaper-clippings/DSCN1914.JPG" alt="Newspaper clipping" style="width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid rgba(0,0,0,0.15);cursor:pointer" onclick="openClippingModal(this)"></div>
+                <div class="clipping-item"><img src="assets/newspaper-clippings/DSCN1915.JPG" alt="Newspaper clipping" style="width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid rgba(0,0,0,0.15);cursor:pointer" onclick="openClippingModal(this)"></div>
+                <div class="clipping-item"><img src="assets/newspaper-clippings/DSCN1916.JPG" alt="Newspaper clipping" style="width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid rgba(0,0,0,0.15);cursor:pointer" onclick="openClippingModal(this)"></div>
+                <div class="clipping-item"><img src="assets/newspaper-clippings/DSCN1917.JPG" alt="Newspaper clipping" style="width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid rgba(0,0,0,0.15);cursor:pointer" onclick="openClippingModal(this)"></div>
+                <div class="clipping-item"><img src="assets/newspaper-clippings/DSCN1918.JPG" alt="Newspaper clipping" style="width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid rgba(0,0,0,0.15);cursor:pointer" onclick="openClippingModal(this)"></div>
+                <div class="clipping-item"><img src="assets/newspaper-clippings/DSCN1919.JPG" alt="Newspaper clipping" style="width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid rgba(0,0,0,0.15);cursor:pointer" onclick="openClippingModal(this)"></div>
+            </div>
+            <p style="margin-top:1.5rem;font-size:0.85rem;color:var(--charcoal)">Showing 12 of 39 clippings. Full archive available upon request.</p>
         </div>
     </section>
 
@@ -187,6 +225,72 @@
         <div class="social"><a href="#">Instagram</a><a href="#">Pinterest</a></div>
         <p style="margin-top:2rem;opacity:0.5;font-size:0.75rem">© 2026 Loh Ek Sem. All rights reserved.</p>
     </footer>
-    <script>document.querySelectorAll('nav a').forEach(link=>{link.addEventListener('click',()=>{document.querySelector('nav').classList.remove('mobile-open')})});</script>
+    <script>
+        document.querySelectorAll('nav a').forEach(link=>{
+            link.addEventListener('click',()=>{
+                document.querySelector('nav').classList.remove('mobile-open')
+            })
+        });
+
+        // Clipping modal
+        function openClippingModal(img) {
+            const modal = document.createElement('div');
+            modal.className = 'clipping-modal active';
+            modal.innerHTML = `
+                <button class="modal-close" onclick="this.closest('.clipping-modal').remove()">×</button>
+                <img src="${img.src}" alt="Newspaper clipping" style="max-width:90vw;max-height:90vh;object-fit:contain">
+            `;
+            document.body.appendChild(modal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.remove();
+            });
+            document.addEventListener('keydown', function closeOnEscape(ev) {
+                if (ev.key === 'Escape') {
+                    modal.remove();
+                    document.removeEventListener('keydown', closeOnEscape);
+                }
+            });
+        }
+    </script>
+
+    <style>
+        .clipping-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .clipping-modal.active {
+            display: flex;
+        }
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--terracotta);
+            color: var(--paper);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10001;
+        }
+        .modal-close:hover {
+            background: #a04828;
+        }
+        .clipping-item img:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s var(--ease-fluid);
+        }
+    </style>
 </body>
 </html>
