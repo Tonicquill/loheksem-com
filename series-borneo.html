@@ -102,9 +102,17 @@
                 top: var(--nav-height);
                 left: 0; right: 0;
                 background: var(--paper);
-                padding: 2rem;
+                padding: 1rem 2rem;
                 border-bottom: 1px solid rgba(0,0,0,0.1);
-                gap: 1.5rem;
+                gap: 1rem;
+                max-height: calc(100dvh - var(--nav-height));
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+        @media (max-width: 1024px) and (orientation: landscape) {
+            nav.mobile-open ul {
+                max-height: calc(100dvh - var(--nav-height) - 1rem);
             }
         }
 

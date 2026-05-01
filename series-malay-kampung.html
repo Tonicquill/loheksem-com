@@ -97,14 +97,24 @@
             .nav-toggle { display: flex; }
             nav.mobile-open ul {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 position: absolute;
                 top: var(--nav-height);
                 left: 0; right: 0;
                 background: var(--paper);
-                padding: 2rem;
+                padding: 1rem 2rem;
                 border-bottom: 1px solid rgba(0,0,0,0.1);
                 gap: 1.5rem;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            nav.mobile-open ul::-webkit-scrollbar { display: none; }
+            nav.mobile-open ul li { flex-shrink: 0; }
+            nav.mobile-open ul a {
+                white-space: nowrap;
+                padding: 0.5rem 0;
             }
         }
 

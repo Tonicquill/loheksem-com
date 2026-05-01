@@ -206,9 +206,17 @@
                 left: 0;
                 right: 0;
                 background: var(--paper);
-                padding: 2rem;
+                padding: 1rem 2rem;
                 border-bottom: 1px solid rgba(0,0,0,0.1);
-                gap: 1.5rem;
+                gap: 1rem;
+                max-height: calc(100dvh - var(--nav-height));
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+        @media (max-width: 1024px) and (orientation: landscape) {
+            nav.mobile-open ul {
+                max-height: calc(100dvh - var(--nav-height) - 1rem);
             }
         }
 
@@ -1125,13 +1133,13 @@
             <!-- Ink & Sketch -->
             <a href="series-ink-sketch.html" class="series-card">
                 <div class="series-card-image">
-                    <img src="assets/Ink-Sketch/Petaling Street.jpg" alt="Ink & Sketch preview" loading="lazy" onerror="this.src='by the well.jpg';this.style.filter='grayscale(1) contrast(1.2)'">
+                    <img src="assets/Ink-Sketch/malacca river1.JPG" alt="Ink & Sketch preview" loading="lazy">
                 </div>
                 <div class="series-card-content">
                     <h3>Ink & Sketch</h3>
                     <p>Ink and pencil on paper</p>
                     <div class="series-card-meta">
-                        <span class="series-card-count">30+ works</span>
+                        <span class="series-card-count">50+ works</span>
                         <span class="series-card-link">
                             Explore
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
