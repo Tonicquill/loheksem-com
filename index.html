@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Loh Ek Sem | Malaysian Artist | Kampung Life Documentarian</title>
+    <meta name="description" content="Archive of 30+ years documenting vanishing Malay kampung culture and Peranakan heritage through painting and paper cast sculpture by artist Loh Ek Sem.">
+    <meta name="keywords" content="Loh Ek Sem, Malaysian artist, kampung culture, Peranakan heritage, paper cast sculpture, Johor Bahru artist, Malay kampung painting">
+
+    <!-- Open Graph (Social Sharing) -->
+    <meta property="og:title" content="Loh Ek Sem | Kampung Life Documentarian">
+    <meta property="og:description" content="Archive of 30+ years documenting vanishing Malay kampung culture and Peranakan heritage.">
+    <meta property="og:image" content="assets/og-image.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Loh Ek Sem | Artist Archive">
+    <meta name="twitter:description" content="Malaysian fine artist | Kampung life | Peranakan heritage | Paper cast innovation">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VisualArtist",
+        "name": "Loh Ek Sem",
+        "description": "Malaysian fine artist documenting vanishing kampung life and Peranakan heritage",
+        "birthDate": "1956",
+        "birthPlace": "Malaysia",
+        "knowsAbout": ["Kampung culture", "Peranakan heritage", "Paper casting", "Watercolour", "Acrylic painting"],
+        "email": "loheksem@gmail.com",
+        "location": "Johor Bahru, Malaysia",
+        "url": "https://loheksem.com"
+    }
+    </script>
+
+    <style>
+        /* ============================================
+           CSS VARIABLES — Design System
+           ============================================ */
+        :root {
+            /* Primary Palette */
+            --ink: #000000;
+            --paper: #ffffff;
+            --charcoal: #1a1a1a;
+            --warm-gray: #f5f3f0;
+
+            /* Accent Colors */
+            --terracotta: #b85c38;
+            --clay: #c9a97e;
+
+            /* Series-Specific */
+            --kampung-green: #5a7a4a;
+            --river-blue: #4a6b7a;
+            --attap-brown: #5c4a3a;
+            --nyonya-pink: #d4a5b5;
+
+            /* Typography */
+            --font-display: 'Georgia', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+            /* Spacing */
+            --container-max: 1400px;
+            --nav-height: 80px;
+
+            /* Motion */
+            --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: 0.3s var(--ease-fluid);
+            --transition-med: 0.5s var(--ease-fluid);
+        }
+
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ============================================
+           NAVIGATION — Fixed Header
+           ============================================ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            background: var(--paper);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        nav .logo img {
+            height: 35px;
+            width: auto;
+            opacity: 0.9;
+        }
+
+        nav .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--charcoal);
+            transition: color var(--transition-fast);
+            position: relative;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--terracotta);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--terracotta);
+        }
+
+        /* Mobile Navigation */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--ink);
+            transition: var(--transition-fast);
+        }
+
+        @media (max-width: 1024px) {
+            nav ul {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            nav.mobile-open ul {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0;
+                right: 0;
+                background: var(--paper);
+                padding: 2rem;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                gap: 1.5rem;
+            }
+        }
+
+        /* ============================================
+           HERO — Asymmetric Three-Column
+           DESIGN_VARIANCE=8: Non-center bias, layered depth
+           ============================================ */
+        .hero {
+            position: relative;
+            min-height: 100dvh;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr;
+            align-items: center;
+            gap: 2rem;
+            padding: calc(var(--nav-height) + 4rem) 3rem 4rem;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        /* Backdrop Layer */
+        .hero-backdrop {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .hero-backdrop img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.2) sepia(0.1);
+        }
+
+        /* Column 1: Text Content */
+        .hero-text {
+            position: relative;
+            z-index: 2;
+            padding: 2rem 1rem 2rem 0;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--terracotta);
+            margin-bottom: 1.5rem;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid var(--terracotta);
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 500;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.05rem;
+            color: var(--charcoal);
+            line-height: 1.8;
+            max-width: 40ch;
+            margin-bottom: 2rem;
+        }
+
+        .hero-signature {
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.15);
+        }
+
+        .hero-signature img {
+            height: 45px;
+            opacity: 0.85;
+        }
+
+        /* Column 2: Artist Portrait */
+        .hero-portrait {
+            position: relative;
+            z-index: 2;
+            aspect-ratio: 4/5;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            border: 3px solid var(--ink);
+            box-shadow: 24px 24px 0 rgba(0,0,0,0.08);
+            background: var(--paper);
+            transition: transform var(--transition-med);
+        }
+
+        .hero-portrait:hover {
+            transform: translateY(-4px);
+        }
+
+        .hero-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+        }
+
+        .hero-portrait-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--ink);
+            color: var(--paper);
+            padding: 0.5rem 0.75rem;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        /* Column 3: Featured Artwork */
+        .hero-artwork {
+            position: relative;
+            z-index: 2;
+            aspect-ratio: 3/4;
+            width: 100%;
+            border: 3px solid var(--ink);
+            box-shadow: -16px 16px 0 rgba(0,0,0,0.06);
+            background: #f0f0f0;
+            overflow: hidden;
+            transition: transform var(--transition-med);
+        }
+
+        .hero-artwork:hover {
+            transform: translateY(-4px);
+        }
+
+        .hero-artwork img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.02) saturate(1.02);
+        }
+
+        .hero-artwork-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.92);
+            color: var(--paper);
+            padding: 0.75rem 1rem;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            line-height: 1.5;
+        }
+
+        .hero-artwork-caption strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+            color: var(--clay);
+        }
+
+        .hero-artwork-caption em {
+            font-style: normal;
+            opacity: 0.85;
+            font-family: var(--font-mono);
+        }
+
+        /* ============================================
+           SERIES SECTION — Featured Collections
+           ============================================ */
+        .series {
+            padding: 6rem 2rem;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--terracotta);
+            margin-bottom: 1rem;
+        }
+
+        .section-label::before,
+        .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(184, 92, 56, 0.4);
+            min-width: 40px;
+        }
+
+        .section-intro {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            max-width: 65ch;
+            line-height: 1.8;
+        }
+
+        .series-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .series-card {
+            group: series;
+            cursor: pointer;
+        }
+
+        .series-card-image {
+            position: relative;
+            aspect-ratio: 4/3;
+            background: var(--warm-gray);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.12);
+            transition: border-color var(--transition-fast);
+        }
+
+        .series-card:hover .series-card-image {
+            border-color: var(--ink);
+        }
+
+        .series-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.6s var(--ease-fluid);
+        }
+
+        .view-full-indicator {
+            position: absolute;
+            top: 0.5rem; right: 0.5rem;
+            background: rgba(0,0,0,0.7); color: var(--paper);
+            padding: 0.4rem 0.6rem; border-radius: 4px;
+            font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;
+            opacity: 0; transition: opacity 0.3s var(--ease-fluid);
+            z-index: 15; pointer-events: none;
+        }
+        .series-card:hover .view-full-indicator { opacity: 1; }
+
+        .image-modal {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+            z-index: 10000; display: none;
+            align-items: center; justify-content: center; padding: 2rem; cursor: zoom-out;
+        }
+        .image-modal.active { display: flex; }
+        .image-modal img {
+            max-width: 95vw; max-height: 95vh; object-fit: contain;
+            box-shadow: 0 0 40px rgba(0,0,0,0.8);
+        }
+        .image-modal-close {
+            position: absolute; top: 1.5rem; right: 1.5rem;
+            background: var(--terracotta); color: var(--paper); border: none;
+            padding: 0.75rem 1.25rem; font-size: 0.85rem;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            cursor: pointer; border-radius: 4px;
+        }
+        .image-modal-caption {
+            position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+            color: var(--paper); text-align: center; max-width: 600px;
+        }
+        .image-modal-caption h4 {
+            font-family: var(--font-display); font-size: 1.2rem;
+            margin-bottom: 0.5rem; color: var(--clay);
+        }
+        .image-modal-caption p { font-size: 0.85rem; opacity: 0.8; }
+
+        .series-card:hover .series-card-image img {
+            transform: scale(1.04);
+        }
+
+        .series-card-content {
+            padding: 1.25rem 0.5rem 0.5rem;
+        }
+
+        .series-card h3 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .series-card p {
+            font-size: 0.8rem;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .series-card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .series-card-count {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--terracotta);
+            font-family: var(--font-mono);
+        }
+
+        .series-card-link {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap var(--transition-fast);
+        }
+
+        .series-card:hover .series-card-link {
+            gap: 0.75rem;
+        }
+
+        .series-card-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* ============================================
+           PROCESS TEASER — Horizontal Scroll
+           ============================================ */
+        .process-teaser {
+            padding: 6rem 0;
+            background: var(--charcoal);
+            color: var(--paper);
+            overflow: hidden;
+        }
+
+        .process-teaser .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .process-teaser .section-label {
+            color: var(--clay);
+        }
+
+        .process-teaser .section-label::before,
+        .process-teaser .section-label::after {
+            background: rgba(201, 169, 126, 0.4);
+        }
+
+        .process-teaser-intro {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 70ch;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .process-scroll {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+            scrollbar-color: var(--clay) var(--charcoal);
+            padding-bottom: 1rem;
+        }
+
+        .process-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .process-scroll::-webkit-scrollbar-track {
+            background: var(--charcoal);
+        }
+
+        .process-scroll::-webkit-scrollbar-thumb {
+            background: var(--clay);
+        }
+
+        .process-step {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            background: var(--paper);
+            color: var(--ink);
+            padding: 1.25rem;
+        }
+
+        .process-step img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            filter: contrast(1.05);
+        }
+
+        .process-step-number {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--terracotta);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-mono);
+        }
+
+        .process-step h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step p {
+            font-size: 0.8rem;
+            color: var(--charcoal);
+        }
+
+        .process-cta {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .process-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--clay);
+            border: 1px solid var(--clay);
+            padding: 0.75rem 1.5rem;
+            transition: all var(--transition-fast);
+        }
+
+        .process-cta a:hover {
+            background: var(--clay);
+            color: var(--charcoal);
+        }
+
+        /* ============================================
+           EXHIBITION SPOTLIGHT
+           ============================================ */
+        .exhibitions {
+            padding: 6rem 2rem;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .exhibition-timeline {
+            border-left: 2px solid var(--ink);
+            padding-left: 2rem;
+            margin-top: 2rem;
+        }
+
+        .exhibition-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+        }
+
+        .exhibition-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.3rem;
+            width: 10px;
+            height: 10px;
+            background: var(--paper);
+            border: 2px solid var(--terracotta);
+            border-radius: 50%;
+        }
+
+        .exhibition-year {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--terracotta);
+            margin-bottom: 0.5rem;
+        }
+
+        .exhibition-item h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .exhibition-item p {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+        }
+
+        .exhibitions-cta {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .exhibitions-cta a {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--ink);
+            border-bottom: 1px solid var(--ink);
+            padding-bottom: 0.25rem;
+            transition: all var(--transition-fast);
+        }
+
+        .exhibitions-cta a:hover {
+            color: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            padding: 4rem 2rem;
+            background: var(--ink);
+            color: var(--paper);
+            text-align: center;
+        }
+
+        footer .signature {
+            margin-bottom: 1.5rem;
+        }
+
+        footer .signature img {
+            height: 50px;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            margin: 0 auto;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            opacity: 0.75;
+            letter-spacing: 0.05em;
+        }
+
+        footer .social {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        footer .social a {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.75;
+            transition: opacity var(--transition-fast);
+        }
+
+        footer .social a:hover {
+            opacity: 1;
+        }
+
+        /* ============================================
+           MOBILE RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: calc(var(--nav-height) + 3rem) 1.5rem 3rem;
+                gap: 3rem;
+            }
+
+            .hero-text {
+                padding: 0;
+                text-align: center;
+            }
+
+            .hero-tagline {
+                max-width: 100%;
+            }
+
+            .hero-portrait,
+            .hero-artwork {
+                max-width: 280px;
+                margin: 0 auto;
+                box-shadow: 16px 16px 0 rgba(0,0,0,0.08);
+            }
+
+            .series-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-step {
+                flex: 0 0 240px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: calc(var(--nav-height) + 2rem) 1rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .series-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .series,
+            .process-teaser .container,
+            .exhibitions {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            footer {
+                padding: 3rem 1rem;
+            }
+
+            footer .social {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+
+        /* ============================================
+           ANIMATIONS — Staggered Children
+           ============================================ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s var(--ease-fluid), transform 0.6s var(--ease-fluid);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+
+        /* ============================================
+           IMAGE PROTECTION — Anti-extraction
+           ============================================ */
+        .protected-img {
+            position: relative;
+            pointer-events: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .protected-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: transparent;
+            z-index: 10;
+        }
+
+        .protected-img img {
+            pointer-events: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+            -webkit-touch-callout: none;
+        }
+
+        /* Disable context menu on images */
+        .protected-img img,
+        img[data-protected="true"] {
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature">
+            <span class="logo-text">Loh Ek Sem</span>
+        </div>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="series-malay-kampung.html">Malay Kampung</a></li>
+            <li><a href="series-peranakan.html">Peranakan</a></li>
+            <li><a href="series-watercolour.html">Watercolour</a></li>
+            <li><a href="series-paper-cast.html">Paper Cast</a></li>
+            <li><a href="series-bali.html">Bali</a></li>
+            <li><a href="series-borneo.html">Borneo</a></li>
+            <li><a href="series-sculpture.html">Sculpture</a></li>
+            <li><a href="series-ink-sketch.html">Ink & Sketch</a></li>
+            <li><a href="exhibitions.html">Exhibitions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('mobile-open')">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-backdrop">
+            <img src="Fishing village [122x186cm] acrylic.JPG" alt="Malay Kampung Series backdrop" loading="eager">
+        </div>
+
+        <!-- Column 1: Text -->
+        <div class="hero-text">
+            <span class="hero-label">Artist Archive</span>
+            <h1>Loh Ek Sem</h1>
+            <p class="hero-tagline">
+                Preserving vanishing Malay kampung culture and Peranakan
+                heritage through four decades of painting and paper cast sculpture.
+            </p>
+            <div class="hero-signature">
+                <img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature">
+            </div>
+        </div>
+
+        <!-- Column 2: Artist Portrait (HIGH RES) -->
+        <div class="hero-portrait">
+            <img src="loheksem_staging/crops/artist,LohEkSem.JPG" alt="Loh Ek Sem portrait" loading="eager">
+            <div class="hero-portrait-caption">The Artist</div>
+        </div>
+
+        <!-- Column 3: Featured Artwork -->
+        <div class="hero-artwork">
+            <img src="by the well.jpg" alt="By the Well — Malay Kampung Series" loading="eager">
+            <div class="hero-artwork-caption">
+                <strong>By the Well</strong>
+                <em>137 × 214cm, Acrylic on canvas, 1995</em>
+            </div>
+        </div>
+    </section>
+
+    <!-- Series Section -->
+    <section class="series">
+        <div class="section-header">
+            <span class="section-label">Painting Series</span>
+            <p class="section-intro">
+                Eight bodies of work documenting the cultural fabric of Southeast Asia —
+                from vanishing kampung villages to Peranakan traditions, Balinese dance to
+                Borneo longhouse culture, intimate watercolours to innovative paper cast sculptures
+                and urban ink drawings.
+            </p>
+        </div>
+
+        <div class="series-grid">
+            <!-- Malay Kampung -->
+            <a href="series-malay-kampung.html" class="series-card">
+                <div class="series-card-image">
+                    <img src="by the well.jpg" alt="Malay Kampung Series preview" loading="lazy">
+                </div>
+                <div class="series-card-content">
+                    <h3>Malay Kampung</h3>
+                    <p>Acrylic on canvas</p>
+                    <div class="series-card-meta">
+                        <span class="series-card-count">12 works</span>
+                        <span class="series-card-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Peranakan -->
+            <a href="series-peranakan.html" class="series-card">
+                <div class="series-card-image">
+                    <img src="09ChengHo comes to Nanyang.jpg" alt="Peranakan Series preview" loading="lazy">
+                </div>
+                <div class="series-card-content">
+                    <h3>Peranakan</h3>
+                    <p>Acrylic on canvas</p>
+                    <div class="series-card-meta">
+                        <span class="series-card-count">10 works</span>
+                        <span class="series-card-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Watercolour -->
+            <a href="series-watercolour.html" class="series-card">
+                <div class="series-card-image">
+                    <img src="assets/Watercolour/Chesstime(38cmx50cm) watercolour.JPG" alt="Watercolour Studies preview" loading="lazy" onerror="this.src='09ChengHo comes to Nanyang.jpg'">
+                </div>
+                <div class="series-card-content">
+                    <h3>Watercolour</h3>
+                    <p>Watercolour on paper</p>
+                    <div class="series-card-meta">
+                        <span class="series-card-count">8 works</span>
+                        <span class="series-card-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Paper Cast -->
+            <a href="series-paper-cast.html" class="series-card">
+                <div class="series-card-image">
+                    <img src="by the well [25x30cm].JPG" alt="Paper Cast Series preview" loading="lazy">
+                </div>
+                <div class="series-card-content">
+                    <h3>Paper Cast</h3>
+                    <p>Sculptural relief</p>
+                    <div class="series-card-meta">
+                        <span class="series-card-count">7-step process</span>
+                        <span class="series-card-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Bali -->
+            <a href="series-bali.html" class="series-card">
+                <div class="series-card-image">
+                    <img src="assets/Bali/Little Balinese Dancer 98x98cm oil.JPG" alt="Bali Series preview" loading="lazy">
+                </div>
+                <div class="series-card-content">
+                    <h3>Bali</h3>
+                    <p>Oil and acrylic on canvas</p>
+                    <div class="series-card-meta">
+                        <span class="series-card-count">7 works</span>
+                        <span class="series-card-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Borneo -->
+            <a href="series-borneo.html" class="series-card">
+                <div class="series-card-image">
+                    <img src="assets/Borneo/Hornbil Dancers [83x110cm] acrylic [mlqa].JPG" alt="Borneo Series preview" loading="lazy">
+                </div>
+                <div class="series-card-content">
+                    <h3>Borneo</h3>
+                    <p>Oil and acrylic on canvas</p>
+                    <div class="series-card-meta">
+                        <span class="series-card-count">40+ works</span>
+                        <span class="series-card-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Sculpture -->
+            <a href="series-sculpture.html" class="series-card">
+                <div class="series-card-image">
+                    <img src="assets/Sculpture/Woman Standing 1.JPG" alt="Sculpture preview" loading="lazy">
+                </div>
+                <div class="series-card-content">
+                    <h3>Sculpture</h3>
+                    <p>Paper cast, mixed media</p>
+                    <div class="series-card-meta">
+                        <span class="series-card-count">50+ works</span>
+                        <span class="series-card-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Ink & Sketch -->
+            <a href="series-ink-sketch.html" class="series-card">
+                <div class="series-card-image">
+                    <img src="assets/Ink-Sketch/Petaling Street.jpg" alt="Ink & Sketch preview" loading="lazy" onerror="this.src='by the well.jpg';this.style.filter='grayscale(1) contrast(1.2)'">
+                </div>
+                <div class="series-card-content">
+                    <h3>Ink & Sketch</h3>
+                    <p>Ink and pencil on paper</p>
+                    <div class="series-card-meta">
+                        <span class="series-card-count">30+ works</span>
+                        <span class="series-card-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Process Teaser -->
+    <section class="process-teaser">
+        <div class="container">
+            <span class="section-label">Innovative Technique</span>
+            <p class="process-teaser-intro">
+                Paper Cast is a unique medium pioneered by Loh Ek Sem — transforming
+                recycled paper pulp into three-dimensional relief sculptures that capture
+                the texture and spirit of traditional crafts. The 7-step process takes
+                weeks to complete.
+            </p>
+
+            <div class="process-scroll">
+                <div class="process-step">
+                    <img src="PAPERcast-making/pencil drawing.JPG" alt="Step 1: Pencil drawing" loading="lazy">
+                    <div class="process-step-number">Step 01</div>
+                    <h4>Pencil Drawing</h4>
+                    <p>Initial reference sketch</p>
+                </div>
+
+                <div class="process-step">
+                    <img src="PAPERcast-making/carving on wood block.JPG" alt="Step 2: Wood carving" loading="lazy">
+                    <div class="process-step-number">Step 02</div>
+                    <h4>Wood Carving</h4>
+                    <p>Creating the mould base</p>
+                </div>
+
+                <div class="process-step">
+                    <img src="PAPERcast-making/mould making.JPG" alt="Step 3: Mould making" loading="lazy">
+                    <div class="process-step-number">Step 03</div>
+                    <h4>Mould Making</h4>
+                    <p>Preparing the form</p>
+                </div>
+
+                <div class="process-step">
+                    <img src="PAPERcast-making/mashed paper laying.JPG" alt="Step 4: Paper laying" loading="lazy">
+                    <div class="process-step-number">Step 04</div>
+                    <h4>Paper Laying</h4>
+                    <p>Applying paper pulp</p>
+                </div>
+
+                <div class="process-step">
+                    <img src="PAPERcast-making/drying.JPG" alt="Step 5: Drying" loading="lazy">
+                    <div class="process-step-number">Step 05</div>
+                    <h4>Drying</h4>
+                    <p>Natural air drying</p>
+                </div>
+
+                <div class="process-step">
+                    <img src="PAPERcast-making/detatch mould.JPG" alt="Step 6: Detaching" loading="lazy">
+                    <div class="process-step-number">Step 06</div>
+                    <h4>Detaching</h4>
+                    <p>Separating from mould</p>
+                </div>
+
+                <div class="process-step">
+                    <img src="PAPERcast-making/colouring 1.JPG" alt="Step 7: Colouring" loading="lazy">
+                    <div class="process-step-number">Step 07</div>
+                    <h4>Colouring</h4>
+                    <p>Final pigmentation</p>
+                </div>
+            </div>
+
+            <div class="process-cta">
+                <a href="series-paper-cast.html">View Full Process →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exhibition Spotlight -->
+    <section class="exhibitions">
+        <span class="section-label">Career Timeline</span>
+        <p class="section-intro" style="margin-bottom: 2rem;">
+            Selected exhibitions spanning 1995 to present — from solo shows at
+            Penang and Kuala Lumpur galleries to the monumental Cultural Pin Carnival mural.
+        </p>
+
+        <div class="exhibition-timeline">
+            <div class="exhibition-item">
+                <div class="exhibition-year">1995</div>
+                <h4>Rural Harmony</h4>
+                <p>The Art Gallery, Penang — Solo exhibition</p>
+            </div>
+
+            <div class="exhibition-item">
+                <div class="exhibition-year">1995–2000</div>
+                <h4>Opera Gallery Representation</h4>
+                <p>Singapore, Paris, New York</p>
+            </div>
+
+            <div class="exhibition-item">
+                <div class="exhibition-year">1997</div>
+                <h4>Kampung Ady II</h4>
+                <p>Art Salon Sdn. Bhd., Bangsar Baru — Solo</p>
+            </div>
+
+            <div class="exhibition-item">
+                <div class="exhibition-year">2009</div>
+                <h4>Cultural Pin Carnival</h4>
+                <p>Persada Johor — 9.35m × 6.7m mural, 3.7M pins</p>
+            </div>
+        </div>
+
+        <div class="exhibitions-cta">
+            <a href="exhibitions.html">View Full Exhibition History</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="signature">
+            <img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature">
+        </div>
+        <p>loheksem@gmail.com</p>
+        <p>Johor Bahru, Malaysia</p>
+        <div class="social">
+            <a href="#">Instagram</a>
+            <a href="#">Pinterest</a>
+        </div>
+        <p style="margin-top: 2rem; opacity: 0.5; font-size: 0.75rem;">
+            © 2026 Loh Ek Sem. All rights reserved.
+        </p>
+    </footer>
+
+    <!-- Intersection Observer for Fade-In Animations -->
+    <script>
+        // Mobile navigation toggle
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('nav').classList.remove('mobile-open');
+            });
+        });
+
+        // Fade-in on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ============================================
+        // FULL-IMAGE MODAL FOR SERIES CARDS
+        // ============================================
+        document.querySelectorAll('.series-card-image').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const img = this.querySelector('img');
+                const title = this.closest('.series-card').querySelector('h3').textContent;
+                const medium = this.closest('.series-card').querySelector('p').textContent;
+
+                const modal = document.createElement('div');
+                modal.className = 'image-modal active';
+                modal.innerHTML = `
+                    <button class="image-modal-close">Close ×</button>
+                    <img src="${img.src}" alt="${title}" onerror="this.src='${img.src}'">
+                    <div class="image-modal-caption">
+                        <h4>${title}</h4>
+                        <p>${medium}</p>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+
+                const closeModal = () => modal.remove();
+                modal.querySelector('.image-modal-close').addEventListener('click', e => { e.stopPropagation(); closeModal(); });
+                modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+                document.addEventListener('keydown', function closeOnEscape(ev) {
+                    if (ev.key === 'Escape') { closeModal(); document.removeEventListener('keydown', closeOnEscape); }
+                });
+            });
+        });
+
+        // ============================================
+        // IMAGE PROTECTION SYSTEM
+        // ============================================
+
+        // 1. Disable right-click context menu on all images
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG' || e.target.closest('.protected-img')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 2. Disable drag-to-save on images
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG' || e.target.closest('.protected-img')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 3. Block keyboard shortcuts for saving/capturing
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+S, Cmd+S (Save)
+            if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+U, Cmd+U (View Source)
+            if ((e.ctrlKey || e.metaKey) && e.key === 'u') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+I, Cmd+Option+I (DevTools)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'i' || e.key === 'I')) {
+                if (e.shiftKey || e.altKey || e.metaKey) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+            // Ctrl+Shift+J, Cmd+Option+J (DevTools Console)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'j' || e.key === 'J')) {
+                if (e.shiftKey || e.altKey || e.metaKey) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+            // Ctrl+Shift+C (DevTools Inspect)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C')) {
+                if (e.shiftKey) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+            // PrintScreen
+            if (e.key === 'PrintScreen') {
+                e.preventDefault();
+                // Show warning
+                showProtectionWarning('Screenshot blocked: Content is protected');
+                return false;
+            }
+        });
+
+        // 4. Detect and block screenshot attempts (Windows + PrintScreen)
+        document.addEventListener('keyup', function(e) {
+            if (e.key === 'PrintScreen') {
+                showProtectionWarning('Screenshot blocked: Content is protected');
+            }
+        });
+
+        // 5. Protect images on page load
+        function protectImages() {
+            document.querySelectorAll('img').forEach(function(img) {
+                // Add data attribute
+                img.setAttribute('data-protected', 'true');
+
+                // Wrap in protected container if not already wrapped
+                if (!img.closest('.protected-img')) {
+                    const wrapper = document.createElement('span');
+                    wrapper.className = 'protected-img';
+                    img.parentNode.insertBefore(wrapper, img);
+                    wrapper.appendChild(img);
+                }
+            });
+        }
+
+        // 6. Show protection warning
+        function showProtectionWarning(message) {
+            // Create overlay
+            const overlay = document.createElement('div');
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.8);
+                z-index: 999999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                animation: fadeOut 2s forwards;
+            `;
+
+            const messageEl = document.createElement('div');
+            messageEl.textContent = message;
+            messageEl.style.cssText = `
+                background: #b85c38;
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                font-size: 1rem;
+                font-weight: 600;
+            `;
+
+            overlay.appendChild(messageEl);
+            document.body.appendChild(overlay);
+
+            setTimeout(() => {
+                overlay.remove();
+            }, 2000);
+        }
+
+        // 7. Add CSS animation for warning
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                0% { opacity: 1; }
+                80% { opacity: 1; }
+                100% { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // 8. Block developer tools detection (makes it harder)
+        function detectDevTools() {
+            const threshold = 160;
+            const widthDiff = window.outerWidth - window.innerWidth;
+            const heightDiff = window.outerHeight - window.innerHeight;
+
+            if (widthDiff > threshold || heightDiff > threshold) {
+                // DevTools likely open
+                document.querySelectorAll('img').forEach(img => {
+                    img.style.filter = 'blur(10px)';
+                });
+                showProtectionWarning('Developer tools detected: Images blurred for protection');
+            }
+        }
+
+        // Check periodically
+        setInterval(detectDevTools, 1000);
+
+        // 9. Disable selection on images
+        document.addEventListener('selectstart', function(e) {
+            if (e.target.tagName === 'IMG' || e.target.closest('.protected-img')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 10. Prevent image extraction via inspector (clear src on focus)
+        document.addEventListener('DOMNodeRemoved', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.target.removeAttribute('src');
+            }
+        });
+
+        // Initialize protection on page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', protectImages);
+        } else {
+            protectImages();
+        }
+    </script>
+</body>
+</html>

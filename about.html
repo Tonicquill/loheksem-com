@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>About Loh Ek Sem | Artist Biography | Malay Kampung Painter</title>
+    <meta name="description" content="Biography of Loh Ek Sem (b.1956), Malaysian fine artist known for documenting kampung life and inventing paper cast sculpture technique.">
+    <meta name="keywords" content="Loh Ek Sem biography, Malaysian artist, kampung painter, paper cast inventor, Johor Bahru artist">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Loh Ek Sem | Artist Biography">
+    <meta property="og:description" content="From advertising career to fine art: 30+ years documenting vanishing Malay culture.">
+    <meta property="og:type" content="website">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Loh Ek Sem",
+        "birthDate": "1956",
+        "birthPlace": "Malaysia",
+        "nationality": "Malaysian",
+        "occupation": "Fine Artist",
+        "knowsAbout": ["Kampung culture", "Peranakan heritage", "Paper casting", "Watercolour", "Acrylic painting"],
+        "email": "loheksem@gmail.com",
+        "location": "Johor Bahru, Malaysia",
+        "url": "https://loheksem.com/about.html"
+    }
+    </script>
+
+    <style>
+        :root {
+            --ink: #000000;
+            --paper: #ffffff;
+            --charcoal: #1a1a1a;
+            --warm-gray: #f5f3f0;
+            --terracotta: #b85c38;
+            --clay: #c9a97e;
+            --font-display: 'Georgia', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+            --container-max: 1200px;
+            --nav-height: 80px;
+            --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--paper); color: var(--ink); line-height: 1.6; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--nav-height);
+            background: var(--paper);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        nav .logo img { height: 35px; width: auto; opacity: 0.9; }
+        nav .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+        }
+
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav a {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--charcoal);
+            transition: color 0.3s var(--ease-fluid);
+        }
+        nav a:hover, nav a.active { color: var(--terracotta); }
+
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+        .nav-toggle span { width: 24px; height: 2px; background: var(--ink); transition: 0.3s; }
+
+        @media (max-width: 1024px) {
+            nav ul { display: none; }
+            .nav-toggle { display: flex; }
+            nav.mobile-open ul {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0; right: 0;
+                background: var(--paper);
+                padding: 2rem;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                gap: 1.5rem;
+            }
+        }
+
+        /* Hero Section */
+        .about-hero {
+            position: relative;
+            min-height: 80dvh;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            align-items: center;
+            gap: 4rem;
+            padding: calc(var(--nav-height) + 4rem) 3rem 4rem;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .about-hero-image {
+            position: relative;
+            aspect-ratio: 3/4;
+            border: 3px solid var(--ink);
+            box-shadow: 24px 24px 0 rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .about-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-hero-content {
+            padding: 2rem 0;
+        }
+
+        .about-hero-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--terracotta);
+            margin-bottom: 1.5rem;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid var(--terracotta);
+        }
+
+        .about-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-hero-tagline {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            max-width: 50ch;
+        }
+
+        .about-hero-signature img { height: 50px; opacity: 0.85; }
+
+        /* Biography Section */
+        .biography {
+            padding: 6rem 2rem;
+            background: var(--warm-gray);
+        }
+
+        .biography .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--terracotta);
+            margin-bottom: 2rem;
+        }
+
+        .section-label::before, .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(184, 92, 56, 0.4);
+            min-width: 40px;
+        }
+
+        .biography-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--charcoal);
+        }
+
+        .biography-content p { margin-bottom: 1.5rem; }
+
+        .biography-content strong { color: var(--ink); }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 6rem 2rem;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .timeline {
+            border-left: 2px solid var(--ink);
+            padding-left: 2rem;
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.3rem;
+            width: 12px;
+            height: 12px;
+            background: var(--paper);
+            border: 2px solid var(--terracotta);
+            border-radius: 50%;
+        }
+
+        .timeline-year {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--terracotta);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item p {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+        }
+
+        /* Process Section */
+        .process {
+            padding: 6rem 2rem;
+            background: var(--paper);
+        }
+
+        .process .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .process-intro {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--charcoal);
+            text-align: center;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+        }
+
+        .process-image {
+            aspect-ratio: 4/3;
+            background: var(--warm-gray);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.12);
+        }
+
+        .process-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s var(--ease-fluid);
+        }
+
+        .process-step:hover .process-image img {
+            transform: scale(1.05);
+        }
+
+        .process-step h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+
+        .process-step p {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        /* Artist Statement */
+        .statement {
+            padding: 6rem 2rem;
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        .statement .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .statement .section-label {
+            color: var(--clay);
+        }
+
+        .statement .section-label::before,
+        .statement .section-label::after {
+            background: rgba(201, 169, 126, 0.4);
+        }
+
+        .statement-content {
+            font-size: 1.2rem;
+            line-height: 2;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .statement-content blockquote {
+            border-left: 3px solid var(--clay);
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .statement-content cite {
+            display: block;
+            margin-top: 1rem;
+            font-style: normal;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem;
+            background: var(--ink);
+            color: var(--paper);
+            text-align: center;
+        }
+
+        footer .signature img {
+            height: 50px;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            margin: 0 auto 1.5rem;
+        }
+
+        footer p { font-size: 0.85rem; opacity: 0.75; letter-spacing: 0.05em; }
+
+        footer .social {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        footer .social a {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.75;
+            transition: opacity 0.3s;
+        }
+
+        footer .social a:hover { opacity: 1; }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                grid-template-columns: 1fr;
+                padding: calc(var(--nav-height) + 2rem) 1.5rem 2rem;
+                gap: 3rem;
+            }
+
+            .about-hero-image {
+                max-width: 320px;
+                margin: 0 auto;
+                box-shadow: 16px 16px 0 rgba(0,0,0,0.08);
+            }
+
+            .biography, .timeline-section, .statement {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            nav { padding: 0 1rem; }
+        }
+    </style>
+
+        /* Image Protection */
+        .protected-img { position: relative; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+        .protected-img::after { content: ""; position: absolute; inset: 0; background: transparent; z-index: 10; }
+        .protected-img img { pointer-events: none; -webkit-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-drag: none; -webkit-touch-callout: none; cursor: default; }
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature">
+            <span class="logo-text">Loh Ek Sem</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="series-malay-kampung.html">Malay Kampung</a></li>
+            <li><a href="series-peranakan.html">Peranakan</a></li>
+            <li><a href="series-watercolour.html">Watercolour</a></li>
+            <li><a href="series-paper-cast.html">Paper Cast</a></li>
+            <li><a href="series-bali.html">Bali</a></li>
+            <li><a href="series-borneo.html">Borneo</a></li>
+            <li><a href="series-sculpture.html">Sculpture</a></li>
+            <li><a href="series-ink-sketch.html">Ink &amp; Sketch</a></li>
+            <li><a href="exhibitions.html">Exhibitions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('mobile-open')">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-image">
+            <img src="loheksem_staging/crops/artist,LohEkSem.JPG" alt="Loh Ek Sem portrait" loading="eager">
+        </div>
+        <div class="about-hero-content">
+            <span class="about-hero-label">Artist Biography</span>
+            <h1>Loh Ek Sem</h1>
+            <p class="about-hero-tagline">
+                Born 1956, Malaysia. Fine artist and cultural documentarian
+                preserving vanishing kampung life and Peranakan heritage
+                through four decades of painting and paper cast sculpture.
+            </p>
+            <div class="about-hero-signature">
+                <img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature">
+            </div>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section class="biography">
+        <div class="container">
+            <span class="section-label">Life & Work</span>
+            <div class="biography-content">
+                <p>
+                    <strong>Loh Ek Sem</strong> (b.1956) is a Malaysian fine artist whose four-decade practice
+                    has been driven by a singular mission: to document the vanishing cultural landscapes
+                    of Southeast Asia. His work functions as visual anthropology—art that preserves not
+                    just aesthetic objects, but entire ways of life disappearing from modern Malaysia.
+                </p>
+                <p>
+                    Sem began his career in the advertising industry, where he developed technical mastery
+                    and a keen eye for visual storytelling. But in <strong>1994</strong>, he made a decisive pivot to
+                    fine art, driven by a growing urgency to capture the kampung (village) life he
+                    remembered from his youth—traditional wooden houses on stilts, community rituals,
+                    the textures and rhythms of rural Malaysia that rapid development was replacing.
+                </p>
+                <p>
+                    Over the next decade, Sem produced his flagship <strong>Malay Kampung Series</strong>—large-scale
+                    acrylic paintings that depict kampung scenes with documentary precision and nostalgic
+                    warmth. Works like <em>By the Well</em> (137 × 214cm) and <em>Fishing Village</em> (122 × 186cm)
+                    are not mere representations; they are time capsules of a world that no longer exists
+                    in physical form.
+                </p>
+                <p>
+                    Parallel to his kampung documentation, Sem developed a deep engagement with
+                    <strong>Peranakan heritage</strong>—the hybrid Chinese-Malay culture that flourished in colonial
+                    Malaya. His Peranakan Series captures the intricate details of Nyonya life: ceremonial
+                    dress, festival preparations, the domestic rituals that defined a community straddling
+                    multiple identities.
+                </p>
+                <p>
+                    In the 2000s, Sem invented an entirely new medium: <strong>paper cast sculpture</strong>. Dissatisfied
+                    with painting's inability to capture the roughness of kampung materials—aged wood,
+                    attap roofing, hand-carved furniture—he developed a seven-step process that transforms
+                    recycled paper pulp into three-dimensional relief sculptures. The technique, which takes
+                    weeks to complete for each work, produces pieces that are neither painting nor sculpture,
+                    but both at once.
+                </p>
+                <p>
+                    Today, Sem continues to work from his studio in <strong>Johor Bahru</strong>, maintaining an archive
+                    of over 100 works across four series. His art has been exhibited in Singapore, Paris,
+                    and New York through Opera Gallery (1995–2000), and his monumental <em>Cultural Pin
+                    Carnival</em> mural (2009)—created with 3.7 million map pins—stands as a testament to
+                    his belief that art can be both culturally significant and publicly accessible.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <span class="section-label">Career Timeline</span>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1956</div>
+                <h4>Born in Malaysia</h4>
+                <p>Early life exposed to traditional kampung culture and Peranakan heritage</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1970s–1980s</div>
+                <h4>Advertising Career</h4>
+                <p>Develops technical mastery and visual storytelling skills in commercial art</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1994</div>
+                <h4>Pivot to Fine Art</h4>
+                <p>Leaves advertising to pursue cultural documentation through painting</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1995</div>
+                <h4>Rural Harmony — First Solo Exhibition</h4>
+                <p>The Art Gallery, Penang. Debut of Malay Kampung Series.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1995–2000</div>
+                <h4>Opera Gallery Representation</h4>
+                <p>International representation with galleries in Singapore, Paris, and New York</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1997</div>
+                <h4>Kampung Ady II — Solo Exhibition</h4>
+                <p>Art Salon Sdn. Bhd., Bangsar Baru. Continued kampung documentation.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2000s</div>
+                <h4>Develops Paper Cast Technique</h4>
+                <p>Invents seven-step paper casting process over five years of experimentation</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2009</div>
+                <h4>Cultural Pin Carnival</h4>
+                <p>Persada Johor. Monumental 9.35m × 6.7m mural created with 3.7 million map pins.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <span class="section-label">The Paper Cast Process</span>
+            <div class="process-intro">
+                <p>Loh Ek Sem invented his signature paper cast technique in the 2000s, seeking a medium that could capture the roughness of kampung materials—aged wood, attap roofing, hand-carved furniture—that painting alone could not convey. The process takes weeks for each work, transforming recycled paper into durable sculptural reliefs.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-image">
+                        <img src="PAPERcast-making/pencil drawing.JPG" alt="Initial drawing" loading="lazy">
+                    </div>
+                    <h4>1. Drawing</h4>
+                    <p>The image is first drawn on wood block or board, establishing the composition and outlines.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-image">
+                        <img src="PAPERcast-making/mould making.JPG" alt="Creating mould" loading="lazy">
+                    </div>
+                    <h4>2. Mould Making</h4>
+                    <p>A mould is carved or formed to create the three-dimensional base for the paper cast.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-image">
+                        <img src="PAPERcast-making/mashed paper laying.JPG" alt="Applying paper pulp" loading="lazy">
+                    </div>
+                    <h4>3. Paper Preparation</h4>
+                    <p>Recycled paper is soaked, blended into pulp, and mixed with binding agents.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-image">
+                        <img src="PAPERcast-making/carving on wood block.JPG" alt="Carving details" loading="lazy">
+                    </div>
+                    <h4>4. Carving & Shaping</h4>
+                    <p>Details are carved into the wood block or the paper pulp is shaped while wet.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-image">
+                        <img src="PAPERcast-making/drying.JPG" alt="Drying process" loading="lazy">
+                    </div>
+                    <h4>5. Drying</h4>
+                    <p>The paper cast air-dries over weeks. Rushing causes cracking or warping.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-image">
+                        <img src="PAPERcast-making/detatch mould.JPG" alt="Removing from mould" loading="lazy">
+                    </div>
+                    <h4>6. Demoulding</h4>
+                    <p>Once fully cured, the paper cast is carefully removed from the mould.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-image">
+                        <img src="PAPERcast-making/colouring 1.JPG" alt="Coloring process" loading="lazy">
+                    </div>
+                    <h4>7. Coloring</h4>
+                    <p>Acrylic paints are applied to bring the scene to life, building up layers of color.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-image">
+                        <img src="PAPERcast-making/colouring 2.JPG" alt="Final coloring" loading="lazy">
+                    </div>
+                    <h4>8. Finishing</h4>
+                    <p>Final details and protective coatings complete the transformation from paper to art.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artist Statement -->
+    <section class="statement">
+        <div class="container">
+            <span class="section-label">In His Own Words</span>
+            <div class="statement-content">
+                <blockquote>
+                    "The kampung houses I painted in the 1990s no longer exist in reality—
+                    replaced by condominiums and highways. But they live on in my archive:
+                    attap roofs, wooden stilts, the smell of woodsmoke and coconut oil.
+                    These paintings are not just art; they are time capsules."
+                    <cite>— Loh Ek Sem</cite>
+                </blockquote>
+                <blockquote>
+                    "How do you capture the texture of an aged wooden door, the roughness
+                    of attap roofing, the grain of hand-carved furniture? Paint wasn't enough.
+                    I developed paper casting over five years: recycled paper, hand-carved
+                    moulds, natural pigments. The result is neither painting nor sculpture—
+                    both at once."
+                    <cite>— Loh Ek Sem on paper cast technique</cite>
+                </blockquote>
+                <blockquote>
+                    "A 20-year-old KL native might never have seen a kampung house in person.
+                    But in my gallery, they encounter the architecture, the community rituals,
+                    the textures of their ancestors' lives. The art becomes a bridge—connecting
+                    generations who share a culture separated by time."
+                    <cite>— Loh Ek Sem on cultural preservation</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="signature">
+            <img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature">
+        </div>
+        <p>loheksem@gmail.com</p>
+        <p>Johor Bahru, Malaysia</p>
+        <div class="social">
+            <a href="#">Instagram</a>
+            <a href="#">Pinterest</a>
+        </div>
+        <p style="margin-top: 2rem; opacity: 0.5; font-size: 0.75rem;">
+            © 2026 Loh Ek Sem. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('nav').classList.remove('mobile-open');
+            });
+        });
+    </script>
+</body>
+</html>

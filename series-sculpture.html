@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sculpture | Paper Cast & Figurative Works | Loh Ek Sem</title>
+    <meta name="description" content="Sculpture by Loh Ek Sem — figurative paper cast sculptures and three-dimensional works exploring the human form and Malaysian daily life.">
+    <meta name="keywords" content="Loh Ek Sem sculpture, paper cast, figurative art, Malaysian sculptor, 3D art Johor Bahru">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VisualArtwork","artSeries":"Sculpture","artist":{"@type":"Person","name":"Loh Ek Sem"},"description":"Sculptural works in paper cast and mixed media.","artMedium":"Paper cast, mixed media","artform":"Sculpture"}
+    </script>
+    <style>
+        :root{--ink:#000;--paper:#fff;--charcoal:#1a1a1a;--warm-gray:#f5f3f0;--terracotta:#b85c38;--clay:#c9a97e;--stone:#7a7a7a;--font-display:'Georgia',serif;--font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--font-mono:'JetBrains Mono','Courier New',monospace;--container-max:1400px;--nav-height:80px;--ease-fluid:cubic-bezier(0.16,1,0.3,1)}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6}
+        img{max-width:100%;height:auto;display:block}
+        a{color:inherit;text-decoration:none}
+        nav{position:fixed;top:0;left:0;right:0;height:var(--nav-height);background:var(--paper);border-bottom:1px solid rgba(0,0,0,0.1);z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 2rem}
+        nav .logo{display:flex;align-items:center;gap:1.5rem}
+        nav .logo img{height:35px;width:auto;opacity:0.9}
+        nav .logo-text{font-family:var(--font-display);font-size:1.1rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--charcoal)}
+        nav ul{display:flex;gap:2rem;list-style:none}
+        nav a{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--charcoal);transition:color 0.3s var(--ease-fluid)}
+        nav a:hover,nav a.active{color:var(--terracotta)}
+        nav a.active{border-bottom:1px solid var(--terracotta)}
+        .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+        .nav-toggle span{width:24px;height:2px;background:var(--ink);transition:0.3s}
+        @media(max-width:1024px){nav ul{display:none}.nav-toggle{display:flex}nav.mobile-open ul{display:flex;flex-direction:column;position:absolute;top:var(--nav-height);left:0;right:0;background:var(--paper);padding:2rem;border-bottom:1px solid rgba(0,0,0,0.1);gap:1.5rem}}
+        .series-hero{position:relative;min-height:70dvh;display:grid;place-items:center;padding:calc(var(--nav-height)+4rem) 2rem 4rem;background:var(--warm-gray);overflow:hidden}
+        .series-hero-backdrop{position:absolute;inset:0;opacity:0.08;pointer-events:none;transform:translateZ(-1px) scale(1.1);will-change:transform}
+        .series-hero-backdrop img{width:100%;height:120%;object-fit:cover;object-position:center;filter:grayscale(0.3) sepia(0.15) blur(0.5px);transform:translateY(-10%)}
+        .series-hero-content{position:relative;z-index:2;text-align:center;max-width:800px}
+        .series-hero-label{display:inline-block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.25em;color:var(--stone);margin-bottom:1.5rem;padding:0.25rem 1rem;border:1px solid var(--stone);border-radius:50px}
+        .series-hero h1{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:500;line-height:1.1;margin-bottom:1.5rem;color:var(--ink)}
+        .series-hero p{font-size:1.1rem;color:var(--charcoal);line-height:1.8;max-width:65ch}
+        .series-intro{padding:6rem 2rem;max-width:800px;margin:0 auto}
+        .series-intro-content{font-size:1.05rem;line-height:1.9;color:var(--charcoal)}
+        .series-intro-content p{margin-bottom:1.5rem}
+        .series-intro-content strong{color:var(--ink)}
+        .gallery{padding:4rem 2rem 6rem;max-width:var(--container-max);margin:0 auto}
+        .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem}
+        .gallery-item{break-inside:avoid;margin-bottom:2rem}
+        .gallery-item-image{position:relative;aspect-ratio:4/3;background:var(--warm-gray);overflow:hidden;border:1px solid rgba(0,0,0,0.12);transition:border-color 0.3s var(--ease-fluid);cursor:pointer}
+        .gallery-item:hover .gallery-item-image{border-color:var(--ink)}
+        .gallery-item img{width:100%;height:100%;object-fit:contain;transition:transform 0.6s var(--ease-fluid)}
+        .gallery-item:hover img{transform:scale(1.02)}
+        .view-full-indicator{position:absolute;top:0.5rem;right:0.5rem;background:rgba(0,0,0,0.7);color:var(--paper);padding:0.4rem 0.6rem;border-radius:4px;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;opacity:0;transition:opacity 0.3s var(--ease-fluid);z-index:15;pointer-events:none}
+        .gallery-item:hover .view-full-indicator{opacity:1}
+        .image-modal{position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:10000;display:none;align-items:center;justify-content:center;padding:2rem;cursor:zoom-out}
+        .image-modal.active{display:flex}
+        .image-modal img{max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 0 40px rgba(0,0,0,0.8)}
+        .image-modal-close{position:absolute;top:1.5rem;right:1.5rem;background:var(--terracotta);color:var(--paper);border:none;padding:0.75rem 1.25rem;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;border-radius:4px}
+        .image-modal-caption{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:var(--paper);text-align:center;max-width:600px}
+        .image-modal-caption h4{font-family:var(--font-display);font-size:1.2rem;margin-bottom:0.5rem;color:var(--clay)}
+        .image-modal-caption p{font-size:0.85rem;opacity:0.8}
+        .gallery-item-info{padding:1.25rem 0.5rem 0.5rem}
+        .gallery-item-title{font-family:var(--font-display);font-size:1rem;font-weight:600;margin-bottom:0.5rem}
+        .gallery-item-meta{font-size:0.8rem;color:var(--charcoal);font-family:var(--font-mono);margin-bottom:0.75rem}
+        .gallery-item-story{font-size:0.85rem;color:var(--charcoal);line-height:1.6}
+        .gallery-item-image .sold-badge{position:absolute;top:1rem;right:1rem;background:var(--terracotta);color:var(--paper);padding:0.4rem 0.8rem;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;z-index:10;opacity:0;transform:translateY(-10px);transition:all 0.3s var(--ease-fluid)}
+        .gallery-item[data-sold="true"] .sold-badge{opacity:1;transform:translateY(0)}
+        .gallery-item-image .artwork-popup{position:absolute;inset:0;background:rgba(0,0,0,0.92);color:var(--paper);display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity 0.3s var(--ease-fluid);z-index:20}
+        .gallery-item-image:hover .artwork-popup{opacity:1;pointer-events:auto}
+        .popup-content{max-height:90%;overflow-y:auto;text-align:left}
+        .popup-content h4{font-family:var(--font-display);font-size:1.3rem;margin-bottom:1rem;color:var(--clay)}
+        .popup-meta{font-size:0.85rem;margin-bottom:0.5rem;font-family:var(--font-mono)}
+        .popup-meta strong{color:var(--clay)}
+        .popup-description{margin-top:1rem;font-size:0.9rem;line-height:1.6;color:rgba(255,255,255,0.9)}
+        .status-retained{color:#9ca3af;font-weight:600;font-style:italic}
+        .status-sold{color:var(--terracotta);font-weight:600}
+        .cultural-notes{padding:6rem 2rem;background:var(--warm-gray)}
+        .cultural-notes .container{max-width:900px;margin:0 auto}
+        .section-label{display:inline-flex;align-items:center;gap:1rem;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--terracotta);margin-bottom:2rem}
+        .section-label::before,.section-label::after{content:'';flex:1;height:1px;background:rgba(184,92,56,0.4);min-width:40px}
+        .cultural-notes-content{font-size:1.05rem;line-height:1.9;color:var(--charcoal)}
+        .cultural-notes-content h3{font-family:var(--font-display);font-size:1.3rem;margin-top:2.5rem;margin-bottom:1rem;color:var(--stone)}
+        .cultural-notes-content p{margin-bottom:1.5rem}
+        .cultural-notes-content ul{margin:1.5rem 0;padding-left:1.5rem}
+        .cultural-notes-content li{margin-bottom:0.75rem}
+        .term{font-weight:600;color:var(--ink)}
+        .series-nav{padding:4rem 2rem;text-align:center;background:var(--ink);color:var(--paper)}
+        .series-nav-links{display:flex;justify-content:center;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+        .series-nav-links a{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--clay);border:1px solid var(--clay);padding:0.75rem 1.5rem;transition:all 0.3s var(--ease-fluid)}
+        .series-nav-links a:hover{background:var(--clay);color:var(--ink)}
+        footer{padding:4rem 2rem;background:var(--ink);color:var(--paper);text-align:center}
+        footer .signature img{height:50px;filter:brightness(0) invert(1);opacity:0.9;margin:0 auto 1.5rem}
+        footer p{font-size:0.85rem;opacity:0.75;letter-spacing:0.05em}
+        footer .social{display:flex;justify-content:center;gap:2rem;margin-top:1.5rem}
+        footer .social a{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;opacity:0.75;transition:opacity 0.3s}
+        footer .social a:hover{opacity:1}
+        @media(max-width:768px){.series-hero{padding:calc(var(--nav-height)+2rem) 1.5rem 2rem}.gallery-grid{grid-template-columns:1fr}.series-intro,.cultural-notes .container,.gallery{padding-left:1rem;padding-right:1rem}nav{padding:0 1rem}}
+        .protected-img{position:relative;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+        .protected-img::after{content:'';position:absolute;inset:0;background:transparent;z-index:10}
+        .protected-img img{pointer-events:none;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none;-webkit-touch-callout:none;cursor:default}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature"><span class="logo-text">Loh Ek Sem</span></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="series-malay-kampung.html">Malay Kampung</a></li>
+            <li><a href="series-peranakan.html">Peranakan</a></li>
+            <li><a href="series-watercolour.html">Watercolour</a></li>
+            <li><a href="series-paper-cast.html">Paper Cast</a></li>
+            <li><a href="series-bali.html">Bali</a></li>
+            <li><a href="series-borneo.html">Borneo</a></li>
+            <li><a href="series-sculpture.html" class="active">Sculpture</a></li>
+            <li><a href="series-ink-sketch.html">Ink & Sketch</a></li>
+            <li><a href="exhibitions.html">Exhibitions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('mobile-open')"><span></span><span></span><span></span></div>
+    </nav>
+
+    <section class="series-hero">
+        <div class="series-hero-backdrop"><img src="assets/Sculpture/Woman Standing 1.JPG" alt="Sculpture backdrop" loading="eager"></div>
+        <div class="series-hero-content">
+            <span class="series-hero-label">Three-Dimensional Works</span>
+            <h1>Sculpture</h1>
+            <p>Figurative sculptures exploring the human form in moments of rest, contemplation, and daily activity — from paper cast reliefs to freestanding forms.</p>
+        </div>
+    </section>
+
+    <section class="series-intro">
+        <div class="series-intro-content">
+            <p>The <strong>Sculpture</strong> series (2000–2015) extends Loh Ek Sem's documentarian practice into three dimensions. Working primarily in paper cast — his invented medium — Sem creates figurative sculptures that occupy the space between painting and traditional sculpture.</p>
+            <p>The subjects are drawn from the same well as his paintings: figures at rest, women engaged in domestic tasks, elders in contemplation. But the sculptural form adds a new dimension — literally and figuratively. The viewer can walk around the work, see it from multiple angles, experience the weight and presence of the form.</p>
+            <p>The series includes 50+ works, from small reliefs (30 × 25cm) to large freestanding figures (118cm height). Materials include paper cast on wood armature, mixed media assemblage, and painted relief.</p>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="gallery-grid">
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Sculpture/Woman Standing 1.JPG" alt="Woman Standing I" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Woman Standing I</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 87cm height</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Paper cast on armature</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2005</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A full-length figure of a woman in everyday dress, standing in quiet contemplation. The paper cast technique captures the texture of fabric and the subtle weight shift of a body at rest.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Woman Standing I</h3>
+                    <p class="gallery-item-meta">87cm height, Paper cast on armature, 2005</p>
+                    <p class="gallery-item-story">A full-length figure in quiet contemplation — the paper cast captures fabric texture and weight shift of a body at rest.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Sculpture/Reclining woman I.JPG" alt="Reclining Woman I" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Reclining Woman I</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 95cm length</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Paper cast on armature</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2006</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A figure reclining, one arm supporting the head, in a pose that echoes art historical traditions from Giorgione to Modigliani. The paper cast surface retains the artist's hand marks.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Reclining Woman I</h3>
+                    <p class="gallery-item-meta">95cm length, Paper cast on armature, 2006</p>
+                    <p class="gallery-item-story">A figure reclining in a pose echoing art historical traditions — the paper cast surface retains the artist's hand marks.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Sculpture/Big Rooster.JPG" alt="Big Rooster" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Big Rooster</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 75 × 45 × 50cm</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Paper cast, mixed media</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2008</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A large-scale rooster sculpture — a symbol of vigilance and pride in Malay culture. The textured surface captures the layered quality of feathers through built-up paper cast.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Big Rooster</h3>
+                    <p class="gallery-item-meta">75 × 45 × 50cm, Paper cast mixed media, 2008</p>
+                    <p class="gallery-item-story">A large-scale rooster — a symbol of vigilance and pride in Malay culture — with textured surface capturing layered feathers.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Sculpture/Child care (Woman and child) 3 Qtr.JPG" alt="Child Care" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Child Care (Mother and Child)</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 78cm height</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Paper cast on armature</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2007</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A mother holding her child — a universal subject rendered with specific cultural detail. The sarong folds, the way the child nestles into the mother's shoulder, all captured in paper cast.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Child Care</h3>
+                    <p class="gallery-item-meta">78cm height, Paper cast on armature, 2007</p>
+                    <p class="gallery-item-story">A mother holding her child — universal subject with specific cultural detail: sarong folds, child nestled into mother's shoulder.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Sculpture/Just thinking.JPG" alt="Just Thinking" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Just Thinking</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 52cm height</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Paper cast, painted</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2009</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A bust of a figure in deep contemplation — hand to chin, gaze distant. The title is deliberately simple; the act of thinking is universal, yet the features are specifically Malay.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Just Thinking</h3>
+                    <p class="gallery-item-meta">52cm height, Paper cast painted, 2009</p>
+                    <p class="gallery-item-story">A bust of a figure in deep contemplation — hand to chin, gaze distant. Title deliberately simple; features specifically Malay.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Sculpture/= a reclining woman touching her hair.JPG" alt="Reclining Woman Touching Hair" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Reclining Woman Touching Hair</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 92cm length</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Paper cast on armature</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2008</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A reclining figure in a moment of self-care, hand raised to hair. The pose is intimate yet dignified, capturing a private moment rendered in the artist's signature paper cast technique.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Reclining Woman Touching Hair</h3>
+                    <p class="gallery-item-meta">92cm length, Paper cast on armature, 2008</p>
+                    <p class="gallery-item-story">A reclining figure in a moment of self-care — hand raised to hair, intimate yet dignified, capturing a private moment.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Sculpture/= a seated woman holding a tray.JPG" alt="Woman Holding Tray" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Woman Holding Tray</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 82cm height</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Paper cast on armature</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2009</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A woman carrying a tray — a gesture of hospitality and service repeated countless times in Malaysian households. The sculpture elevates this everyday act to the level of art.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Woman Holding Tray</h3>
+                    <p class="gallery-item-meta">82cm height, Paper cast on armature, 2009</p>
+                    <p class="gallery-item-story">A woman carrying a tray — gesture of hospitality and service repeated in Malaysian households — elevated to art.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Sculpture/= man with sape.JPG" alt="Man with Sape" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Man with Sape</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 75cm height</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Paper cast, mixed media</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2010</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A musician with the sape, the traditional stringed instrument of the Orang Ulu people of Borneo. The sculpture captures both the player and his instrument, a testament to Malaysia's indigenous musical heritage.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Man with Sape</h3>
+                    <p class="gallery-item-meta">75cm height, Paper cast mixed media, 2010</p>
+                    <p class="gallery-item-story">A musician with the sape — traditional stringed instrument of Borneo's Orang Ulu — capturing Malaysia's indigenous musical heritage.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Sculpture/Reclining woman With Book.JPG" alt="Reclining Woman with Book" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Reclining Woman with Book</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 95cm length</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Paper cast on armature</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2011</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A woman reclining with a book — a moment of leisure and intellectual engagement. The sculpture captures the quiet pleasure of reading, the body relaxed in contemplation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Reclining Woman with Book</h3>
+                    <p class="gallery-item-meta">95cm length, Paper cast on armature, 2011</p>
+                    <p class="gallery-item-story">A woman reclining with a book — moment of leisure and intellectual engagement, body relaxed in contemplation.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Sculpture/= mother and child in her arms.JPG" alt="Mother and Child" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Mother and Child</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 68cm height</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Paper cast on armature</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2007</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A mother cradling her child in her arms — the most universal of human subjects, rendered with specific cultural detail. The tenderness of the embrace, the way the child nestles into the mother's body.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Mother and Child</h3>
+                    <p class="gallery-item-meta">68cm height, Paper cast on armature, 2007</p>
+                    <p class="gallery-item-story">A mother cradling her child — universal subject rendered with cultural detail, tenderness of embrace captured in paper cast.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cultural-notes">
+        <div class="container">
+            <span class="section-label">Technique Notes</span>
+            <div class="cultural-notes-content">
+                <h3>Paper Cast as Sculpture</h3>
+                <p>Loh Ek Sem's paper cast technique was developed over years of experimentation. The process transforms recycled paper pulp into a durable sculptural medium that retains the texture and warmth of traditional crafts while achieving the permanence of fine art.</p>
+                <ul>
+                    <li><span class="term">Armature</span> — Wood or wire framework that supports the paper cast. The armature is built to the approximate size and shape of the final sculpture.</li>
+                    <li><span class="term">Paper Pulp</span> — Recycled paper soaked, blended, and mixed with binding agents. The pulp is applied in layers, building up form and texture.</li>
+                    <li><span class="term">Drying</span> — Air-dried over weeks to ensure even curing. Rushing this stage causes cracking or warping.</li>
+                    <li><span class="term">Finishing</span> — Sanded smooth or left textured depending on the desired effect. Painted with acrylics or left natural.</li>
+                </ul>
+
+                <h3>Why Sculpture Matters</h3>
+                <p>Sculpture extends Sem's documentarian practice into three dimensions. Where paintings capture scenes, sculptures capture presence. The viewer doesn't just observe — they occupy the same space as the subject, walking around, seeing from multiple angles, experiencing the weight and volume of the form.</p>
+                <p>The figurative tradition in Malaysian art is relatively young, constrained by cultural and religious sensitivities. Sem's sculptures navigate this terrain carefully — these are not idealized nudes but clothed figures engaged in everyday activities. The focus is on dignity, not display.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="series-nav">
+        <p style="font-size:1.05rem;margin-bottom:1.5rem">Explore other series</p>
+        <div class="series-nav-links">
+            <a href="series-malay-kampung.html">Malay Kampung</a>
+            <a href="series-peranakan.html">Peranakan</a>
+            <a href="series-watercolour.html">Watercolour</a>
+            <a href="series-paper-cast.html">Paper Cast</a>
+            <a href="series-bali.html">Bali</a>
+            <a href="series-borneo.html">Borneo</a>
+            <a href="series-ink-sketch.html">Ink & Sketch</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="index.html">← Home</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="signature"><img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature"></div>
+        <p>loheksem@gmail.com</p>
+        <p>Johor Bahru, Malaysia</p>
+        <div class="social"><a href="#">Instagram</a><a href="#">Pinterest</a></div>
+        <p style="margin-top:2rem;opacity:0.5;font-size:0.75rem">© 2026 Loh Ek Sem. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link=>{link.addEventListener('click',()=>{document.querySelector('nav').classList.remove('mobile-open')})});
+        document.querySelectorAll('.gallery-item').forEach(item=>{const isSold=item.dataset.sold==='true';const soldBadge=item.querySelector('.sold-badge');const popupStatus=item.querySelector('.popup-meta strong:last-of-type+span');if(isSold&&soldBadge){soldBadge.style.opacity='1';soldBadge.style.transform='translateY(0)'}if(isSold&&popupStatus){popupStatus.textContent='SOLD';popupStatus.className='status-sold'}});
+
+        // 3-LAYER PARALLAX
+        const heroSection=document.querySelector('.series-hero');const heroBackdrop=document.querySelector('.series-hero-backdrop');const heroBackdropImg=heroBackdrop?.querySelector('img');const heroContent=document.querySelector('.series-hero-content');let heroForeground=document.querySelector('.series-hero-foreground');if(!heroForeground&&heroSection){heroForeground=document.createElement('div');heroForeground.className='series-hero-foreground';heroForeground.innerHTML='<img src="assets/Sculpture/Woman Standing 1.JPG" alt="Foreground" loading="eager">';heroSection.insertBefore(heroForeground,heroSection.firstChild)}const heroForegroundImg=heroForeground?.querySelector('img');if(!document.querySelector('#parallax-styles')){const parallaxStyles=document.createElement('style');parallaxStyles.id='parallax-styles';parallaxStyles.textContent=`.series-hero-foreground{position:absolute;inset:0;opacity:0.1;pointer-events:none;z-index:1;overflow:hidden}.series-hero-foreground img{width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(0.3) sepia(0.15);transform:translateZ(0);will-change:transform}.series-hero-content{z-index:2;position:relative}.series-hero-backdrop{z-index:0}`;document.head.appendChild(parallaxStyles)}let ticking=false;window.addEventListener('scroll',()=>{if(!ticking&&heroSection){window.requestAnimationFrame(()=>{const scrolled=window.pageYOffset;const heroTop=heroSection.offsetTop;const heroHeight=heroSection.offsetHeight;if(scrolled>=heroTop-window.innerHeight&&scrolled<=heroTop+heroHeight){const progress=(scrolled-heroTop+window.innerHeight)/(heroHeight+window.innerHeight);if(heroForegroundImg){const fgMove=progress*-20;heroForegroundImg.style.transform=`translateY(${fgMove}px) scale(1.05)`}if(heroContent){const contentMove=progress*50;heroContent.style.transform=`translateY(${contentMove}px)`}if(heroBackdropImg){const bgMove=progress*80;heroBackdropImg.style.transform=`translateY(${-10+bgMove}%)`}}ticking=false})}ticking=true},{passive:true});
+
+        // FULL-IMAGE MODAL
+        document.querySelectorAll('.gallery-item-image').forEach(item=>{item.addEventListener('click',function(e){e.preventDefault();const img=this.querySelector('img');const title=this.closest('.gallery-item').querySelector('.gallery-item-title').textContent;const meta=this.closest('.gallery-item').querySelector('.gallery-item-meta').textContent;const modal=document.createElement('div');modal.className='image-modal active';modal.innerHTML=`<button class="image-modal-close">Close ×</button><img src="${img.src}" alt="${title}" onerror="this.src='${img.src}'"><div class="image-modal-caption"><h4>${title}</h4><p>${meta}</p></div>`;document.body.appendChild(modal);const closeModal=()=>modal.remove();modal.querySelector('.image-modal-close').addEventListener('click',(e)=>{e.stopPropagation();closeModal()});modal.addEventListener('click',(e)=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',function closeOnEscape(ev){if(ev.key==='Escape'){closeModal();document.removeEventListener('keydown',closeOnEscape)}})});
+
+        // Image Protection
+        document.addEventListener('contextmenu',function(e){if(e.target.tagName==='IMG'||e.target.closest('.protected-img')){e.preventDefault();return false}});document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG'||e.target.closest('.protected-img')){e.preventDefault();return false}});document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&e.key==='s'){e.preventDefault();return false}if((e.ctrlKey||e.metaKey)&&e.key==='u'){e.preventDefault();return false}if(e.key==='PrintScreen'){e.preventDefault();showProtectionWarning('Screenshot blocked: Content is protected');return false}});function protectImages(){document.querySelectorAll('img').forEach(function(img){img.setAttribute('data-protected','true');if(!img.closest('.protected-img')){const wrapper=document.createElement('span');wrapper.className='protected-img';img.parentNode.insertBefore(wrapper,img);wrapper.appendChild(img)}})}function showProtectionWarning(message){const existing=document.querySelector('.protection-warning');if(existing)existing.remove();const overlay=document.createElement('div');overlay.className='protection-warning';overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:999999;display:flex;align-items:center;justify-content:center;animation:fadeOut 2s forwards;';const messageEl=document.createElement('div');messageEl.textContent=message;messageEl.style.cssText='background:#b85c38;color:white;padding:1rem 2rem;border-radius:8px;font-size:1rem;font-weight:600;box-shadow:0 4px 20px rgba(0,0,0,0.5);';overlay.appendChild(messageEl);document.body.appendChild(overlay);setTimeout(()=>overlay.remove(),2000)}function detectDevTools(){const widthDiff=window.outerWidth-window.innerWidth;const heightDiff=window.outerHeight-window.innerHeight;if(widthDiff>160||heightDiff>160){document.querySelectorAll('img').forEach(img=>img.style.filter='blur(10px)');showProtectionWarning('Developer tools detected: Images blurred for protection')}else{document.querySelectorAll('img').forEach(img=>img.style.filter='none')}}setInterval(detectDevTools,1000);if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',protectImages)}else{protectImages()}
+    </script>
+</body>
+</html>

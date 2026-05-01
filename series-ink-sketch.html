@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ink & Sketch | Urban Drawings | Loh Ek Sem</title>
+    <meta name="description" content="Ink & Sketch by Loh Ek Sem — urban drawings and sketches documenting street life in Malaysia: Petaling Street, Penang Street, Malacca River, and daily scenes.">
+    <meta name="keywords" content="Loh Ek Sem ink drawings, urban sketch Malaysia, street drawings, Petaling Street art, Penang sketch, Malacca River drawing">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VisualArtwork","artSeries":"Ink & Sketch","artist":{"@type":"Person","name":"Loh Ek Sem"},"description":"Urban ink drawings and sketches documenting Malaysian street life.","artMedium":"Ink on paper, pencil sketch","artform":"Drawing"}
+    </script>
+    <style>
+        :root{--ink:#000;--paper:#fff;--charcoal:#1a1a1a;--warm-gray:#f5f3f0;--terracotta:#b85c38;--clay:#c9a97e;--slate:#4a5568;--font-display:'Georgia',serif;--font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--font-mono:'JetBrains Mono','Courier New',monospace;--container-max:1400px;--nav-height:80px;--ease-fluid:cubic-bezier(0.16,1,0.3,1)}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6}
+        img{max-width:100%;height:auto;display:block}
+        a{color:inherit;text-decoration:none}
+        nav{position:fixed;top:0;left:0;right:0;height:var(--nav-height);background:var(--paper);border-bottom:1px solid rgba(0,0,0,0.1);z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 2rem}
+        nav .logo{display:flex;align-items:center;gap:1.5rem}
+        nav .logo img{height:35px;width:auto;opacity:0.9}
+        nav .logo-text{font-family:var(--font-display);font-size:1.1rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--charcoal)}
+        nav ul{display:flex;gap:2rem;list-style:none}
+        nav a{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--charcoal);transition:color 0.3s var(--ease-fluid)}
+        nav a:hover,nav a.active{color:var(--terracotta)}
+        nav a.active{border-bottom:1px solid var(--terracotta)}
+        .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+        .nav-toggle span{width:24px;height:2px;background:var(--ink);transition:0.3s}
+        @media(max-width:1024px){nav ul{display:none}.nav-toggle{display:flex}nav.mobile-open ul{display:flex;flex-direction:column;position:absolute;top:var(--nav-height);left:0;right:0;background:var(--paper);padding:2rem;border-bottom:1px solid rgba(0,0,0,0.1);gap:1.5rem}}
+        .series-hero{position:relative;min-height:70dvh;display:grid;place-items:center;padding:calc(var(--nav-height)+4rem) 2rem 4rem;background:var(--warm-gray);overflow:hidden}
+        .series-hero-backdrop{position:absolute;inset:0;opacity:0.25;pointer-events:none;transform:translateZ(-1px) scale(1.1);will-change:transform}
+        .series-hero-backdrop img{width:100%;height:120%;object-fit:cover;object-position:center;filter:grayscale(0.3) sepia(0.15);transform:translateY(-10%)}
+        .series-hero-content{position:relative;z-index:2;text-align:center;max-width:800px}
+        .series-hero-label{display:inline-block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.25em;color:var(--slate);margin-bottom:1.5rem;padding:0.25rem 1rem;border:1px solid var(--slate);border-radius:50px}
+        .series-hero h1{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:500;line-height:1.1;margin-bottom:1.5rem;color:var(--ink)}
+        .series-hero p{font-size:1.1rem;color:var(--charcoal);line-height:1.8;max-width:65ch}
+        .series-intro{padding:6rem 2rem;max-width:800px;margin:0 auto}
+        .series-intro-content{font-size:1.05rem;line-height:1.9;color:var(--charcoal)}
+        .series-intro-content p{margin-bottom:1.5rem}
+        .series-intro-content strong{color:var(--ink)}
+        .gallery{padding:4rem 2rem 6rem;max-width:var(--container-max);margin:0 auto}
+        .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem}
+        .gallery-item{break-inside:avoid;margin-bottom:2rem}
+        .gallery-item-image{position:relative;aspect-ratio:4/3;background:var(--warm-gray);overflow:hidden;border:1px solid rgba(0,0,0,0.12);transition:border-color 0.3s var(--ease-fluid);cursor:pointer}
+        .gallery-item:hover .gallery-item-image{border-color:var(--ink)}
+        .gallery-item img{width:100%;height:100%;object-fit:contain;transition:transform 0.6s var(--ease-fluid)}
+        .gallery-item:hover img{transform:scale(1.02)}
+        .view-full-indicator{position:absolute;top:0.5rem;right:0.5rem;background:rgba(0,0,0,0.7);color:var(--paper);padding:0.4rem 0.6rem;border-radius:4px;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;opacity:0;transition:opacity 0.3s var(--ease-fluid);z-index:15;pointer-events:none}
+        .gallery-item:hover .view-full-indicator{opacity:1}
+        .image-modal{position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:10000;display:none;align-items:center;justify-content:center;padding:2rem;cursor:zoom-out}
+        .image-modal.active{display:flex}
+        .image-modal img{max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 0 40px rgba(0,0,0,0.8)}
+        .image-modal-close{position:absolute;top:1.5rem;right:1.5rem;background:var(--terracotta);color:var(--paper);border:none;padding:0.75rem 1.25rem;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;border-radius:4px}
+        .image-modal-caption{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:var(--paper);text-align:center;max-width:600px}
+        .image-modal-caption h4{font-family:var(--font-display);font-size:1.2rem;margin-bottom:0.5rem;color:var(--clay)}
+        .image-modal-caption p{font-size:0.85rem;opacity:0.8}
+        .gallery-item-info{padding:1.25rem 0.5rem 0.5rem}
+        .gallery-item-title{font-family:var(--font-display);font-size:1rem;font-weight:600;margin-bottom:0.5rem}
+        .gallery-item-meta{font-size:0.8rem;color:var(--charcoal);font-family:var(--font-mono);margin-bottom:0.75rem}
+        .gallery-item-story{font-size:0.85rem;color:var(--charcoal);line-height:1.6}
+        .gallery-item-image .sold-badge{position:absolute;top:1rem;right:1rem;background:var(--terracotta);color:var(--paper);padding:0.4rem 0.8rem;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;z-index:10;opacity:0;transform:translateY(-10px);transition:all 0.3s var(--ease-fluid)}
+        .gallery-item[data-sold="true"] .sold-badge{opacity:1;transform:translateY(0)}
+        .gallery-item-image .artwork-popup{position:absolute;inset:0;background:rgba(0,0,0,0.92);color:var(--paper);display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity 0.3s var(--ease-fluid);z-index:20}
+        .gallery-item-image:hover .artwork-popup{opacity:1;pointer-events:auto}
+        .popup-content{max-height:90%;overflow-y:auto;text-align:left}
+        .popup-content h4{font-family:var(--font-display);font-size:1.3rem;margin-bottom:1rem;color:var(--clay)}
+        .popup-meta{font-size:0.85rem;margin-bottom:0.5rem;font-family:var(--font-mono)}
+        .popup-meta strong{color:var(--clay)}
+        .popup-description{margin-top:1rem;font-size:0.9rem;line-height:1.6;color:rgba(255,255,255,0.9)}
+        .status-retained{color:#9ca3af;font-weight:600;font-style:italic}
+        .status-sold{color:var(--terracotta);font-weight:600}
+        .cultural-notes{padding:6rem 2rem;background:var(--warm-gray)}
+        .cultural-notes .container{max-width:900px;margin:0 auto}
+        .section-label{display:inline-flex;align-items:center;gap:1rem;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--terracotta);margin-bottom:2rem}
+        .section-label::before,.section-label::after{content:'';flex:1;height:1px;background:rgba(184,92,56,0.4);min-width:40px}
+        .cultural-notes-content{font-size:1.05rem;line-height:1.9;color:var(--charcoal)}
+        .cultural-notes-content h3{font-family:var(--font-display);font-size:1.3rem;margin-top:2.5rem;margin-bottom:1rem;color:var(--slate)}
+        .cultural-notes-content p{margin-bottom:1.5rem}
+        .cultural-notes-content ul{margin:1.5rem 0;padding-left:1.5rem}
+        .cultural-notes-content li{margin-bottom:0.75rem}
+        .term{font-weight:600;color:var(--ink)}
+        .series-nav{padding:4rem 2rem;text-align:center;background:var(--ink);color:var(--paper)}
+        .series-nav-links{display:flex;justify-content:center;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+        .series-nav-links a{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--clay);border:1px solid var(--clay);padding:0.75rem 1.5rem;transition:all 0.3s var(--ease-fluid)}
+        .series-nav-links a:hover{background:var(--clay);color:var(--ink)}
+        footer{padding:4rem 2rem;background:var(--ink);color:var(--paper);text-align:center}
+        footer .signature img{height:50px;filter:brightness(0) invert(1);opacity:0.9;margin:0 auto 1.5rem}
+        footer p{font-size:0.85rem;opacity:0.75;letter-spacing:0.05em}
+        footer .social{display:flex;justify-content:center;gap:2rem;margin-top:1.5rem}
+        footer .social a{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;opacity:0.75;transition:opacity 0.3s}
+        footer .social a:hover{opacity:1}
+        @media(max-width:768px){.series-hero{padding:calc(var(--nav-height)+2rem) 1.5rem 2rem}.gallery-grid{grid-template-columns:1fr}.series-intro,.cultural-notes .container,.gallery{padding-left:1rem;padding-right:1rem}nav{padding:0 1rem}}
+        .protected-img{position:relative;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+        .protected-img::after{content:'';position:absolute;inset:0;background:transparent;z-index:10}
+        .protected-img img{pointer-events:none;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none;-webkit-touch-callout:none;cursor:default}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature"><span class="logo-text">Loh Ek Sem</span></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="series-malay-kampung.html">Malay Kampung</a></li>
+            <li><a href="series-peranakan.html">Peranakan</a></li>
+            <li><a href="series-watercolour.html">Watercolour</a></li>
+            <li><a href="series-paper-cast.html">Paper Cast</a></li>
+            <li><a href="series-bali.html">Bali</a></li>
+            <li><a href="series-borneo.html">Borneo</a></li>
+            <li><a href="series-sculpture.html">Sculpture</a></li>
+            <li><a href="series-ink-sketch.html" class="active">Ink & Sketch</a></li>
+            <li><a href="exhibitions.html">Exhibitions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('mobile-open')"><span></span><span></span><span></span></div>
+    </nav>
+
+    <section class="series-hero">
+        <div class="series-hero-backdrop"><img src="assets/Ink-Sketch/Petaling Street.jpg" alt="Urban sketch backdrop" loading="eager" onerror="this.src='by the well.jpg';this.style.filter='grayscale(1) contrast(1.2)';"></div>
+        <div class="series-hero-content">
+            <span class="series-hero-label">Drawings & Sketches</span>
+            <h1>Ink & Sketch</h1>
+            <p>Urban drawings documenting street life across Malaysia — from the bustling lanes of Petaling Street to the quiet corners of Malacca River, captured in ink and pencil.</p>
+        </div>
+    </section>
+
+    <section class="series-intro">
+        <div class="series-intro-content">
+            <p>The <strong>Ink & Sketch</strong> series (2000–2015) represents Loh Ek Sem's most immediate and spontaneous work. Unlike the carefully composed paintings that require weeks to complete, these drawings capture moments in real time — the energy of a crowded market, the rhythm of a busy street, the quiet dignity of everyday commerce.</p>
+            <p>Sem works primarily in ink on paper, a medium that demands confidence and speed. There is no room for hesitation — each line is permanent, each mark a commitment. The results are drawings that feel alive, vibrating with the energy of the scenes they depict.</p>
+            <p>The series includes 30+ works on paper, ranging from quick field sketches (25 × 35cm) to large finished drawings (70 × 100cm). Subjects include street markets, shop houses, river scenes, and the architecture of Malaysian urban life.</p>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="gallery-grid">
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Ink-Sketch/Petaling Street.jpg" alt="Petaling Street" loading="lazy" onerror="this.src='by the well.jpg';this.style.filter='grayscale(1) contrast(1.2)';">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Petaling Street</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 50 × 70cm</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Ink on paper</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2005</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">The famous Chinatown market in Kuala Lumpur — vendors, shoppers, motorbikes, and the layered chaos of urban commerce. Drawn on site over three mornings, capturing the rhythm of daily trade.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Petaling Street</h3>
+                    <p class="gallery-item-meta">50 × 70cm, Ink on paper, 2005</p>
+                    <p class="gallery-item-story">The famous Chinatown market — vendors, shoppers, motorbikes, layered chaos of urban commerce. Drawn on site over three mornings.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Ink-Sketch/Penang Street.jpg" alt="Penang Street" loading="lazy" onerror="this.src='by the well.jpg';this.style.filter='grayscale(1) contrast(1.2)';">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Penang Street</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 45 × 65cm</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Ink and wash on paper</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2006</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">George Town street scene — colonial shop houses, Cantonese clan jetties, the layered history of Penang's UNESCO World Heritage site. The ink wash captures the humidity and atmosphere of the island.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Penang Street</h3>
+                    <p class="gallery-item-meta">45 × 65cm, Ink and wash on paper, 2006</p>
+                    <p class="gallery-item-story">George Town street scene — colonial shop houses, clan jetties, layered history of Penang's UNESCO heritage site.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Ink-Sketch/Malacca River.jpg" alt="Malacca River" loading="lazy" onerror="this.src='by the well.jpg';this.style.filter='grayscale(1) contrast(1.2)';">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Malacca River</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 40 × 60cm</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Ink on paper</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2007</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">The historic Malacca River winding through the old city — Portuguese ruins, Dutch buildings, Chinese shop houses, all layered along the riverbank. Drawn from a boat, capturing the perspective of river traffic.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Malacca River</h3>
+                    <p class="gallery-item-meta">40 × 60cm, Ink on paper, 2007</p>
+                    <p class="gallery-item-story">Historic Malacca River through the old city — Portuguese ruins, Dutch buildings, Chinese shop houses. Drawn from a boat.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Ink-Sketch/Kampung Baru.jpg" alt="Kampung Baru" loading="lazy" onerror="this.src='by the well.jpg';this.style.filter='grayscale(1) contrast(1.2)';">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Kampung Baru</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 35 × 50cm</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Pencil and ink on paper</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2008</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">The Malay settlement in central Kuala Lumpur — wooden houses, coconut palms, the call to prayer rising above the rooftops. A village enclave surrounded by modern skyscrapers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Kampung Baru</h3>
+                    <p class="gallery-item-meta">35 × 50cm, Pencil and ink on paper, 2008</p>
+                    <p class="gallery-item-story">Malay settlement in central KL — wooden houses, coconut palms, call to prayer above rooftops. Village enclave surrounded by skyscrapers.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Ink-Sketch/Hawker Centre.jpg" alt="Hawker Centre" loading="lazy" onerror="this.src='by the well.jpg';this.style.filter='grayscale(1) contrast(1.2)';">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Hawker Centre</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 55 × 75cm</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Ink on paper</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2009</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">Night market food stalls — wok flames, steam rising, crowds gathered around plastic tables. The energy of Malaysian street food culture captured in rapid ink strokes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Hawker Centre</h3>
+                    <p class="gallery-item-meta">55 × 75cm, Ink on paper, 2009</p>
+                    <p class="gallery-item-story">Night market food stalls — wok flames, steam, crowds at plastic tables. Energy of Malaysian street food culture in rapid ink strokes.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Ink-Sketch/Old Shop House.jpg" alt="Old Shop House" loading="lazy" onerror="this.src='by the well.jpg';this.style.filter='grayscale(1) contrast(1.2)';">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Old Shop House</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 45 × 60cm</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Ink and watercolour on paper</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2010</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A disappearing architectural form — the five-foot way, wooden shutters, faded signage. These buildings housed generations of Malaysian businesses and families. Now many are demolished for development.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Old Shop House</h3>
+                    <p class="gallery-item-meta">45 × 60cm, Ink and watercolour on paper, 2010</p>
+                    <p class="gallery-item-story">Disappearing architectural form — five-foot way, wooden shutters, faded signage. Many demolished for development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cultural-notes">
+        <div class="container">
+            <span class="section-label">Technique Notes</span>
+            <div class="cultural-notes-content">
+                <h3>Ink Drawing as Documentation</h3>
+                <p>Ink drawing demands speed and confidence. Unlike painting, there is no room for revision — each line is permanent. This makes ink ideal for capturing scenes that are themselves in motion: markets, streets, crowds.</p>
+                <ul>
+                    <li><span class="term">Direct observation</span> — Most drawings are done on site, often in challenging conditions. The artist must work quickly before the scene changes.</li>
+                    <li><span class="term">Economy of line</span> — Every mark must count. There is no space for hesitation or second-guessing.</li>
+                    <li><span class="term">Ink wash</span> — Diluted ink creates tonal variation, suggesting depth and atmosphere without detailed rendering.</li>
+                    <li><span class="term">Mixed media</span> — Some works combine ink with watercolour or pencil, adding color accents to the monochrome foundation.</li>
+                </ul>
+
+                <h3>Why Drawing Matters</h3>
+                <p>Photography captures a moment instantly. Painting captures a moment over weeks. Drawing occupies a middle ground — fast enough to capture movement, slow enough to require deep observation.</p>
+                <p>These drawings document Malaysian urban life at a specific moment in history. The shop houses, the street markets, the river scenes — all are changing rapidly. In fifty years, much of what is depicted here will be gone. The drawings preserve not just the visual appearance but the feeling of being there: the noise, the smells, the energy.</p>
+                <p>Sem's drawings are in the tradition of artist-documentarians — from Daumier's Paris to Hokusai's Edo. They are not idealized views but honest records of everyday life, drawn with the affection that comes from deep familiarity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="series-nav">
+        <p style="font-size:1.05rem;margin-bottom:1.5rem">Explore other series</p>
+        <div class="series-nav-links">
+            <a href="series-malay-kampung.html">Malay Kampung</a>
+            <a href="series-peranakan.html">Peranakan</a>
+            <a href="series-bali.html">Bali</a>
+            <a href="series-borneo.html">Borneo</a>
+            <a href="series-sculpture.html">Sculpture</a>
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="signature"><img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature"></div>
+        <p>loheksem@gmail.com</p>
+        <p>Johor Bahru, Malaysia</p>
+        <div class="social"><a href="#">Instagram</a><a href="#">Pinterest</a></div>
+        <p style="margin-top:2rem;opacity:0.5;font-size:0.75rem">© 2026 Loh Ek Sem. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link=>{link.addEventListener('click',()=>{document.querySelector('nav').classList.remove('mobile-open')})});
+        document.querySelectorAll('.gallery-item').forEach(item=>{const isSold=item.dataset.sold==='true';const soldBadge=item.querySelector('.sold-badge');const popupStatus=item.querySelector('.popup-meta strong:last-of-type+span');if(isSold&&soldBadge){soldBadge.style.opacity='1';soldBadge.style.transform='translateY(0)}if(isSold&&popupStatus){popupStatus.textContent='SOLD';popupStatus.className='status-sold'}});
+
+        // 3-LAYER PARALLAX
+        const heroSection=document.querySelector('.series-hero');const heroBackdrop=document.querySelector('.series-hero-backdrop');const heroBackdropImg=heroBackdrop?.querySelector('img');const heroContent=document.querySelector('.series-hero-content');let heroForeground=document.querySelector('.series-hero-foreground');if(!heroForeground&&heroSection){heroForeground=document.createElement('div');heroForeground.className='series-hero-foreground';heroForeground.innerHTML='<img src="by the well.jpg" alt="Foreground" loading="eager" onerror="this.src=\'by the well.jpg\';this.style.filter=\'grayscale(1) contrast(1.2)\';">';heroSection.insertBefore(heroForeground,heroSection.firstChild)}const heroForegroundImg=heroForeground?.querySelector('img');if(!document.querySelector('#parallax-styles')){const parallaxStyles=document.createElement('style');parallaxStyles.id='parallax-styles';parallaxStyles.textContent=`.series-hero-foreground{position:absolute;inset:0;opacity:0.1;pointer-events:none;z-index:1;overflow:hidden}.series-hero-foreground img{width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(0.3) sepia(0.15);transform:translateZ(0);will-change:transform}.series-hero-content{z-index:2;position:relative}.series-hero-backdrop{z-index:0}`;document.head.appendChild(parallaxStyles)}let ticking=false;window.addEventListener('scroll',()=>{if(!ticking&&heroSection){window.requestAnimationFrame(()=>{const scrolled=window.pageYOffset;const heroTop=heroSection.offsetTop;const heroHeight=heroSection.offsetHeight;if(scrolled>=heroTop-window.innerHeight&&scrolled<=heroTop+heroHeight){const progress=(scrolled-heroTop+window.innerHeight)/(heroHeight+window.innerHeight);if(heroForegroundImg){const fgMove=progress*-20;heroForegroundImg.style.transform=`translateY(${fgMove}px) scale(1.05)`}if(heroContent){const contentMove=progress*50;heroContent.style.transform=`translateY(${contentMove}px)`}if(heroBackdropImg){const bgMove=progress*80;heroBackdropImg.style.transform=`translateY(${-10+bgMove}%)`}}ticking=false})}ticking=true},{passive:true});
+
+        // FULL-IMAGE MODAL
+        document.querySelectorAll('.gallery-item-image').forEach(item=>{item.addEventListener('click',function(e){e.preventDefault();const img=this.querySelector('img');const title=this.closest('.gallery-item').querySelector('.gallery-item-title').textContent;const meta=this.closest('.gallery-item').querySelector('.gallery-item-meta').textContent;const modal=document.createElement('div');modal.className='image-modal active';modal.innerHTML=`<button class="image-modal-close">Close ×</button><img src="${img.src}" alt="${title}" onerror="this.src='${img.src}'"><div class="image-modal-caption"><h4>${title}</h4><p>${meta}</p></div>`;document.body.appendChild(modal);const closeModal=()=>modal.remove();modal.querySelector('.image-modal-close').addEventListener('click',(e)=>{e.stopPropagation();closeModal()});modal.addEventListener('click',(e)=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',function closeOnEscape(ev){if(ev.key==='Escape'){closeModal();document.removeEventListener('keydown',closeOnEscape)}})});
+
+        // Image Protection
+        document.addEventListener('contextmenu',function(e){if(e.target.tagName==='IMG'||e.target.closest('.protected-img')){e.preventDefault();return false}});document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG'||e.target.closest('.protected-img')){e.preventDefault();return false}});document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&e.key==='s'){e.preventDefault();return false}if((e.ctrlKey||e.metaKey)&&e.key==='u'){e.preventDefault();return false}if(e.key==='PrintScreen'){e.preventDefault();showProtectionWarning('Screenshot blocked: Content is protected');return false}});function protectImages(){document.querySelectorAll('img').forEach(function(img){img.setAttribute('data-protected','true');if(!img.closest('.protected-img')){const wrapper=document.createElement('span');wrapper.className='protected-img';img.parentNode.insertBefore(wrapper,img);wrapper.appendChild(img)}})}function showProtectionWarning(message){const existing=document.querySelector('.protection-warning');if(existing)existing.remove();const overlay=document.createElement('div');overlay.className='protection-warning';overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:999999;display:flex;align-items:center;justify-content:center;animation:fadeOut 2s forwards;';const messageEl=document.createElement('div');messageEl.textContent=message;messageEl.style.cssText='background:#b85c38;color:white;padding:1rem 2rem;border-radius:8px;font-size:1rem;font-weight:600;box-shadow:0 4px 20px rgba(0,0,0,0.5);';overlay.appendChild(messageEl);document.body.appendChild(overlay);setTimeout(()=>overlay.remove(),2000)}function detectDevTools(){const widthDiff=window.outerWidth-window.innerWidth;const heightDiff=window.outerHeight-window.innerHeight;if(widthDiff>160||heightDiff>160){document.querySelectorAll('img').forEach(img=>img.style.filter='blur(10px)');showProtectionWarning('Developer tools detected: Images blurred for protection')}else{document.querySelectorAll('img').forEach(img=>img.style.filter='none')}}setInterval(detectDevTools,1000);if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',protectImages)}else{protectImages()}
+    </script>
+</body>
+</html>

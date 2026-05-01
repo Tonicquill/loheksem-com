@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Bali Series | Balinese Dance & Culture | Loh Ek Sem</title>
+    <meta name="description" content="Bali Series by Loh Ek Sem — paintings documenting Balinese dance traditions, ceremonial culture, and the island's artistic heritage through oil and acrylic.">
+    <meta name="keywords" content="Bali Series, Balinese dance, Loh Ek Sem, Indonesian art, traditional dance painting, Ramayana ballet, Legong dance">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bali Series | Balinese Dance & Culture">
+    <meta property="og:description" content="7 paintings capturing the grace and spirituality of Balinese performing arts.">
+    <meta property="og:type" content="website">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "artSeries": "Bali Series",
+        "artist": {
+            "@type": "Person",
+            "name": "Loh Ek Sem"
+        },
+        "description": "Series of paintings documenting Balinese dance traditions and ceremonial culture.",
+        "artMedium": "Oil and acrylic on canvas",
+        "artform": "Painting"
+    }
+    </script>
+
+    <style>
+        :root {
+            --ink: #000000;
+            --paper: #ffffff;
+            --charcoal: #1a1a1a;
+            --warm-gray: #f5f3f0;
+            --terracotta: #b85c38;
+            --clay: #c9a97e;
+            --bali-gold: #c9a227;
+            --font-display: 'Georgia', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+            --container-max: 1400px;
+            --nav-height: 80px;
+            --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--paper); color: var(--ink); line-height: 1.6; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--nav-height);
+            background: var(--paper);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        nav .logo { display: flex; align-items: center; gap: 1.5rem; }
+        nav .logo img { height: 35px; width: auto; opacity: 0.9; }
+        nav .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+        }
+
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav a {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--charcoal);
+            transition: color 0.3s var(--ease-fluid);
+        }
+        nav a:hover, nav a.active { color: var(--terracotta); }
+        nav a.active { border-bottom: 1px solid var(--terracotta); }
+
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+        .nav-toggle span { width: 24px; height: 2px; background: var(--ink); transition: 0.3s; }
+
+        @media (max-width: 1024px) {
+            nav ul { display: none; }
+            .nav-toggle { display: flex; }
+            nav.mobile-open ul {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0; right: 0;
+                background: var(--paper);
+                padding: 2rem;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                gap: 1.5rem;
+            }
+        }
+
+        /* Hero Section with Parallax Backdrop */
+        .series-hero {
+            position: relative;
+            min-height: 70dvh;
+            display: grid;
+            place-items: center;
+            padding: calc(var(--nav-height) + 4rem) 2rem 4rem;
+            background: var(--warm-gray);
+            overflow: hidden;
+        }
+
+        .series-hero-backdrop {
+            position: absolute;
+            inset: 0;
+            opacity: 0.08;
+            pointer-events: none;
+            transform: translateZ(-1px) scale(1.1);
+            will-change: transform;
+        }
+
+        .series-hero-backdrop img {
+            width: 100%;
+            height: 120%;
+            object-fit: cover;
+            object-position: center;
+            filter: grayscale(0.3) sepia(0.15) blur(0.5px);
+            transform: translateY(-10%);
+        }
+
+        .series-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .series-hero-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--bali-gold);
+            margin-bottom: 1.5rem;
+            padding: 0.25rem 1rem;
+            border: 1px solid var(--bali-gold);
+            border-radius: 50px;
+        }
+
+        .series-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--ink);
+        }
+
+        .series-hero p {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            line-height: 1.8;
+            max-width: 65ch;
+        }
+
+        /* Intro Section */
+        .series-intro {
+            padding: 6rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .series-intro-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--charcoal);
+        }
+
+        .series-intro-content p { margin-bottom: 1.5rem; }
+        .series-intro-content strong { color: var(--ink); }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 4rem 2rem 6rem;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-item-image {
+            position: relative;
+            aspect-ratio: 4/3;
+            background: var(--warm-gray);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.12);
+            transition: border-color 0.3s var(--ease-fluid);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover .gallery-item-image {
+            border-color: var(--ink);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.6s var(--ease-fluid);
+        }
+
+        /* View Full Image Indicator */
+        .view-full-indicator {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: rgba(0,0,0,0.7);
+            color: var(--paper);
+            padding: 0.4rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0;
+            transition: opacity 0.3s var(--ease-fluid);
+            z-index: 15;
+            pointer-events: none;
+        }
+
+        .gallery-item:hover .view-full-indicator {
+            opacity: 1;
+        }
+
+        /* Full Image Modal */
+        .image-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            cursor: zoom-out;
+        }
+
+        .image-modal.active {
+            display: flex;
+        }
+
+        .image-modal img {
+            max-width: 95vw;
+            max-height: 95vh;
+            object-fit: contain;
+            box-shadow: 0 0 40px rgba(0,0,0,0.8);
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--terracotta);
+            color: var(--paper);
+            border: none;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .image-modal-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--paper);
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .image-modal-caption h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--clay);
+        }
+
+        .image-modal-caption p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.04);
+        }
+
+        .gallery-item-info {
+            padding: 1.25rem 0.5rem 0.5rem;
+        }
+
+        .gallery-item-title {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-item-meta {
+            font-size: 0.8rem;
+            color: var(--charcoal);
+            font-family: var(--font-mono);
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-item-story {
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        /* SOLD Badge */
+        .gallery-item-image .sold-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--terracotta);
+            color: var(--paper);
+            padding: 0.4rem 0.8rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            z-index: 10;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s var(--ease-fluid);
+        }
+
+        .gallery-item[data-sold="true"] .sold-badge {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Artwork Popup (Hover) */
+        .gallery-item-image .artwork-popup {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            color: var(--paper);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s var(--ease-fluid);
+            z-index: 20;
+        }
+
+        .gallery-item-image:hover .artwork-popup {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .popup-content {
+            max-height: 90%;
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        .popup-content h4 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--clay);
+        }
+
+        .popup-meta {
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-mono);
+        }
+
+        .popup-meta strong {
+            color: var(--clay);
+        }
+
+        .popup-description {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .status-retained {
+            color: #9ca3af;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .status-sold {
+            color: var(--terracotta);
+            font-weight: 600;
+        }
+
+        /* Cultural Notes */
+        .cultural-notes {
+            padding: 6rem 2rem;
+            background: var(--warm-gray);
+        }
+
+        .cultural-notes .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--terracotta);
+            margin-bottom: 2rem;
+        }
+
+        .section-label::before, .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(184, 92, 56, 0.4);
+            min-width: 40px;
+        }
+
+        .cultural-notes-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--charcoal);
+        }
+
+        .cultural-notes-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--bali-gold);
+        }
+
+        .cultural-notes-content p { margin-bottom: 1.5rem; }
+
+        .cultural-notes-content ul {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .cultural-notes-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .term {
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        /* Navigation CTA */
+        .series-nav {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        .series-nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .series-nav-links a {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--clay);
+            border: 1px solid var(--clay);
+            padding: 0.75rem 1.5rem;
+            transition: all 0.3s var(--ease-fluid);
+        }
+
+        .series-nav-links a:hover {
+            background: var(--clay);
+            color: var(--ink);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem;
+            background: var(--ink);
+            color: var(--paper);
+            text-align: center;
+        }
+
+        footer .signature img {
+            height: 50px;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            margin: 0 auto 1.5rem;
+        }
+
+        footer p { font-size: 0.85rem; opacity: 0.75; letter-spacing: 0.05em; }
+
+        footer .social {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        footer .social a {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.75;
+            transition: opacity 0.3s;
+        }
+
+        footer .social a:hover { opacity: 1; }
+
+        @media (max-width: 768px) {
+            .series-hero {
+                padding: calc(var(--nav-height) + 2rem) 1.5rem 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .series-intro, .cultural-notes .container, .gallery {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            nav { padding: 0 1rem; }
+        }
+    </style>
+
+        /* Image Protection */
+        .protected-img { position: relative; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+        .protected-img::after { content: ""; position: absolute; inset: 0; background: transparent; z-index: 10; }
+        .protected-img img { pointer-events: none; -webkit-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-drag: none; -webkit-touch-callout: none; cursor: default; }
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature">
+            <span class="logo-text">Loh Ek Sem</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="series-malay-kampung.html">Malay Kampung</a></li>
+            <li><a href="series-peranakan.html">Peranakan</a></li>
+            <li><a href="series-watercolour.html">Watercolour</a></li>
+            <li><a href="series-paper-cast.html">Paper Cast</a></li>
+            <li><a href="series-bali.html" class="active">Bali</a></li>
+            <li><a href="series-borneo.html">Borneo</a></li>
+            <li><a href="series-sculpture.html">Sculpture</a></li>
+            <li><a href="series-ink-sketch.html">Ink & Sketch</a></li>
+            <li><a href="exhibitions.html">Exhibitions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('mobile-open')">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="series-hero">
+        <div class="series-hero-backdrop">
+            <img src="assets/Bali/Little Balinese Dancer 98x98cm oil.JPG" alt="Balinese dancer backdrop" loading="eager">
+        </div>
+        <div class="series-hero-content">
+            <span class="series-hero-label">Painting Series</span>
+            <h1>Bali Series</h1>
+            <p>
+                The grace, spirituality, and theatrical beauty of Balinese dance —
+                from the sacred Legong to the epic Ramayana Ballet — captured
+                through oil and acrylic painting.
+            </p>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="series-intro">
+        <div class="series-intro-content">
+            <p>
+                The <strong>Bali Series</strong> (1996–2005) represents Loh Ek Sem's deep engagement with
+                Indonesian performing arts. Drawn to the island's rich ceremonial culture
+                and the codified gestures of traditional dance, Sem produced a body of work
+                that functions as both aesthetic appreciation and ethnographic documentation.
+            </p>
+            <p>
+                Each painting captures dancers in moments of suspended grace — the flickering
+                eye movements (seledet), the angular wrist rotations, the intricate footwork
+                that connects performer to earth and spirit. These are not tourist snapshots
+                but studied observations of an art form that requires decades of training.
+            </p>
+            <p>
+                The series includes 7 major works, ranging from intimate solo portraits
+                (73 × 98cm) to ensemble scenes (130 × 80cm). Paintings are executed in
+                both oil and acrylic, chosen for their ability to capture the luminous
+                quality of Balinese costumes and the dramatic intensity of performance.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="gallery-grid">
+
+            <!-- Artwork 1: Little Balinese Dancer -->
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Bali/Little Balinese Dancer 98x98cm oil.JPG" alt="Little Balinese Dancer" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Little Balinese Dancer</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 98 × 98cm</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Oil on canvas</p>
+                            <p class="popup-meta"><strong>Year:</strong> 1998</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A young dancer in full ceremonial costume — golden headdress, ornate collar, and the characteristic crossed-eye gaze (seledet) that defines Balinese dance aesthetics. The square format emphasizes the symmetry of the pose.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Little Balinese Dancer</h3>
+                    <p class="gallery-item-meta">98 × 98cm, Oil on canvas, 1998</p>
+                    <p class="gallery-item-story">
+                        A young dancer in full ceremonial costume — golden headdress,
+                        ornate collar, and the characteristic seledet gaze that defines
+                        Balinese dance aesthetics.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Artwork 2: Rama-Rama -->
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Bali/Rama-Rama [98x126cm] acrylic.JPG" alt="Rama-Rama" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Rama-Rama</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 98 × 126cm</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Acrylic on canvas</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2000</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">Scene from the Ramayana Ballet depicting Rama, the seventh avatar of Vishnu. The painting captures the hero's noble bearing and the theatrical staging of this epic Hindu tale that is central to Balinese performance culture.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Rama-Rama</h3>
+                    <p class="gallery-item-meta">98 × 126cm, Acrylic on canvas, 2000</p>
+                    <p class="gallery-item-story">
+                        Scene from the Ramayana Ballet depicting Rama, the seventh
+                        avatar of Vishnu — a cornerstone of Balinese theatrical tradition.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Artwork 3: Regong Sisters -->
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Bali/Regong Sisters [130x80cm] acrylic.JPG" alt="Regong Sisters" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Regong Sisters</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 130 × 80cm</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Acrylic on canvas</p>
+                            <p class="popup-meta"><strong>Year:</strong> 1999</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">Twin dancers performing the Reong dance — a ceremonial piece that requires perfect synchronization between performers. The elongated format emphasizes the vertical grace of the dancers' postures and the mirrored symmetry of their movements.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Regong Sisters</h3>
+                    <p class="gallery-item-meta">130 × 80cm, Acrylic on canvas, 1999</p>
+                    <p class="gallery-item-story">
+                        Twin dancers performing the Reong dance — a ceremonial piece
+                        requiring perfect synchronization and mirrored movements.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Artwork 4: Puteri Kipas (SOLD) -->
+            <div class="gallery-item" data-sold="true">
+                <div class="gallery-item-image">
+                    <img src="assets/Bali/SOLD Tsri-Puteri Kipas [82x110cm] acrylic.JPG" alt="Puteri Kipas" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Puteri Kipas (The Fan Princess)</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 82 × 110cm</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Acrylic on canvas</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2001</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-sold">SOLD</span></p>
+                            <p class="popup-description">A dancer performing with the ceremonial fan (kipas) — an essential prop in many Balinese dances. The fan extends the dancer's gestures, amplifying the storytelling through stylized movement. This work captures the elegance of the princess character archetype.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Puteri Kipas</h3>
+                    <p class="gallery-item-meta">82 × 110cm, Acrylic on canvas, 2001</p>
+                    <p class="gallery-item-story">
+                        A dancer performing with the ceremonial fan — an essential prop
+                        that extends and amplifies the storytelling gestures.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Artwork 5: Suci (SOLD) -->
+            <div class="gallery-item" data-sold="true">
+                <div class="gallery-item-image">
+                    <img src="assets/Bali/SOLD MK-Suci  (82x110cm) oil.JPG" alt="Suci" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Suci (Pure)</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 82 × 110cm</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Oil on canvas</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2002</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-sold">SOLD</span></p>
+                            <p class="popup-description">The title 'Suci' means pure or sacred in Indonesian. This painting depicts a dancer in a moment of spiritual preparation — the boundary between performer and priest dissolves in Balinese tradition, where dance is both art and religious offering.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Suci</h3>
+                    <p class="gallery-item-meta">82 × 110cm, Oil on canvas, 2002</p>
+                    <p class="gallery-item-story">
+                        'Suci' means pure or sacred — depicting a dancer in spiritual
+                        preparation, where art becomes religious offering.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Artwork 6: Lustrous Twins -->
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Bali/Lustrous Twins 110x82 acrylic.JPG" alt="Lustrous Twins" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Lustrous Twins</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 110 × 82cm</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Acrylic on canvas</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2003</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">Twin performers in elaborate ceremonial dress, their costumes shimmering with gold thread and sequins. The painting captures the lustrous quality of Balinese textiles and the uncanny symmetry of twin dancers moving as one entity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Lustrous Twins</h3>
+                    <p class="gallery-item-meta">110 × 82cm, Acrylic on canvas, 2003</p>
+                    <p class="gallery-item-story">
+                        Twin performers in elaborate ceremonial dress, their costumes
+                        shimmering with gold thread — moving as one synchronized entity.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Artwork 7: Tokoh Tari -->
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Bali/tokoh-tari [98x73cm] acrylic.JPG" alt="Tokoh Tari" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Tokoh Tari (Dance Figure)</h4>
+                            <p class="popup-meta"><strong>Dimensions:</strong> 98 × 73cm</p>
+                            <p class="popup-meta"><strong>Medium:</strong> Acrylic on canvas</p>
+                            <p class="popup-meta"><strong>Year:</strong> 2005</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">'Tokoh Tari' translates to 'dance figure' or 'character in dance.' This work depicts a senior performer — a master dancer whose movements carry the weight of tradition. The painting honors the transmission of cultural knowledge through generations of performers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Tokoh Tari</h3>
+                    <p class="gallery-item-meta">98 × 73cm, Acrylic on canvas, 2005</p>
+                    <p class="gallery-item-story">
+                        'Tokoh Tari' means dance figure — honoring a master performer
+                        whose movements carry the weight of generations of tradition.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Cultural Notes -->
+    <section class="cultural-notes">
+        <div class="container">
+            <span class="section-label">Cultural Context</span>
+            <div class="cultural-notes-content">
+                <h3>Balinese Dance Traditions</h3>
+                <p>
+                    Balinese dance is inseparable from Hindu-Balinese spirituality. Every
+                    gesture, eye movement, and foot placement is codified — a visual language
+                    developed over centuries of religious and artistic refinement.
+                </p>
+                <ul>
+                    <li>
+                        <span class="term">Legong</span> — Classical dance performed by young
+                        women before puberty. Characterized by intricate finger movements,
+                        rapid head turns, and the signature seledet (side-to-side eye dart).
+                        Dancers train from age 5-7.
+                    </li>
+                    <li>
+                        <span class="term">Ramayana Ballet</span> — Dance-drama depicting
+                        the Hindu epic. Performances can last entire nights, with dancers
+                        entering trance states to embody divine characters.
+                    </li>
+                    <li>
+                        <span class="term">Reong</span> — Synchronized dance performed by
+                        groups of four or more dancers. The challenge is perfect unison —
+                        no individual expression, only collective grace.
+                    </li>
+                    <li>
+                        <span class="term">Kipas (fan)</span> — Ceremonial prop used in
+                        many dances. The fan extends the dancer's gestures, creating
+                        larger visual narratives through stylized movement.
+                    </li>
+                </ul>
+
+                <h3>The Dancer's Body</h3>
+                <p>
+                    Balinese dance demands extreme physical discipline. Key characteristics include:
+                </p>
+                <ul>
+                    <li>
+                        <span class="term">Agem</span> — The basic stance: knees bent, weight
+                        low, torso upright. Dancers maintain this position throughout
+                        performance, requiring immense leg strength.
+                    </li>
+                    <li>
+                        <span class="term">Seledet</span> — Rapid side-to-side eye movement.
+                        This is not natural but trained — dancers practice for years to
+                        achieve the sharp, darting quality.
+                    </li>
+                    <li>
+                        <span class="term">Udjet</span> — Head movement that counterbalances
+                        the torso. The head tilts opposite to the body's lean, creating
+                        dynamic tension.
+                    </li>
+                    <li>
+                        <span class="term">Ngrayud</span> — Finger extension. Every finger
+                        is pulled back to its limit, creating the characteristic lotus-bud
+                        hand shape.
+                    </li>
+                </ul>
+
+                <h3>Why This Series Matters</h3>
+                <p>
+                    Tourism has transformed Bali since the 1970s. Traditional dances, once
+                    performed only in temples for religious ceremonies, are now staged
+                    nightly for tourists. Some argue this commodification dilutes the
+                    spiritual essence; others see it as economic survival for an art form
+                    that might otherwise disappear.
+                </p>
+                <p>
+                    Sem's paintings document dancers in their full ceremonial regalia —
+                    not as tourist attractions but as practitioners of a sacred art. The
+                    works ask: What is lost when ritual becomes performance? What is
+                    preserved when tradition adapts to modernity? These questions are
+                    embedded in the brushstrokes, even when not explicitly stated.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation CTA -->
+    <section class="series-nav">
+        <p style="font-size: 1.05rem; margin-bottom: 1.5rem;">
+            Explore other painting series
+        </p>
+        <div class="series-nav-links">
+            <a href="series-malay-kampung.html">Malay Kampung</a>
+            <a href="series-peranakan.html">Peranakan</a>
+            <a href="series-borneo.html">Borneo</a>
+            <a href="series-sculpture.html">Sculpture</a>
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="signature">
+            <img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature">
+        </div>
+        <p>loheksem@gmail.com</p>
+        <p>Johor Bahru, Malaysia</p>
+        <div class="social">
+            <a href="#">Instagram</a>
+            <a href="#">Pinterest</a>
+        </div>
+        <p style="margin-top: 2rem; opacity: 0.5; font-size: 0.75rem;">
+            © 2026 Loh Ek Sem. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('nav').classList.remove('mobile-open');
+            });
+        });
+
+        // ============================================
+        // 3-LAYER PARALLAX SCROLLING
+        // ============================================
+        const heroSection = document.querySelector('.series-hero');
+        const heroBackdrop = document.querySelector('.series-hero-backdrop');
+        const heroBackdropImg = heroBackdrop?.querySelector('img');
+        const heroContent = document.querySelector('.series-hero-content');
+
+        let heroForeground = document.querySelector('.series-hero-foreground');
+        if (!heroForeground && heroSection) {
+            heroForeground = document.createElement('div');
+            heroForeground.className = 'series-hero-foreground';
+            heroForeground.innerHTML = '<img src="assets/Bali/Little Balinese Dancer 98x98cm oil.JPG" alt="Foreground element" loading="eager">';
+            heroSection.insertBefore(heroForeground, heroSection.firstChild);
+        }
+        const heroForegroundImg = heroForeground?.querySelector('img');
+
+        if (!document.querySelector('#parallax-styles')) {
+            const parallaxStyles = document.createElement('style');
+            parallaxStyles.id = 'parallax-styles';
+            parallaxStyles.textContent = `
+                .series-hero-foreground {
+                    position: absolute;
+                    inset: 0;
+                    opacity: 0.1;
+                    pointer-events: none;
+                    z-index: 1;
+                    overflow: hidden;
+                }
+                .series-hero-foreground img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    filter: grayscale(0.3) sepia(0.15);
+                    transform: translateZ(0);
+                    will-change: transform;
+                }
+                .series-hero-content { z-index: 2; position: relative; }
+                .series-hero-backdrop { z-index: 0; }
+            `;
+            document.head.appendChild(parallaxStyles);
+        }
+
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking && heroSection) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const heroTop = heroSection.offsetTop;
+                    const heroHeight = heroSection.offsetHeight;
+
+                    if (scrolled >= heroTop - window.innerHeight && scrolled <= heroTop + heroHeight) {
+                        const progress = (scrolled - heroTop + window.innerHeight) / (heroHeight + window.innerHeight);
+
+                        if (heroForegroundImg) {
+                            const fgMove = progress * -20;
+                            heroForegroundImg.style.transform = `translateY(${fgMove}px) scale(1.05)`;
+                        }
+                        if (heroContent) {
+                            const contentMove = progress * 50;
+                            heroContent.style.transform = `translateY(${contentMove}px)`;
+                        }
+                        if (heroBackdropImg) {
+                            const bgMove = progress * 80;
+                            heroBackdropImg.style.transform = `translateY(${-10 + bgMove}%)`;
+                        }
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // ============================================
+        // FULL-IMAGE MODAL
+        // ============================================
+        document.querySelectorAll('.gallery-item-image').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const img = this.querySelector('img');
+                const title = this.closest('.gallery-item').querySelector('.gallery-item-title').textContent;
+                const meta = this.closest('.gallery-item').querySelector('.gallery-item-meta').textContent;
+
+                const modal = document.createElement('div');
+                modal.className = 'image-modal active';
+                modal.innerHTML = `
+                    <button class="image-modal-close">Close ×</button>
+                    <img src="${img.src}" alt="${title}" onerror="this.src='${img.src}'">
+                    <div class="image-modal-caption"><h4>${title}</h4><p>${meta}</p></div>
+                `;
+                document.body.appendChild(modal);
+
+                const closeModal = () => modal.remove();
+                modal.querySelector('.image-modal-close').addEventListener('click', (e) => { e.stopPropagation(); closeModal(); });
+                modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+                document.addEventListener('keydown', function closeOnEscape(ev) {
+                    if (ev.key === 'Escape') { closeModal(); document.removeEventListener('keydown', closeOnEscape); }
+                });
+            });
+        });
+
+        // Image Protection
+        document.addEventListener('contextmenu', function(e) { if (e.target.tagName === 'IMG' || e.target.closest('.protected-img')) { e.preventDefault(); return false; }});
+        document.addEventListener('dragstart', function(e) { if (e.target.tagName === 'IMG' || e.target.closest('.protected-img')) { e.preventDefault(); return false; }});
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); return false; }
+            if ((e.ctrlKey || e.metaKey) && e.key === 'u') { e.preventDefault(); return false; }
+            if (e.key === 'PrintScreen') { e.preventDefault(); showProtectionWarning('Screenshot blocked: Content is protected'); return false; }
+        });
+        function protectImages() { document.querySelectorAll('img').forEach(function(img) { img.setAttribute('data-protected', 'true'); if (!img.closest('.protected-img')) { const wrapper = document.createElement('span'); wrapper.className = 'protected-img'; img.parentNode.insertBefore(wrapper, img); wrapper.appendChild(img); }}); }
+        function showProtectionWarning(message) { const existing = document.querySelector('.protection-warning'); if (existing) existing.remove(); const overlay = document.createElement('div'); overlay.className = 'protection-warning'; overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:999999;display:flex;align-items:center;justify-content:center;animation:fadeOut 2s forwards;'; const messageEl = document.createElement('div'); messageEl.textContent = message; messageEl.style.cssText = 'background:#b85c38;color:white;padding:1rem 2rem;border-radius:8px;font-size:1rem;font-weight:600;box-shadow:0 4px 20px rgba(0,0,0,0.5);'; overlay.appendChild(messageEl); document.body.appendChild(overlay); setTimeout(() => overlay.remove(), 2000); }
+        function detectDevTools() { const widthDiff = window.outerWidth - window.innerWidth; const heightDiff = window.outerHeight - window.innerHeight; if (widthDiff > 160 || heightDiff > 160) { document.querySelectorAll('img').forEach(img => img.style.filter = 'blur(10px)'); showProtectionWarning('Developer tools detected: Images blurred for protection'); } else { document.querySelectorAll('img').forEach(img => img.style.filter = 'none'); } }
+        setInterval(detectDevTools, 1000);
+        if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', protectImages); } else { protectImages(); }
+    </script>
+</body>
+</html>

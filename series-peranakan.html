@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Peranakan Series | Nyonya Heritage Art | Loh Ek Sem</title>
+    <meta name="description" content="Peranakan Series by Loh Ek Sem — acrylic paintings documenting Nyonya heritage, Peranakan festivals, and hybrid Chinese-Malay culture in Malaysia.">
+    <meta name="keywords" content="Peranakan, Nyonya, Baba, Malaysian heritage, Loh Ek Sem, acrylic painting, cultural documentation, Peranakan wedding, Cheng Ho">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Peranakan Series | Nyonya Heritage Art">
+    <meta property="og:description" content="10 paintings documenting Peranakan culture and Nyonya traditions in Malaysia.">
+    <meta property="og:type" content="website">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "artSeries": "Peranakan Series",
+        "artist": { "@type": "Person", "name": "Loh Ek Sem" },
+        "description": "Series of acrylic paintings documenting Peranakan (Nyonya) heritage and cultural traditions.",
+        "artMedium": "Acrylic on canvas",
+        "artform": "Painting"
+    }
+    </script>
+
+    <style>
+        :root {
+            --ink: #000000;
+            --paper: #ffffff;
+            --charcoal: #1a1a1a;
+            --warm-gray: #f5f3f0;
+            --terracotta: #b85c38;
+            --clay: #c9a97e;
+            --nyonya-pink: #d4a5b5;
+            --font-display: 'Georgia', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+            --container-max: 1400px;
+            --nav-height: 80px;
+            --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--paper); color: var(--ink); line-height: 1.6; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--nav-height);
+            background: var(--paper);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        nav .logo { display: flex; align-items: center; gap: 1.5rem; }
+        nav .logo img { height: 35px; width: auto; opacity: 0.9; }
+        nav .logo-text { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--charcoal); }
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav a { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--charcoal); transition: color 0.3s var(--ease-fluid); }
+        nav a:hover, nav a.active { color: var(--terracotta); }
+        nav a.active { border-bottom: 1px solid var(--terracotta); }
+
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+        .nav-toggle span { width: 24px; height: 2px; background: var(--ink); transition: 0.3s; }
+
+        @media (max-width: 1024px) {
+            nav ul { display: none; }
+            .nav-toggle { display: flex; }
+            nav.mobile-open ul {
+                display: flex; flex-direction: column; position: absolute;
+                top: var(--nav-height); left: 0; right: 0;
+                background: var(--paper); padding: 2rem;
+                border-bottom: 1px solid rgba(0,0,0,0.1); gap: 1.5rem;
+            }
+        }
+
+        .series-hero {
+            position: relative;
+            min-height: 70dvh;
+            display: grid;
+            place-items: center;
+            padding: calc(var(--nav-height) + 4rem) 2rem 4rem;
+            background: var(--warm-gray);
+            overflow: hidden;
+        }
+
+        .series-hero-backdrop {
+            position: absolute; inset: 0; opacity: 0.12; pointer-events: none;
+        }
+
+        .series-hero-backdrop img {
+            width: 100%; height: 100%; object-fit: cover;
+            filter: grayscale(0.2) sepia(0.1);
+        }
+
+        .series-hero-content {
+            position: relative; z-index: 2; text-align: center; max-width: 800px;
+        }
+
+        .series-hero-label {
+            display: inline-block; font-size: 0.7rem; text-transform: uppercase;
+            letter-spacing: 0.25em; color: var(--nyonya-pink);
+            margin-bottom: 1.5rem; padding: 0.25rem 1rem;
+            border: 1px solid var(--nyonya-pink); border-radius: 50px;
+        }
+
+        .series-hero h1 {
+            font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 500; line-height: 1.1; margin-bottom: 1.5rem; color: var(--ink);
+        }
+
+        .series-hero p {
+            font-size: 1.1rem; color: var(--charcoal); line-height: 1.8; max-width: 65ch;
+        }
+
+        .series-intro {
+            padding: 6rem 2rem; max-width: 800px; margin: 0 auto;
+        }
+
+        .series-intro-content {
+            font-size: 1.05rem; line-height: 1.9; color: var(--charcoal);
+        }
+
+        .series-intro-content p { margin-bottom: 1.5rem; }
+        .series-intro-content strong { color: var(--ink); }
+
+        .gallery {
+            padding: 4rem 2rem 6rem; max-width: var(--container-max); margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem;
+        }
+
+        .gallery-item { break-inside: avoid; margin-bottom: 2rem; }
+
+        .gallery-item-image {
+            position: relative; aspect-ratio: 4/3; background: var(--warm-gray);
+            overflow: hidden; border: 1px solid rgba(0,0,0,0.12);
+            transition: border-color 0.3s var(--ease-fluid); cursor: pointer;
+        }
+
+        .gallery-item:hover .gallery-item-image { border-color: var(--ink); }
+
+        .gallery-item img {
+            width: 100%; height: 100%; object-fit: contain;
+            transition: transform 0.6s var(--ease-fluid);
+        }
+
+        .gallery-item:hover img { transform: scale(1.02); }
+
+        .view-full-indicator {
+            position: absolute; top: 0.5rem; right: 0.5rem;
+            background: rgba(0,0,0,0.7); color: var(--paper);
+            padding: 0.4rem 0.6rem; border-radius: 4px;
+            font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;
+            opacity: 0; transition: opacity 0.3s var(--ease-fluid);
+            z-index: 15; pointer-events: none;
+        }
+        .gallery-item:hover .view-full-indicator { opacity: 1; }
+
+        .image-modal {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+            z-index: 10000; display: none;
+            align-items: center; justify-content: center; padding: 2rem; cursor: zoom-out;
+        }
+        .image-modal.active { display: flex; }
+        .image-modal img {
+            max-width: 95vw; max-height: 95vh; object-fit: contain;
+            box-shadow: 0 0 40px rgba(0,0,0,0.8);
+        }
+        .image-modal-close {
+            position: absolute; top: 1.5rem; right: 1.5rem;
+            background: var(--terracotta); color: var(--paper); border: none;
+            padding: 0.75rem 1.25rem; font-size: 0.85rem;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            cursor: pointer; border-radius: 4px;
+        }
+        .image-modal-caption {
+            position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+            color: var(--paper); text-align: center; max-width: 600px;
+        }
+        .image-modal-caption h4 {
+            font-family: var(--font-display); font-size: 1.2rem;
+            margin-bottom: 0.5rem; color: var(--clay);
+        }
+        .image-modal-caption p { font-size: 0.85rem; opacity: 0.8; }
+
+        .gallery-item-info { padding: 1.25rem 0.5rem 0.5rem; }
+
+        .gallery-item-title {
+            font-family: var(--font-display); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;
+        }
+
+        .gallery-item-meta {
+            font-size: 0.8rem; color: var(--charcoal); font-family: var(--font-mono); margin-bottom: 0.75rem;
+        }
+
+        .gallery-item-story {
+            font-size: 0.85rem; color: var(--charcoal); line-height: 1.6;
+        }
+
+        .cultural-notes {
+            padding: 6rem 2rem; background: var(--warm-gray);
+        }
+
+        .cultural-notes .container { max-width: 900px; margin: 0 auto; }
+
+        .section-label {
+            display: inline-flex; align-items: center; gap: 1rem; font-size: 0.7rem;
+            text-transform: uppercase; letter-spacing: 0.2em; color: var(--terracotta);
+            margin-bottom: 2rem;
+        }
+
+        .section-label::before, .section-label::after {
+            content: ''; flex: 1; height: 1px; background: rgba(184, 92, 56, 0.4); min-width: 40px;
+        }
+
+        .cultural-notes-content { font-size: 1.05rem; line-height: 1.9; color: var(--charcoal); }
+        .cultural-notes-content h3 {
+            font-family: var(--font-display); font-size: 1.3rem;
+            margin-top: 2.5rem; margin-bottom: 1rem; color: var(--nyonya-pink);
+        }
+        .cultural-notes-content p { margin-bottom: 1.5rem; }
+        .cultural-notes-content ul { margin: 1.5rem 0; padding-left: 1.5rem; }
+        .cultural-notes-content li { margin-bottom: 0.75rem; }
+        .term { font-weight: 600; color: var(--ink); }
+
+        .series-nav {
+            padding: 4rem 2rem; text-align: center; background: var(--ink); color: var(--paper);
+        }
+
+        .series-nav-links {
+            display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;
+        }
+
+        .series-nav-links a {
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+            color: var(--clay); border: 1px solid var(--clay); padding: 0.75rem 1.5rem;
+            transition: all 0.3s var(--ease-fluid);
+        }
+
+        .series-nav-links a:hover { background: var(--clay); color: var(--ink); }
+
+        footer {
+            padding: 4rem 2rem; background: var(--ink); color: var(--paper); text-align: center;
+        }
+
+        footer .signature img {
+            height: 50px; filter: brightness(0) invert(1); opacity: 0.9; margin: 0 auto 1.5rem;
+        }
+
+        footer p { font-size: 0.85rem; opacity: 0.75; letter-spacing: 0.05em; }
+
+        footer .social {
+            display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem;
+        }
+
+        footer .social a {
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.75; transition: opacity 0.3s;
+        }
+
+        footer .social a:hover { opacity: 1; }
+
+        @media (max-width: 768px) {
+            .series-hero { padding: calc(var(--nav-height) + 2rem) 1.5rem 2rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .series-intro, .cultural-notes .container, .gallery { padding-left: 1rem; padding-right: 1rem; }
+            nav { padding: 0 1rem; }
+        }
+    </style>
+
+        /* Image Protection */
+        .protected-img { position: relative; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+        .protected-img::after { content: ""; position: absolute; inset: 0; background: transparent; z-index: 10; }
+        .protected-img img { pointer-events: none; -webkit-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-drag: none; -webkit-touch-callout: none; cursor: default; }
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature">
+            <span class="logo-text">Loh Ek Sem</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="series-malay-kampung.html">Malay Kampung</a></li>
+            <li><a href="series-peranakan.html" class="active">Peranakan</a></li>
+            <li><a href="series-watercolour.html">Watercolour</a></li>
+            <li><a href="series-paper-cast.html">Paper Cast</a></li>
+            <li><a href="series-bali.html">Bali</a></li>
+            <li><a href="series-borneo.html">Borneo</a></li>
+            <li><a href="series-sculpture.html">Sculpture</a></li>
+            <li><a href="series-ink-sketch.html">Ink & Sketch</a></li>
+            <li><a href="exhibitions.html">Exhibitions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('mobile-open')">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="series-hero">
+        <div class="series-hero-backdrop">
+            <img src="09ChengHo comes to Nanyang.jpg" alt="Peranakan Series backdrop" loading="eager">
+        </div>
+        <div class="series-hero-content">
+            <span class="series-hero-label">Painting Series</span>
+            <h1>Peranakan</h1>
+            <p>
+                Nyonya heritage, ceremonial dress, festival preparations, and the domestic
+                rituals of Peranakan culture—a hybrid Chinese-Malay identity that flourished
+                in colonial Malaya and continues to influence Malaysian society.
+            </p>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="series-intro">
+        <div class="series-intro-content">
+            <p>
+                The <strong>Peranakan Series</strong> explores the rich visual culture of the Peranakan
+                (Straits Chinese) community—descendants of Chinese traders who settled in
+                Malaya and married local Malay women. The resulting hybrid culture, known
+                as <em>Peranakan</em> or <em>Baba-Nyonya</em>, developed distinctive traditions in dress,
+                cuisine, language, and religious practice.
+            </p>
+            <p>
+                Sem's paintings document key moments in Peranakan life: the arrival of
+                Admiral Cheng Ho (the legendary Chinese explorer who visited Malacca in
+                the 15th century), festival preparations (Mooncake Festival, Chinese New Year),
+                wedding ceremonies, and domestic scenes that reveal the intricate material
+                culture of Nyonya households.
+            </p>
+            <p>
+                The series includes 10 major works, painted between 1996 and 2002. Like the
+                Malay Kampung Series, these are executed in acrylic on canvas—chosen for
+                its ability to capture both the fine detail of embroidered textiles and
+                the bold colors of ceremonial objects.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="gallery-grid">
+
+            <!-- Artwork 1 -->
+            <div class="gallery-item">
+                <div class="gallery-item-image">
+                    <img src="09ChengHo comes to Nanyang.jpg" alt="Cheng Ho Comes to Nanyang" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Cheng Ho Comes to Nanyang</h3>
+                    <p class="gallery-item-meta">549 × 610cm (18' × 20'), Acrylic on canvas, 1998</p>
+                    <p class="gallery-item-story">
+                        Admiral Cheng Ho (Zheng He), the legendary Chinese explorer who
+                        visited Malacca in the 15th century, is a foundational figure in
+                        Peranakan history. His voyages established trade routes that
+                        brought Chinese merchants to Southeast Asia.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Artwork 2 -->
+            <div class="gallery-item">
+                <div class="gallery-item-image">
+                    <img src="09Mooncake Festival.jpg" alt="Mooncake Festival" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Mooncake Festival</h3>
+                    <p class="gallery-item-meta">Acrylic on canvas, 1999</p>
+                    <p class="gallery-item-story">
+                        The Mid-Autumn Festival (Mooncake Festival) is celebrated with
+                        lanterns, mooncakes, and family gatherings. In Peranakan
+                        households, the celebration incorporates both Chinese and Malay
+                        elements—traditional mooncakes alongside Nyonya kuih.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Cultural Notes -->
+    <section class="cultural-notes">
+        <div class="container">
+            <span class="section-label">Cultural Context</span>
+            <div class="cultural-notes-content">
+                <h3>Who Are the Peranakan?</h3>
+                <p>
+                    The term <span class="term">Peranakan</span> comes from the Malay root
+                    <em>anak</em> (child), meaning "locally born." Peranakans are descendants
+                    of Chinese traders who settled in Malaya (primarily Malacca, Penang, and
+                    Singapore) and married local Malay women. The community developed a
+                    hybrid culture that blended Chinese ancestry with Malay language, dress,
+                    and customs.
+                </p>
+                <p>
+                    Men were called <span class="term">Baba</span> and women
+                    <span class="term">Nyonya</span> (or Nonya). The Nyonya women developed
+                    distinctive clothing: the <em>kebaya</em> (embroidered blouse) and
+                    <em>sarong</em> (batik wrap skirt), along with elaborate beaded shoes
+                    called <em>kasut manek</em>.
+                </p>
+
+                <h3>Peranakan Traditions Depicted</h3>
+                <ul>
+                    <li>
+                        <span class="term">Cheng Ho's legacy</span> — Admiral Zheng He's
+                        seven voyages (1405–1433) established Chinese presence in Southeast
+                        Asia. His arrival in Malacca is commemorated in Peranakan folklore
+                        as the beginning of the community.
+                    </li>
+                    <li>
+                        <span class="term">Mooncake Festival</span> — The Mid-Autumn Festival
+                        (15th day of the 8th lunar month) celebrates the harvest. Peranakan
+                        celebrations include mooncakes, lantern processions, and the Nyonya
+                        specialty: <em>kuih bakul</em> (sticky rice cake).
+                    </li>
+                    <li>
+                        <span class="term">Peranakan weddings</span> — A 12-day ceremony
+                        incorporating Chinese and Malay rituals. Key elements include the
+                        <em>tea ceremony</em> (Chinese) and <em>bersanding</em> (Malay-style
+                        throne seating). The bride wears a <em>kebaya</em> with
+                        <em>kasut manek</em> (beaded shoes she embroidered herself).
+                    </li>
+                    <li>
+                        <span class="term">Nyonya cuisine</span> — A fusion of Chinese
+                        ingredients and Malay spices. Signature dishes include
+                        <em>laksa</em> (spicy noodle soup), <em>ayam buah keluak</em>
+                        (chicken with Indonesian nuts), and <em>kuih</em> (colorful
+                        bite-sized sweets).
+                    </li>
+                </ul>
+
+                <h3>Why This Series Matters</h3>
+                <p>
+                    Peranakan culture is often romanticized as "exotic" or "quaint." But Sem's
+                    paintings treat it as a living tradition—one that shaped Malaysian identity
+                    in profound ways. The Peranakan community produced some of Malaya's most
+                    influential figures: merchants, politicians, artists, and writers who
+                    navigated multiple cultural worlds.
+                </p>
+                <p>
+                    By documenting Peranakan rituals and material culture, Sem preserves not
+                    just aesthetic objects but a way of life that continues to influence
+                    contemporary Malaysia. The kebaya, the kuih, the festival celebrations—
+                    these are not relics. They are practices that continue to define what
+                    it means to be Malaysian.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation CTA -->
+    <section class="series-nav">
+        <p style="font-size: 1.05rem; margin-bottom: 1.5rem;">Explore other painting series</p>
+        <div class="series-nav-links">
+            <a href="series-malay-kampung.html">Malay Kampung</a>
+            <a href="series-watercolour.html">Watercolour</a>
+            <a href="series-paper-cast.html">Paper Cast</a>
+            <a href="series-bali.html">Bali</a>
+            <a href="series-borneo.html">Borneo</a>
+            <a href="series-sculpture.html">Sculpture</a>
+            <a href="series-ink-sketch.html">Ink & Sketch</a>
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="signature">
+            <img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature">
+        </div>
+        <p>loheksem@gmail.com</p>
+        <p>Johor Bahru, Malaysia</p>
+        <div class="social">
+            <a href="#">Instagram</a>
+            <a href="#">Pinterest</a>
+        </div>
+        <p style="margin-top: 2rem; opacity: 0.5; font-size: 0.75rem;">
+            © 2026 Loh Ek Sem. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('nav').classList.remove('mobile-open');
+            });
+        });
+
+        // 3-LAYER PARALLAX
+        const heroSection = document.querySelector('.series-hero');
+        const heroBackdrop = document.querySelector('.series-hero-backdrop');
+        const heroBackdropImg = heroBackdrop?.querySelector('img');
+        const heroContent = document.querySelector('.series-hero-content');
+        let heroForeground = document.querySelector('.series-hero-foreground');
+        if (!heroForeground && heroSection) {
+            heroForeground = document.createElement('div');
+            heroForeground.className = 'series-hero-foreground';
+            heroForeground.innerHTML = '<img src="09ChengHo comes to Nanyang.jpg" alt="Foreground" loading="eager">';
+            heroSection.insertBefore(heroForeground, heroSection.firstChild);
+        }
+        const heroForegroundImg = heroForeground?.querySelector('img');
+        if (!document.querySelector('#parallax-styles')) {
+            const parallaxStyles = document.createElement('style');
+            parallaxStyles.id = 'parallax-styles';
+            parallaxStyles.textContent = `.series-hero-foreground{position:absolute;inset:0;opacity:0.1;pointer-events:none;z-index:1;overflow:hidden}.series-hero-foreground img{width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(0.3) sepia(0.15);transform:translateZ(0);will-change:transform}.series-hero-content{z-index:2;position:relative}.series-hero-backdrop{z-index:0}`;
+            document.head.appendChild(parallaxStyles);
+        }
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking && heroSection) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const heroTop = heroSection.offsetTop;
+                    const heroHeight = heroSection.offsetHeight;
+                    if (scrolled >= heroTop - window.innerHeight && scrolled <= heroTop + heroHeight) {
+                        const progress = (scrolled - heroTop + window.innerHeight) / (heroHeight + window.innerHeight);
+                        if (heroForegroundImg) heroForegroundImg.style.transform = `translateY(${progress * -20}px) scale(1.05)`;
+                        if (heroContent) heroContent.style.transform = `translateY(${progress * 50}px)`;
+                        if (heroBackdropImg) heroBackdropImg.style.transform = `translateY(${-10 + progress * 80}%)`;
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // FULL-IMAGE MODAL
+        document.querySelectorAll('.gallery-item-image').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const img = this.querySelector('img');
+                const title = this.closest('.gallery-item').querySelector('.gallery-item-title').textContent;
+                const meta = this.closest('.gallery-item').querySelector('.gallery-item-meta').textContent;
+                const modal = document.createElement('div');
+                modal.className = 'image-modal active';
+                modal.innerHTML = `<button class="image-modal-close">Close ×</button><img src="${img.src}" alt="${title}" onerror="this.src='${img.src}'"><div class="image-modal-caption"><h4>${title}</h4><p>${meta}</p></div>`;
+                document.body.appendChild(modal);
+                const closeModal = () => modal.remove();
+                modal.querySelector('.image-modal-close').addEventListener('click', e => { e.stopPropagation(); closeModal(); });
+                modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+                document.addEventListener('keydown', function closeOnEscape(ev) {
+                    if (ev.key === 'Escape') { closeModal(); document.removeEventListener('keydown', closeOnEscape); }
+                });
+            });
+        });
+
+        // Image Protection
+        document.addEventListener('contextmenu', function(e) { if (e.target.tagName === 'IMG' || e.target.closest('.protected-img')) { e.preventDefault(); return false; }});
+        document.addEventListener('dragstart', function(e) { if (e.target.tagName === 'IMG' || e.target.closest('.protected-img')) { e.preventDefault(); return false; }});
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); return false; }
+            if ((e.ctrlKey || e.metaKey) && e.key === 'u') { e.preventDefault(); return false; }
+            if (e.key === 'PrintScreen') { e.preventDefault(); showProtectionWarning('Screenshot blocked: Content is protected'); return false; }
+        });
+        function protectImages() { document.querySelectorAll('img').forEach(function(img) { img.setAttribute('data-protected', 'true'); if (!img.closest('.protected-img')) { const wrapper = document.createElement('span'); wrapper.className = 'protected-img'; img.parentNode.insertBefore(wrapper, img); wrapper.appendChild(img); }}); }
+        function showProtectionWarning(message) { const existing = document.querySelector('.protection-warning'); if (existing) existing.remove(); const overlay = document.createElement('div'); overlay.className = 'protection-warning'; overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:999999;display:flex;align-items:center;justify-content:center;animation:fadeOut 2s forwards;'; const messageEl = document.createElement('div'); messageEl.textContent = message; messageEl.style.cssText = 'background:#b85c38;color:white;padding:1rem 2rem;border-radius:8px;font-size:1rem;font-weight:600;box-shadow:0 4px 20px rgba(0,0,0,0.5);'; overlay.appendChild(messageEl); document.body.appendChild(overlay); setTimeout(() => overlay.remove(), 2000); }
+        function detectDevTools() { const widthDiff = window.outerWidth - window.innerWidth; const heightDiff = window.outerHeight - window.innerHeight; if (widthDiff > 160 || heightDiff > 160) { document.querySelectorAll('img').forEach(img => img.style.filter = 'blur(10px)'); showProtectionWarning('Developer tools detected: Images blurred for protection'); } else { document.querySelectorAll('img').forEach(img => img.style.filter = 'none'); } }
+        setInterval(detectDevTools, 1000);
+        if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', protectImages); } else { protectImages(); }
+    </script>
+</body>
+</html>
