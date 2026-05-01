@@ -15,6 +15,9 @@ gp_*.png
 gp_*.png
 fetch_google_photos.py
 
+# Videos (allow MP4)
+*.mp4
+
 # Node modules
 node_modules/
 

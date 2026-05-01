@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Bible Series | Religious Art | Loh Ek Sem</title>
+    <meta name="description" content="Bible Series by Loh Ek Sem — paintings depicting biblical scenes, scripture narratives, and religious themes exploring faith and spirituality.">
+    <meta name="keywords" content="Bible Series, religious art, Loh Ek Sem, biblical paintings, scripture art, Christian art Malaysia, faith-based art">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bible Series | Religious Art">
+    <meta property="og:description" content="Biblical narratives and scripture scenes rendered in Loh Ek Sem's distinctive documentary style.">
+    <meta property="og:type" content="website">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "artSeries": "Bible Series",
+        "artist": {
+            "@type": "Person",
+            "name": "Loh Ek Sem"
+        },
+        "description": "Series of paintings depicting biblical scenes and scripture narratives.",
+        "artMedium": "Oil and acrylic on canvas",
+        "artform": "Painting"
+    }
+    </script>
+
+    <style>
+        :root {
+            --ink: #000000;
+            --paper: #ffffff;
+            --charcoal: #1a1a1a;
+            --warm-gray: #f5f3f0;
+            --terracotta: #b85c38;
+            --clay: #c9a97e;
+            --font-display: 'Georgia', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+            --container-max: 1400px;
+            --nav-height: 80px;
+            --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--paper); color: var(--ink); line-height: 1.6; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--nav-height);
+            background: var(--paper);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        nav .logo { display: flex; align-items: center; gap: 1.5rem; }
+        nav .logo img { height: 35px; width: auto; opacity: 0.9; }
+        nav .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+        }
+
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav a {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--charcoal);
+            transition: color 0.3s var(--ease-fluid);
+        }
+        nav a:hover, nav a.active { color: var(--terracotta); }
+        nav a.active { border-bottom: 1px solid var(--terracotta); }
+
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+        .nav-toggle span { width: 24px; height: 2px; background: var(--ink); transition: 0.3s; }
+
+        @media (max-width: 1024px) {
+            nav ul { display: none; }
+            .nav-toggle { display: flex; }
+            nav.mobile-open ul {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0;
+                right: 0;
+                background: var(--paper);
+                padding: 1rem 2rem;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                gap: 1rem;
+            }
+        }
+
+        /* Series Hero */
+        .series-hero {
+            position: relative;
+            padding: calc(var(--nav-height) + 3rem) 2rem 4rem;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .series-hero-backdrop {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            opacity: 0.08;
+        }
+
+        .series-hero-backdrop img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.3) sepia(0.15);
+        }
+
+        .series-hero-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .series-hero-label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--terracotta);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .series-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+            color: var(--ink);
+        }
+
+        .series-hero p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            max-width: 700px;
+        }
+
+        /* Series Intro */
+        .series-intro {
+            padding: 3rem 2rem;
+            background: var(--warm-gray);
+            border-top: 1px solid rgba(0,0,0,0.08);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .series-intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .series-intro p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .series-intro strong {
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 4rem 2rem 6rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+        }
+
+        .gallery-item-image {
+            position: relative;
+            border: 2px solid var(--ink);
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.08);
+            overflow: hidden;
+            background: var(--warm-gray);
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+
+        .gallery-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s var(--ease-fluid);
+        }
+
+        .gallery-item-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .sold-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--terracotta);
+            color: var(--paper);
+            padding: 0.35rem 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            z-index: 2;
+        }
+
+        .artwork-popup {
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.97);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s var(--ease-fluid), visibility 0.3s;
+            padding: 2rem;
+            z-index: 3;
+        }
+
+        .gallery-item-image:hover .artwork-popup {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-content {
+            max-width: 100%;
+            text-align: left;
+        }
+
+        .popup-content h4 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--ink);
+        }
+
+        .popup-meta {
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .popup-meta strong {
+            color: var(--ink);
+        }
+
+        .popup-description {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--charcoal);
+            margin-top: 1rem;
+        }
+
+        .status-retained {
+            color: var(--terracotta);
+            font-weight: 600;
+        }
+
+        .gallery-item-info {
+            padding-top: 1.25rem;
+        }
+
+        .gallery-item-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+
+        .gallery-item-meta {
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-item-story {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--charcoal);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .series-hero {
+                padding: calc(var(--nav-height) + 2rem) 1.5rem 3rem;
+            }
+
+            .gallery {
+                padding: 3rem 1.5rem 4rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ink);
+            color: var(--paper);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer .signature {
+            max-width: 200px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.9;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            opacity: 0.75;
+            letter-spacing: 0.05em;
+        }
+
+        /* Image Protection */
+        .protected-img { position: relative; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+        .protected-img::after { content: ""; position: absolute; inset: 0; background: transparent; z-index: 10; }
+        .protected-img img { pointer-events: none; -webkit-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-drag: none; -webkit-touch-callout: none; cursor: default; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo"><img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature"><span class="logo-text">Loh Ek Sem</span></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="series-malay-kampung.html">Malay Kampung</a></li>
+            <li><a href="series-peranakan.html">Peranakan</a></li>
+            <li><a href="series-watercolour.html">Watercolour</a></li>
+            <li><a href="series-paper-cast.html">Paper Cast</a></li>
+            <li><a href="series-bali.html">Bali</a></li>
+            <li><a href="series-borneo.html">Borneo</a></li>
+            <li><a href="series-sculpture.html">Sculpture</a></li>
+            <li><a href="series-ink-sketch.html">Ink &amp; Sketch</a></li>
+            <li><a href="series-bible.html" class="active">Bible</a></li>
+            <li><a href="exhibitions.html">Exhibitions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('mobile-open')"><span></span><span></span><span></span></div>
+    </nav>
+
+    <section class="series-hero">
+        <div class="series-hero-backdrop"><img src="assets/Bible/001EA76D-FFD1-4ED3-8511-59675D999647.jpeg" alt="Bible art backdrop" loading="eager"></div>
+        <div class="series-hero-content">
+            <span class="series-hero-label">Scripture &amp; Faith</span>
+            <h1>Bible Series</h1>
+            <p>Biblical narratives and scripture scenes rendered with documentary detail — exploring faith, spirituality, and the timeless stories that have shaped moral consciousness across centuries.</p>
+        </div>
+    </section>
+
+    <section class="series-intro">
+        <div class="series-intro-content">
+            <p>The <strong>Bible Series</strong> represents Loh Ek Sem's engagement with scripture and religious narrative. These paintings depict key biblical scenes and characters, rendered with the same attention to cultural and historical detail that characterizes his work across all series.</p>
+            <p>Working primarily in oil and acrylic on canvas, Sem brings a Southeast Asian perspective to these universal stories. The series includes depictions of New Testament narratives, Old Testament scenes, and symbolic religious imagery.</p>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="gallery-grid">
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Bible/001EA76D-FFD1-4ED3-8511-59675D999647.jpeg" alt="Bible Art" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Bible Series Artwork</h4>
+                            <p class="popup-meta"><strong>Medium:</strong> Oil/Acrylic on canvas</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A biblical scene rendered with Sem's characteristic attention to cultural detail and narrative depth.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Bible Series Artwork</h3>
+                    <p class="gallery-item-meta">Oil/Acrylic on canvas</p>
+                    <p class="gallery-item-story">Biblical narrative rendered with cultural detail and spiritual depth.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Bible/01704848-B85B-43DE-BA0D-40FE5DAB7AE1.jpeg" alt="Bible Art" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Scripture Scene</h4>
+                            <p class="popup-meta"><strong>Medium:</strong> Oil/Acrylic on canvas</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A depiction of biblical narrative exploring themes of faith and redemption.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Scripture Scene</h3>
+                    <p class="gallery-item-meta">Oil/Acrylic on canvas</p>
+                    <p class="gallery-item-story">Biblical narrative exploring themes of faith and redemption.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Bible/0214B8F8-8D3E-42CD-9F94-107C21591B9D.jpeg" alt="Bible Art" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Religious Narrative</h4>
+                            <p class="popup-meta"><strong>Medium:</strong> Oil/Acrylic on canvas</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A scene from scripture rendered with attention to historical and cultural context.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Religious Narrative</h3>
+                    <p class="gallery-item-meta">Oil/Acrylic on canvas</p>
+                    <p class="gallery-item-story">Scripture scene with historical and cultural context.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Bible/10DC31CF-9BC4-410A-ACBC-1AC6FAD042D2.jpeg" alt="Bible Art" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Faith &amp; Spirituality</h4>
+                            <p class="popup-meta"><strong>Medium:</strong> Oil/Acrylic on canvas</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A meditation on faith through biblical imagery and symbolic representation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Faith &amp; Spirituality</h3>
+                    <p class="gallery-item-meta">Oil/Acrylic on canvas</p>
+                    <p class="gallery-item-story">Meditation on faith through biblical imagery.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Bible/11306FD1-386D-4D22-AEA6-968DD4E239EC.jpeg" alt="Bible Art" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Biblical Story</h4>
+                            <p class="popup-meta"><strong>Medium:</strong> Oil/Acrylic on canvas</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">A timeless biblical story brought to life through careful attention to detail and composition.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Biblical Story</h3>
+                    <p class="gallery-item-meta">Oil/Acrylic on canvas</p>
+                    <p class="gallery-item-story">Timeless biblical story with careful attention to detail.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-sold="false">
+                <div class="gallery-item-image">
+                    <img src="assets/Bible/13F22F4E-CC11-4D25-A37A-19E496F59CB7.jpeg" alt="Bible Art" loading="lazy">
+                    <div class="sold-badge">SOLD</div>
+                    <div class="artwork-popup">
+                        <div class="popup-content">
+                            <h4>Scripture Illustration</h4>
+                            <p class="popup-meta"><strong>Medium:</strong> Oil/Acrylic on canvas</p>
+                            <p class="popup-meta"><strong>Status:</strong> <span class="status-retained">Retained by Artist</span></p>
+                            <p class="popup-description">An illustration of scripture narrative with Southeast Asian artistic sensibility.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Scripture Illustration</h3>
+                    <p class="gallery-item-meta">Oil/Acrylic on canvas</p>
+                    <p class="gallery-item-story">Scripture with Southeast Asian artistic sensibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img class="signature" src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature">
+        <p>&copy; <span id="year"></span> Loh Ek Sem. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Right-click protection
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Drag protection
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Keyboard screenshot protection (PrintScreen)
+        document.addEventListener('keyup', function(e) {
+            if (e.key === 'PrintScreen') {
+                navigator.clipboard.writeText('');
+                alert('Screenshots are disabled on this website.');
+            }
+        });
+
+        // Disable PrintScreen key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'PrintScreen') {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
