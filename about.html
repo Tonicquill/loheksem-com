@@ -421,6 +421,74 @@
         }
     </style>
 
+        /* Biography with images */
+        .biography-with-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+
+        .biography-text {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--charcoal);
+        }
+
+        .biography-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .biography-images {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            position: sticky;
+            top: calc(var(--nav-height) + 2rem);
+        }
+
+        .bio-image-card {
+            border: 2px solid var(--ink);
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.08);
+            overflow: hidden;
+            background: var(--warm-gray);
+        }
+
+        .bio-image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s var(--ease-fluid);
+        }
+
+        .bio-image-card:hover img {
+            transform: scale(1.02);
+        }
+
+        .bio-image-caption {
+            padding: 0.75rem 1rem;
+            background: var(--paper);
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 900px) {
+            .biography-with-images {
+                grid-template-columns: 1fr;
+            }
+            .biography-images {
+                position: static;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .bio-image-card {
+                flex: 1 1 200px;
+            }
+        }
+
         /* Image Protection */
         .protected-img { position: relative; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
         .protected-img::after { content: ""; position: absolute; inset: 0; background: transparent; z-index: 10; }
@@ -476,49 +544,69 @@
     <section class="biography">
         <div class="container">
             <span class="section-label">Life & Work</span>
-            <div class="biography-content">
-                <p>
-                    <strong>Loh Ek Sem</strong> (b.1956) is a Malaysian fine artist whose four-decade practice
-                    has been driven by a singular mission: to document the vanishing cultural landscapes
-                    of Southeast Asia. His work functions as visual anthropology—art that preserves not
-                    just aesthetic objects, but entire ways of life disappearing from modern Malaysia.
-                </p>
-                <p>
-                    Sem began his career in the advertising industry, where he developed technical mastery
-                    and a keen eye for visual storytelling. But in <strong>1994</strong>, he made a decisive pivot to
-                    fine art, driven by a growing urgency to capture the kampung (village) life he
-                    remembered from his youth—traditional wooden houses on stilts, community rituals,
-                    the textures and rhythms of rural Malaysia that rapid development was replacing.
-                </p>
-                <p>
-                    Over the next decade, Sem produced his flagship <strong>Malay Kampung Series</strong>—large-scale
-                    acrylic paintings that depict kampung scenes with documentary precision and nostalgic
-                    warmth. Works like <em>By the Well</em> (137 × 214cm) and <em>Fishing Village</em> (122 × 186cm)
-                    are not mere representations; they are time capsules of a world that no longer exists
-                    in physical form.
-                </p>
-                <p>
-                    Parallel to his kampung documentation, Sem developed a deep engagement with
-                    <strong>Peranakan heritage</strong>—the hybrid Chinese-Malay culture that flourished in colonial
-                    Malaya. His Peranakan Series captures the intricate details of Nyonya life: ceremonial
-                    dress, festival preparations, the domestic rituals that defined a community straddling
-                    multiple identities.
-                </p>
-                <p>
-                    In the 2000s, Sem invented an entirely new medium: <strong>paper cast sculpture</strong>. Dissatisfied
-                    with painting's inability to capture the roughness of kampung materials—aged wood,
-                    attap roofing, hand-carved furniture—he developed a seven-step process that transforms
-                    recycled paper pulp into three-dimensional relief sculptures. The technique, which takes
-                    weeks to complete for each work, produces pieces that are neither painting nor sculpture,
-                    but both at once.
-                </p>
-                <p>
-                    Today, Sem continues to work from his studio in <strong>Johor Bahru</strong>, maintaining an archive
-                    of over 100 works across four series. His art has been exhibited in Singapore, Paris,
-                    and New York through Opera Gallery (1995–2000), and his monumental <em>Cultural Pin
-                    Carnival</em> mural (2009)—created with 3.7 million map pins—stands as a testament to
-                    his belief that art can be both culturally significant and publicly accessible.
-                </p>
+            <div class="biography-with-images">
+                <div class="biography-text">
+                    <p>
+                        <strong>Loh Ek Sem</strong> (b.1956) is a Malaysian fine artist whose four-decade practice
+                        has been driven by a singular mission: to document the vanishing cultural landscapes
+                        of Southeast Asia. His work functions as visual anthropology—art that preserves not
+                        just aesthetic objects, but entire ways of life disappearing from modern Malaysia.
+                    </p>
+                    <p>
+                        Sem began his career in the advertising industry, where he developed technical mastery
+                        and a keen eye for visual storytelling. But in <strong>1994</strong>, he made a decisive pivot to
+                        fine art, driven by a growing urgency to capture the kampung (village) life he
+                        remembered from his youth—traditional wooden houses on stilts, community rituals,
+                        the textures and rhythms of rural Malaysia that rapid development was replacing.
+                    </p>
+                    <p>
+                        Over the next decade, Sem produced his flagship <strong>Malay Kampung Series</strong>—large-scale
+                        acrylic paintings that depict kampung scenes with documentary precision and nostalgic
+                        warmth. Works like <em>By the Well</em> (137 × 214cm) and <em>Fishing Village</em> (122 × 186cm)
+                        are not mere representations; they are time capsules of a world that no longer exists
+                        in physical form.
+                    </p>
+                    <p>
+                        Parallel to his kampung documentation, Sem developed a deep engagement with
+                        <strong>Peranakan heritage</strong>—the hybrid Chinese-Malay culture that flourished in colonial
+                        Malaya. His Peranakan Series captures the intricate details of Nyonya life: ceremonial
+                        dress, festival preparations, the domestic rituals that defined a community straddling
+                        multiple identities.
+                    </p>
+                    <p>
+                        In the 2000s, Sem invented an entirely new medium: <strong>paper cast sculpture</strong>. Dissatisfied
+                        with painting's inability to capture the roughness of kampung materials—aged wood,
+                        attap roofing, hand-carved furniture—he developed a seven-step process that transforms
+                        recycled paper pulp into three-dimensional relief sculptures. The technique, which takes
+                        weeks to complete for each work, produces pieces that are neither painting nor sculpture,
+                        but both at once.
+                    </p>
+                    <p>
+                        Today, Sem continues to work from his studio in <strong>Johor Bahru</strong>, maintaining an archive
+                        of over 100 works across four series. His art has been exhibited in Singapore, Paris,
+                        and New York through Opera Gallery (1995–2000), and his monumental <em>Cultural Pin
+                        Carnival</em> mural (2009)—created with 3.7 million map pins—stands as a testament to
+                        his belief that art can be both culturally significant and publicly accessible.
+                    </p>
+                </div>
+                <div class="biography-images">
+                    <div class="bio-image-card">
+                        <img src="loheksem_staging/crops/artist,LohEkSem.JPG" alt="Loh Ek Sem portrait" loading="lazy">
+                        <div class="bio-image-caption">Loh Ek Sem, Artist</div>
+                    </div>
+                    <div class="bio-image-card">
+                        <img src="by the well [25x30cm].JPG" alt="By the Well detail" loading="lazy">
+                        <div class="bio-image-caption">By the Well — Malay Kampung Series</div>
+                    </div>
+                    <div class="bio-image-card">
+                        <img src="09ChengHo comes to Nanyang.jpg" alt="Peranakan Series" loading="lazy">
+                        <div class="bio-image-caption">Peranakan Heritage Series</div>
+                    </div>
+                    <div class="bio-image-card">
+                        <img src="PAPERcast-making/drying.JPG" alt="Paper cast process" loading="lazy">
+                        <div class="bio-image-caption">Paper Cast Technique in Progress</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
