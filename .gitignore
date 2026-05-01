@@ -1,12 +1,12 @@
 # Local Netlify folder
 .netlify
 
-# Images and screenshots (keep only what's needed for the site)
-*.png
+# Screenshots and temp files (exclude these)
 screenshot_*.png
 homepage.png
 bali.png
 peranakan.png
+gp_*.png
 
 # PDFs
 *.pdf
