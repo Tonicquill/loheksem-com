@@ -419,87 +419,59 @@
 
             nav { padding: 0 1rem; }
 
-            /* Biography with images */
-            .biography-with-images {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
-                align-items: start;
-                margin-top: 2rem;
+            /* Biography Section */
+            .biography {
+                padding: 4rem 0 6rem;
+                background: var(--paper);
             }
 
+            .biography .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+
+            .section-label {
+                display: block;
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 0.15em;
+                color: var(--terracotta);
+                margin-bottom: 1rem;
+                font-weight: 600;
+            }
+
+            /* Biography text with improved typography */
             .biography-text {
-                font-size: 1.05rem;
-                line-height: 1.9;
-                color: var(--charcoal);
+                font-family: var(--font-display);
+                font-size: 1.15rem;
+                line-height: 1.85;
+                color: #2a2a2a;
+                font-weight: 300;
             }
 
             .biography-text p {
-                margin-bottom: 1.5rem;
+                margin-bottom: 2rem;
+                text-align: left;
             }
 
-            .biography-images {
-                display: flex;
-                flex-direction: column;
-                gap: 1.5rem;
-                position: sticky;
-                top: calc(var(--nav-height) + 2rem);
+            .biography-text strong {
+                font-weight: 600;
+                color: var(--ink);
             }
 
-            .bio-image-card {
-                border: 2px solid var(--ink);
-                box-shadow: 8px 8px 0 rgba(0,0,0,0.08);
-                overflow: hidden;
-                background: var(--warm-gray);
-            }
-
-            .bio-image-card img {
-                width: 100%;
-                height: auto;
-                display: block;
-                transition: transform 0.3s var(--ease-fluid);
-            }
-
-            .bio-image-card:hover img {
-                transform: scale(1.02);
-            }
-
-            .bio-image-caption {
-                padding: 0.75rem 1rem;
-                background: var(--paper);
-                font-size: 0.85rem;
+            .biography-text em {
+                font-style: italic;
                 color: var(--charcoal);
-                text-align: center;
-                border-top: 1px solid rgba(0,0,0,0.1);
             }
-
-            @media (max-width: 900px) {
-                .biography-with-images {
-                    grid-template-columns: 1fr;
-                }
-                .biography-images {
-                    position: static;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                }
-                .bio-image-card {
-                    flex: 1 1 200px;
-                }
-            }
-
-            /* Image Protection */
-            .protected-img { position: relative; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
-            .protected-img::after { content: ""; position: absolute; inset: 0; background: transparent; z-index: 10; }
-            .protected-img img { pointer-events: none; -webkit-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-drag: none; -webkit-touch-callout: none; cursor: default; }
 
             /* Inline images between biography paragraphs */
             .bio-inline-image {
-                margin: 2rem 0;
+                margin: 3rem 0;
                 border: 2px solid var(--ink);
                 box-shadow: 8px 8px 0 rgba(0,0,0,0.08);
                 overflow: hidden;
                 background: var(--warm-gray);
-                max-width: 600px;
             }
             .bio-inline-image img {
                 width: 100%;
@@ -508,12 +480,38 @@
             }
             .bio-inline-caption {
                 display: block;
-                padding: 0.75rem 1rem;
+                padding: 1rem 1.25rem;
                 background: var(--paper);
-                font-size: 0.85rem;
+                font-size: 0.9rem;
+                font-family: var(--font-body);
                 color: var(--charcoal);
                 text-align: center;
                 border-top: 1px solid rgba(0,0,0,0.1);
+                letter-spacing: 0.02em;
+            }
+
+            /* Image Protection */
+            .protected-img { position: relative; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+            .protected-img::after { content: ""; position: absolute; inset: 0; background: transparent; z-index: 10; }
+            .protected-img img { pointer-events: none; -webkit-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-drag: none; -webkit-touch-callout: none; cursor: default; }
+
+            @media (max-width: 768px) {
+                .biography {
+                    padding: 3rem 0 4rem;
+                }
+                .biography .container {
+                    padding: 0 1.25rem;
+                }
+                .biography-text {
+                    font-size: 1rem;
+                    line-height: 1.7;
+                }
+                .biography-text p {
+                    margin-bottom: 1.5rem;
+                }
+                .bio-inline-image {
+                    margin: 2rem 0;
+                }
             }
         }
     </style>
