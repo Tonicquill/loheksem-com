@@ -44,6 +44,7 @@
         .gallery-item-image{position:relative;aspect-ratio:4/3;background:var(--warm-gray);overflow:hidden;border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(0,0,0,0.08);cursor:pointer}
         .gallery-item-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s var(--ease-fluid)}
         .gallery-item-image:hover img{transform:scale(1.03)}
+        .gallery-item-image.rotated img{transform:rotate(90deg) scale(1.1)}
         .gallery-item-info{padding-top:1rem}
         .gallery-item-title{font-family:var(--font-display);font-size:1.05rem;font-weight:600;margin-bottom:0.5rem}
         .gallery-item-meta{font-size:0.8rem;color:var(--charcoal);font-family:var(--font-mono)}
@@ -132,15 +133,6 @@
                 </div>
             </div>
 
-            <div class="gallery-item">
-                <div class="gallery-item-image" onclick="openModal(this,'Chippendale Writing Table','Hardwood, traditional joinery','A writing desk referencing 18th-century English design — elegant proportions, hand-cut joints.')">
-                    <img src="assets/Furniture/chippendale writing table.JPG" alt="Chippendale Writing Table" loading="lazy">
-                </div>
-                <div class="gallery-item-info">
-                    <h3 class="gallery-item-title">Chippendale Writing Table</h3>
-                    <p class="gallery-item-meta">Hardwood, traditional joinery</p>
-                </div>
-            </div>
 
             <div class="gallery-item">
                 <div class="gallery-item-image" onclick="openModal(this,'Book Shelf','Custom dimensions','Architectural shelving unit — designed for books and display objects.')">
@@ -162,15 +154,6 @@
                 </div>
             </div>
 
-            <div class="gallery-item">
-                <div class="gallery-item-image" onclick="openModal(this,'Cart Wheel Shelf','Reclaimed wood and wheel','Industrial-inspired shelving incorporating a cart wheel — rustic meets functional.')">
-                    <img src="assets/Furniture/cart wheel shelf.JPG" alt="Cart Wheel Shelf" loading="lazy">
-                </div>
-                <div class="gallery-item-info">
-                    <h3 class="gallery-item-title">Cart Wheel Shelf</h3>
-                    <p class="gallery-item-meta">Reclaimed wood and wheel</p>
-                </div>
-            </div>
 
             <div class="gallery-item">
                 <div class="gallery-item-image" onclick="openModal(this,'Cupboard','Hardwood with doors','Storage cupboard with hand-fitted doors — interior shelving adjustable.')">
@@ -183,7 +166,7 @@
             </div>
 
             <div class="gallery-item">
-                <div class="gallery-item-image" onclick="openModal(this,'Easel','Adjustable hardwood','Artist's easel — designed for studio use, adjustable height, stable base.')">
+                <div class="gallery-item-image rotated" onclick="openModal(this,'Easel','Adjustable hardwood','Artist's easel — designed for studio use, adjustable height, stable base.')">
                     <img src="assets/Furniture/easle.JPG" alt="Easel" loading="lazy">
                 </div>
                 <div class="gallery-item-info">
@@ -199,6 +182,32 @@
                 <div class="gallery-item-info">
                     <h3 class="gallery-item-title">Custom Furniture</h3>
                     <p class="gallery-item-meta">Various pieces</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="personal-collection" style="padding:4rem 2rem 6rem;max-width:var(--container-max);margin:0 auto">
+        <span class="section-label" style="display:inline-block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--charcoal);margin-bottom:1rem">Personal Furniture Collection</span>
+        <p style="max-width:800px;margin-bottom:2rem;color:var(--charcoal);font-size:0.95rem">The following pieces are from Sem's personal furniture collection — acquired over the years, not made by him. These reflect his appreciation for craftsmanship and design.</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Chippendale Writing Table','Hardwood, traditional joinery','A writing desk referencing 18th-century English design — elegant proportions, hand-cut joints.')">
+                    <img src="assets/Furniture/chippendale writing table.JPG" alt="Chippendale Writing Table" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Chippendale Writing Table</h3>
+                    <p class="gallery-item-meta">Hardwood, traditional joinery — Personal collection</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cart Wheel Shelf','Reclaimed wood and wheel','Industrial-inspired shelving incorporating a cart wheel — rustic meets functional.')">
+                    <img src="assets/Furniture/cart wheel shelf.JPG" alt="Cart Wheel Shelf" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Cart Wheel Shelf</h3>
+                    <p class="gallery-item-meta">Reclaimed wood and wheel — Personal collection</p>
                 </div>
             </div>
         </div>
