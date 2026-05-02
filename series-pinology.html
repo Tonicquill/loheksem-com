@@ -448,6 +448,204 @@
             border-radius: 4px;
             z-index: 10001;
         }
+
+        /* ============================================
+           SLIDE CAROUSEL — Reusable component
+           ============================================ */
+        .carousel-container {
+            padding: 4rem 2rem;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .carousel-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--terracotta);
+            margin-bottom: 1.5rem;
+        }
+
+        .carousel {
+            position: relative;
+            background: var(--warm-gray);
+            border: 2px solid var(--ink);
+            border-radius: 4px;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .carousel[aria-roledescription="carousel"][data-orientation="horizontal"] {
+            aspect-ratio: 16 / 9;
+        }
+
+        .carousel[aria-roledescription="carousel"][data-orientation="vertical"] {
+            aspect-ratio: 4 / 5;
+        }
+
+        /* Fallback for older browsers without aspect-ratio */
+        @supports not (aspect-ratio: 16 / 9) {
+            .carousel[aria-roledescription="carousel"][data-orientation="horizontal"] {
+                padding-bottom: 56.25%;
+                height: 0;
+                position: relative;
+            }
+            .carousel[aria-roledescription="carousel"][data-orientation="vertical"] {
+                padding-bottom: 125%;
+                height: 0;
+                position: relative;
+            }
+            .carousel-track {
+                position: absolute;
+                inset: 0;
+            }
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s var(--ease-fluid);
+            height: 100%;
+        }
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
+            padding: 3rem 1.5rem 1.5rem;
+            color: var(--paper);
+        }
+
+        .carousel-slide-caption h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .carousel-slide-caption p {
+            font-size: 0.85rem;
+            opacity: 0.85;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            border: 2px solid var(--ink);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.2s var(--ease-fluid), transform 0.2s var(--ease-fluid);
+        }
+
+        .carousel-nav:hover {
+            background: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        .carousel-nav:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .carousel-nav svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--ink);
+        }
+
+        .carousel-nav:hover svg {
+            stroke: var(--paper);
+        }
+
+        .carousel-prev { left: 1rem; }
+        .carousel-next { right: 1rem; }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid var(--paper);
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.2s var(--ease-fluid), transform 0.2s var(--ease-fluid);
+        }
+
+        .carousel-dot:hover {
+            background: rgba(255,255,255,0.7);
+            transform: scale(1.1);
+        }
+
+        .carousel-dot.active {
+            background: var(--paper);
+            transform: scale(1.2);
+        }
+
+        .carousel-slide-counter {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0,0,0,0.6);
+            color: var(--paper);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-nav {
+                width: 36px;
+                height: 36px;
+            }
+            .carousel-nav svg {
+                width: 16px;
+                height: 16px;
+            }
+            .carousel-slide-caption {
+                padding: 2.5rem 1rem 1rem;
+            }
+            .carousel-slide-caption h4 {
+                font-size: 0.95rem;
+            }
+            .carousel-slide-caption p {
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -513,6 +711,58 @@
             <p>Each pin was placed by hand — a labor-intensive process that required hundreds of hours of meticulous work. The resulting image emerges from thousands of colored dots, similar to pointillism but executed with map pins instead of paint. The technique creates a unique texture and depth that changes when viewed from different distances.</p>
 
             <p>The installation was displayed at <strong>Persada Johor</strong> and documented by <em>New Straits Times</em> in June 2009, which reported on the record-breaking achievement and the charitable purpose behind the project.</p>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-container">
+        <span class="carousel-label">Featured Documentation</span>
+        <div class="carousel" aria-roledescription="carousel" data-orientation="horizontal" aria-label="Pinology event highlights">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="assets/Pinology/jci foon yew.JPG" alt="Main documentation with 150 students">
+                    <div class="carousel-slide-caption">
+                        <h4>Main Documentation</h4>
+                        <p>150 Foon Yew High School students with the completed pin art</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/Pinology/jci foon yew1.JPG" alt="Stage performance with pin art backdrop">
+                    <div class="carousel-slide-caption">
+                        <h4>Cultural Performances</h4>
+                        <p>Stage performances with the pin art as backdrop</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/Pinology/jci foon yew2.JPG" alt="Malaysian Book of Records certificate presentation">
+                    <div class="carousel-slide-caption">
+                        <h4>Record Recognition</h4>
+                        <p>Malaysian Book of Records certificate presentation</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/Pinology/jci4.JPG" alt="Pin art detail showing 3.7 million pins">
+                    <div class="carousel-slide-caption">
+                        <h4>Detail Work</h4>
+                        <p>Close-up showing the 3.7 million map pins in 22 colors</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/Pinology/jci9.JPG" alt="Full installation view">
+                    <div class="carousel-slide-caption">
+                        <h4>Full Installation</h4>
+                        <p>The 9.35m × 6.7m artwork at Persada Johor</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-nav carousel-prev" aria-label="Previous slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="carousel-nav carousel-next" aria-label="Next slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <div class="carousel-dots" aria-label="Slide navigation"></div>
+            <div class="carousel-slide-counter">1 / 5</div>
         </div>
     </section>
 
@@ -1008,8 +1258,10 @@
     </footer>
 
     <script>
+        // Navigation close on mobile
         document.querySelectorAll('nav a').forEach(link=>{link.addEventListener('click',()=>{document.querySelector('nav').classList.remove('mobile-open')})});
 
+        // Modal functionality
         function openModal(imgEl, title, meta, description) {
             const modal = document.createElement('div');
             modal.className = 'image-modal active';
@@ -1030,6 +1282,86 @@
                 if (ev.key === 'Escape') { closeModal(); document.removeEventListener('keydown', closeOnEscape); }
             });
         }
+
+        // Carousel functionality
+        (function() {
+            const carousel = document.querySelector('.carousel');
+            if (!carousel) return;
+
+            const track = carousel.querySelector('.carousel-track');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const prevBtn = carousel.querySelector('.carousel-prev');
+            const nextBtn = carousel.querySelector('.carousel-next');
+            const dotsContainer = carousel.querySelector('.carousel-dots');
+            const counter = carousel.querySelector('.carousel-slide-counter');
+
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            // Create dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', 'Go to slide ' + (index + 1));
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+
+            function updateCarousel() {
+                track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+
+                // Update dots
+                dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+
+                // Update counter
+                if (counter) {
+                    counter.textContent = (currentIndex + 1) + ' / ' + totalSlides;
+                }
+            }
+
+            function goToSlide(index) {
+                if (index < 0) index = 0;
+                if (index >= totalSlides) index = totalSlides - 1;
+                currentIndex = index;
+                updateCarousel();
+            }
+
+            function nextSlide() {
+                goToSlide((currentIndex + 1) % totalSlides);
+            }
+
+            function prevSlide() {
+                goToSlide((currentIndex - 1 + totalSlides) % totalSlides);
+            }
+
+            // Event listeners
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+            // Keyboard navigation
+            carousel.setAttribute('tabindex', '0');
+            carousel.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+                if (e.key === 'ArrowRight') { e.preventDefault(); nextSlide(); }
+            });
+
+            // Touch/swipe support
+            let startX = 0;
+            carousel.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', (e) => {
+                const diff = startX - e.changedTouches[0].clientX;
+                if (diff > 50) nextSlide();
+                else if (diff < -50) prevSlide();
+            }, { passive: true });
+
+            // Auto-advance (optional - disabled by default)
+            // setInterval(nextSlide, 5000);
+        })();
     </script>
 </body>
 </html>

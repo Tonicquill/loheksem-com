@@ -221,6 +221,177 @@
         }
 
         /* ============================================
+           SEARCH TRIGGER & MODAL
+           ============================================ */
+        .search-trigger {
+            position: fixed;
+            top: calc(var(--nav-height) + 40px);
+            right: 2rem;
+            background: var(--ink);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+
+        .search-trigger:hover {
+            background: var(--terracotta);
+            transform: scale(1.05);
+        }
+
+        .search-trigger svg {
+            stroke: var(--paper);
+            width: 18px;
+            height: 18px;
+        }
+
+        .search-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 10000;
+            display: none;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 100px;
+        }
+
+        .search-modal.active {
+            display: flex;
+        }
+
+        .search-modal-content {
+            background: var(--paper);
+            width: 90%;
+            max-width: 700px;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .search-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .search-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .search-close {
+            background: transparent;
+            border: none;
+            font-size: 2rem;
+            line-height: 1;
+            cursor: pointer;
+            color: var(--charcoal);
+            transition: color var(--transition-fast);
+        }
+
+        .search-close:hover {
+            color: var(--ink);
+        }
+
+        #searchContainer {
+            padding: 2rem;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        /* Pagefind overrides */
+        .pagefind-ui__search-input {
+            font-size: 1rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .pagefind-ui__search-input:focus {
+            outline: none;
+            border-color: var(--ink);
+        }
+
+        /* ============================================
+           LATEST STRIP
+           ============================================ */
+        .latest-strip {
+            position: fixed;
+            top: var(--nav-height);
+            left: 0;
+            right: 0;
+            background: var(--ink);
+            color: var(--paper);
+            z-index: 999;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .latest-strip-inner {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 0.6rem 2rem;
+        }
+
+        .latest-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--clay);
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .latest-items {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .latest-items::-webkit-scrollbar {
+            display: none;
+        }
+
+        .latest-item {
+            font-size: 0.75rem;
+            color: var(--paper);
+            opacity: 0.8;
+            transition: opacity var(--transition-fast);
+            white-space: nowrap;
+        }
+
+        .latest-item:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .latest-divider {
+            opacity: 0.3;
+            flex-shrink: 0;
+        }
+
+        /* Add padding to hero to account for fixed latest strip */
+        .hero {
+            margin-top: 40px;
+        }
+
+        /* ============================================
            HERO — Asymmetric Three-Column
            DESIGN_VARIANCE=8: Non-center bias, layered depth
            ============================================ */
@@ -428,6 +599,51 @@
             line-height: 1.8;
         }
 
+        /* ============================================
+           SERIES FILTER BAR
+           ============================================ */
+        .series-filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .filter-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--charcoal);
+            margin-right: 0.5rem;
+        }
+
+        .filter-btn {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 20px;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--ink);
+            background: rgba(0,0,0,0.03);
+        }
+
+        .filter-btn.active {
+            background: var(--ink);
+            border-color: var(--ink);
+            color: var(--paper);
+        }
+
         .series-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -437,6 +653,7 @@
         .series-card {
             group: series;
             cursor: pointer;
+            display: block;
         }
 
         .series-card-image {
@@ -445,11 +662,13 @@
             background: var(--warm-gray);
             overflow: hidden;
             border: 1px solid rgba(0,0,0,0.12);
-            transition: border-color var(--transition-fast);
+            border-radius: 4px;
+            transition: all var(--transition-fast);
         }
 
         .series-card:hover .series-card-image {
             border-color: var(--ink);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
         }
 
         .series-card-image img {
@@ -457,6 +676,27 @@
             height: 100%;
             object-fit: contain;
             transition: transform 0.6s var(--ease-fluid);
+        }
+
+        .series-card:hover .series-card-image img {
+            transform: scale(1.04);
+        }
+
+        /* Card accent bar on hover */
+        .series-card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--terracotta);
+            transform: scaleX(0);
+            transition: transform var(--transition-fast);
+        }
+
+        .series-card:hover .series-card-image::after {
+            transform: scaleX(1);
         }
 
         .view-full-indicator {
@@ -497,10 +737,6 @@
         }
         .image-modal-caption p { font-size: 0.85rem; opacity: 0.8; }
 
-        .series-card:hover .series-card-image img {
-            transform: scale(1.04);
-        }
-
         .series-card-content {
             padding: 1.25rem 0.5rem 0.5rem;
         }
@@ -512,6 +748,11 @@
             letter-spacing: 0.08em;
             margin-bottom: 0.5rem;
             font-weight: 600;
+            transition: color var(--transition-fast);
+        }
+
+        .series-card:hover h3 {
+            color: var(--terracotta);
         }
 
         .series-card p {
@@ -533,6 +774,11 @@
             font-weight: 300;
             color: var(--terracotta);
             font-family: var(--font-mono);
+            transition: transform var(--transition-fast);
+        }
+
+        .series-card:hover .series-card-count {
+            transform: translateX(4px);
         }
 
         .series-card-link {
@@ -553,6 +799,53 @@
         .series-card-link svg {
             width: 14px;
             height: 14px;
+        }
+
+        /* ============================================
+           ARTWORK TOOLTIP
+           ============================================ */
+        .artwork-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            background: var(--ink);
+            color: var(--paper);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            line-height: 1.6;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all var(--transition-fast);
+            z-index: 100;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+
+        .artwork-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: var(--ink);
+        }
+
+        .series-card:hover .artwork-tooltip {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-4px);
+        }
+
+        .artwork-tooltip strong {
+            color: var(--clay);
+            font-weight: 600;
+        }
+
+        .artwork-tooltip em {
+            font-style: normal;
+            opacity: 0.8;
         }
 
         /* ============================================
@@ -816,6 +1109,15 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .series-filter-bar {
+                justify-content: center;
+            }
+
+            .filter-label {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
             .process-step {
                 flex: 0 0 240px;
             }
@@ -837,6 +1139,53 @@
             .series-grid {
                 grid-template-columns: 1fr;
             }
+
+            .series-filter-bar {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.65rem;
+            }
+
+            .latest-strip {
+                top: var(--nav-height);
+            }
+
+            .latest-strip-inner {
+                padding: 0.5rem 1rem;
+                gap: 0.75rem;
+            }
+
+            .latest-label {
+                font-size: 0.6rem;
+            }
+
+            .latest-item {
+                font-size: 0.7rem;
+            }
+
+            .search-trigger {
+                top: calc(var(--nav-height) + 8px);
+                right: 1rem;
+                width: 36px;
+                height: 36px;
+            }
+
+            .search-modal-content {
+                width: 95%;
+                margin: 0 auto;
+            }
+
+            .search-modal-header {
+                padding: 1rem 1.5rem;
+            }
+
+            #searchContainer {
+                padding: 1.5rem;
+            }
+        }
 
             .series,
             .process-teaser .container,
@@ -944,6 +1293,34 @@
         </div>
     </nav>
 
+    <!-- Search Trigger -->
+    <button class="search-trigger" id="searchTrigger" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+    </button>
+
+    <!-- Latest Strip -->
+    <div class="latest-strip" id="latestStrip">
+        <div class="latest-strip-inner">
+            <span class="latest-label">Featured</span>
+            <div class="latest-items">
+                <a href="series-pinology.html" class="latest-item">
+                    <span class="latest-item-title">Pinology: Cultural Pin Carnival 2009</span>
+                </a>
+                <span class="latest-divider">•</span>
+                <a href="series-garden.html" class="latest-item">
+                    <span class="latest-item-title">Garden: Deck & Lotus Pond</span>
+                </a>
+                <span class="latest-divider">•</span>
+                <a href="series-bible.html" class="latest-item">
+                    <span class="latest-item-title">Bible Series: Watercolor Narratives</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-backdrop">
@@ -991,11 +1368,26 @@
             </p>
         </div>
 
+        <div class="series-filter-bar">
+            <span class="filter-label">Filter by medium:</span>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="painting">Painting</button>
+            <button class="filter-btn" data-filter="sculpture">Sculpture</button>
+            <button class="filter-btn" data-filter="paper-cast">Paper Cast</button>
+            <button class="filter-btn" data-filter="drawing">Drawing</button>
+            <button class="filter-btn" data-filter="craft">Craft</button>
+        </div>
+
         <div class="series-grid">
             <!-- Malay Kampung -->
-            <a href="series-malay-kampung.html" class="series-card">
+            <a href="series-malay-kampung.html" class="series-card" data-medium="painting">
                 <div class="series-card-image">
                     <img src="by the well.jpg" alt="Malay Kampung Series preview" loading="lazy">
+                    <div class="artwork-tooltip">
+                        <strong>1990-2000</strong><br>
+                        <em>12 works · 137-214cm</em><br>
+                        <em>Acrylic on canvas</em>
+                    </div>
                 </div>
                 <div class="series-card-content">
                     <h3>Malay Kampung</h3>
@@ -1013,9 +1405,14 @@
             </a>
 
             <!-- Peranakan -->
-            <a href="series-peranakan.html" class="series-card">
+            <a href="series-peranakan.html" class="series-card" data-medium="painting">
                 <div class="series-card-image">
                     <img src="09ChengHo comes to Nanyang.jpg" alt="Peranakan Series preview" loading="lazy">
+                    <div class="artwork-tooltip">
+                        <strong>1995-2005</strong><br>
+                        <em>10 works · 122-183cm</em><br>
+                        <em>Acrylic on canvas</em>
+                    </div>
                 </div>
                 <div class="series-card-content">
                     <h3>Peranakan</h3>
@@ -1033,9 +1430,14 @@
             </a>
 
             <!-- Watercolour -->
-            <a href="series-watercolour.html" class="series-card">
+            <a href="series-watercolour.html" class="series-card" data-medium="painting">
                 <div class="series-card-image">
                     <img src="assets/Watercolour/Chesstime(38cmx50cm) watercolour.JPG" alt="Watercolour Studies preview" loading="lazy" onerror="this.src='09ChengHo comes to Nanyang.jpg'">
+                    <div class="artwork-tooltip">
+                        <strong>1985-1995</strong><br>
+                        <em>8 works · 38-76cm</em><br>
+                        <em>Watercolour on paper</em>
+                    </div>
                 </div>
                 <div class="series-card-content">
                     <h3>Watercolour</h3>
@@ -1053,9 +1455,14 @@
             </a>
 
             <!-- Paper Cast -->
-            <a href="series-paper-cast.html" class="series-card">
+            <a href="series-paper-cast.html" class="series-card" data-medium="paper-cast">
                 <div class="series-card-image">
                     <img src="by the well [25x30cm].JPG" alt="Paper Cast Series preview" loading="lazy">
+                    <div class="artwork-tooltip">
+                        <strong>1995-2010</strong><br>
+                        <em>7-step process · 2-4 weeks</em><br>
+                        <em>Recycled paper pulp</em>
+                    </div>
                 </div>
                 <div class="series-card-content">
                     <h3>Paper Cast</h3>
@@ -1073,9 +1480,14 @@
             </a>
 
             <!-- Bali -->
-            <a href="series-bali.html" class="series-card">
+            <a href="series-bali.html" class="series-card" data-medium="painting">
                 <div class="series-card-image">
                     <img src="assets/Bali/Little Balinese Dancer 98x98cm oil.JPG" alt="Bali Series preview" loading="lazy">
+                    <div class="artwork-tooltip">
+                        <strong>1995-2000</strong><br>
+                        <em>7 works · 98-160cm</em><br>
+                        <em>Oil & acrylic on canvas</em>
+                    </div>
                 </div>
                 <div class="series-card-content">
                     <h3>Bali</h3>
@@ -1093,9 +1505,14 @@
             </a>
 
             <!-- Borneo -->
-            <a href="series-borneo.html" class="series-card">
+            <a href="series-borneo.html" class="series-card" data-medium="painting">
                 <div class="series-card-image">
                     <img src="assets/Borneo/Hornbil Dancers [83x110cm] acrylic [mlqa].JPG" alt="Borneo Series preview" loading="lazy">
+                    <div class="artwork-tooltip">
+                        <strong>1995-2005</strong><br>
+                        <em>40+ works · 83-180cm</em><br>
+                        <em>Oil & acrylic on canvas</em>
+                    </div>
                 </div>
                 <div class="series-card-content">
                     <h3>Borneo</h3>
@@ -1113,9 +1530,14 @@
             </a>
 
             <!-- Sculpture -->
-            <a href="series-sculpture.html" class="series-card">
+            <a href="series-sculpture.html" class="series-card" data-medium="sculpture">
                 <div class="series-card-image">
                     <img src="assets/Sculpture/Woman Standing 1.JPG" alt="Sculpture preview" loading="lazy">
+                    <div class="artwork-tooltip">
+                        <strong>1995-Present</strong><br>
+                        <em>50+ works · Various sizes</em><br>
+                        <em>Paper cast, mixed media</em>
+                    </div>
                 </div>
                 <div class="series-card-content">
                     <h3>Sculpture</h3>
@@ -1133,9 +1555,14 @@
             </a>
 
             <!-- Ink & Sketch -->
-            <a href="series-ink-sketch.html" class="series-card">
+            <a href="series-ink-sketch.html" class="series-card" data-medium="drawing">
                 <div class="series-card-image">
                     <img src="assets/Ink-Sketch/Malacca river1.JPG" alt="Ink & Sketch preview" loading="lazy">
+                    <div class="artwork-tooltip">
+                        <strong>1985-Present</strong><br>
+                        <em>50+ works · 21-76cm</em><br>
+                        <em>Ink & pencil on paper</em>
+                    </div>
                 </div>
                 <div class="series-card-content">
                     <h3>Ink & Sketch</h3>
@@ -1153,9 +1580,14 @@
             </a>
 
             <!-- Bible -->
-            <a href="series-bible.html" class="series-card">
+            <a href="series-bible.html" class="series-card" data-medium="painting">
                 <div class="series-card-image">
                     <img src="assets/Bible/001EA76D-FFD1-4ED3-8511-59675D999647.jpeg" alt="Bible Series preview" loading="lazy">
+                    <div class="artwork-tooltip">
+                        <strong>2020-2025</strong><br>
+                        <em>6 works · Various sizes</em><br>
+                        <em>Watercolor on archival paper</em>
+                    </div>
                 </div>
                 <div class="series-card-content">
                     <h3>Bible</h3>
@@ -1173,9 +1605,14 @@
             </a>
 
             <!-- Furniture -->
-            <a href="series-furniture.html" class="series-card">
+            <a href="series-furniture.html" class="series-card" data-medium="craft">
                 <div class="series-card-image">
                     <img src="assets/Furniture/eight foot bench.JPG" alt="Furniture preview" loading="lazy">
+                    <div class="artwork-tooltip">
+                        <strong>2000-Present</strong><br>
+                        <em>8+ pieces · Custom sizes</em><br>
+                        <em>Handcrafted hardwood</em>
+                    </div>
                 </div>
                 <div class="series-card-content">
                     <h3>Furniture</h3>
@@ -1193,15 +1630,45 @@
             </a>
 
             <!-- Garden -->
-            <a href="series-garden.html" class="series-card">
+            <a href="series-garden.html" class="series-card" data-medium="craft">
                 <div class="series-card-image">
                     <img src="assets/Garden/deck bench & lotus pond-night.JPG" alt="Garden preview" loading="lazy">
+                    <div class="artwork-tooltip">
+                        <strong>2010-Present</strong><br>
+                        <em>85 images · Garden design</em><br>
+                        <em>Fiberglass &amp; landscape</em>
+                    </div>
                 </div>
                 <div class="series-card-content">
                     <h3>Garden</h3>
                     <p>Hand-built fiberglass pond &amp; water features</p>
                     <div class="series-card-meta">
                         <span class="series-card-count">85 images</span>
+                        <span class="series-card-link">
+                            Explore
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Pinology -->
+            <a href="series-pinology.html" class="series-card" data-medium="sculpture">
+                <div class="series-card-image">
+                    <img src="jci foon yew.JPG" alt="Pinology Series preview" loading="lazy">
+                    <div class="artwork-tooltip">
+                        <strong>2009</strong><br>
+                        <em>51 photos · 9.35×6.7m mural</em><br>
+                        <em>3.7M push pins, 150 students</em>
+                    </div>
+                </div>
+                <div class="series-card-content">
+                    <h3>Pinology</h3>
+                    <p>Push pin mural</p>
+                    <div class="series-card-meta">
+                        <span class="series-card-count">51 photos</span>
                         <span class="series-card-link">
                             Explore
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1337,6 +1804,21 @@
         </p>
     </footer>
 
+    <!-- Pagefind Search -->
+    <link href="pagefind/pagefind-ui.css" rel="stylesheet">
+    <script src="pagefind/pagefind-ui.js" type="module"></script>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <h2 id="searchTitle" class="search-title">Search</h2>
+                <button class="search-close" id="searchClose" aria-label="Close search">&times;</button>
+            </div>
+            <div id="searchContainer"></div>
+        </div>
+    </div>
+
     <!-- Intersection Observer for Fade-In Animations -->
     <script>
         // Mobile navigation toggle
@@ -1344,6 +1826,63 @@
             link.addEventListener('click', () => {
                 document.querySelector('nav').classList.remove('mobile-open');
             });
+        });
+
+        // ============================================
+        // SEARCH MODAL
+        // ============================================
+        const searchTrigger = document.getElementById('searchTrigger');
+        const searchModal = document.getElementById('searchModal');
+        const searchClose = document.getElementById('searchClose');
+
+        // Initialize Pagefind
+        let pagefindInstance = null;
+        async function initPagefind() {
+            if (pagefindInstance) return pagefindInstance;
+            try {
+                const { PagefindUI } = await import('./pagefind/pagefind-ui.js');
+                pagefindInstance = new PagefindUI({
+                    element: "#searchContainer",
+                    showSubResults: true,
+                    showEmptyFilters: false
+                });
+                return pagefindInstance;
+            } catch (e) {
+                console.log('Pagefind not yet indexed. Run pagefind after building content.');
+                document.getElementById('searchContainer').innerHTML = '<p style="text-align:center;color:var(--charcoal);">Search index not found. Please run: npx pagefind --site "."</p>';
+                return null;
+            }
+        }
+
+        function openSearch() {
+            searchModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            initPagefind();
+            setTimeout(() => {
+                const input = document.querySelector('.pagefind-ui__search-input');
+                if (input) input.focus();
+            }, 100);
+        }
+
+        function closeSearch() {
+            searchModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (searchTrigger) searchTrigger.addEventListener('click', openSearch);
+        if (searchClose) searchClose.addEventListener('click', closeSearch);
+        if (searchModal) searchModal.addEventListener('click', (e) => {
+            if (e.target === searchModal) closeSearch();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && searchModal.classList.contains('active')) {
+                closeSearch();
+            }
+            // Ctrl+K or Cmd+K to open search
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                openSearch();
+            }
         });
 
         // Fade-in on scroll
@@ -1363,6 +1902,48 @@
 
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
+        });
+
+        // ============================================
+        // SERIES FILTER SYSTEM
+        // ============================================
+        const filterButtons = document.querySelectorAll('.filter-btn[data-filter]');
+        const seriesCards = document.querySelectorAll('.series-card[data-medium]');
+
+        filterButtons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const filter = btn.dataset.filter;
+
+                // Update active state on buttons
+                filterButtons.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+
+                // Filter cards with fade animation
+                seriesCards.forEach(function(card) {
+                    if (filter === 'all' || card.dataset.medium === filter) {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(function() {
+                            card.style.display = '';
+                            requestAnimationFrame(function() {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            });
+                        }, 300);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(function() {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Add transition to series cards for smooth filtering
+        document.querySelectorAll('.series-card').forEach(function(card) {
+            card.style.transition = 'opacity 0.3s var(--ease-fluid), transform 0.3s var(--ease-fluid)';
         });
 
         // ============================================
