@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Pinology | Cultural Pin Carnival | Loh Ek Sem</title>
+    <meta name="description" content="Pinology by Loh Ek Sem — 9.35m × 6.7m pin art installation documenting Peranakan culture. Malaysian Book of Records holder. 3.7 million map pins at Persada Johor (2009).">
+    <meta name="keywords" content="Pinology, Cultural Pin Carnival, Loh Ek Sem, Malaysian Book of Records, pin art, Persada Johor, JCI, installation art, Peranakan culture">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pinology | Cultural Pin Carnival | Malaysian Book of Records">
+    <meta property="og:description" content="9.35m × 6.7m pin art installation — 3.7 million map pins forming Peranakan figures. Malaysian Book of Records holder.">
+    <meta property="og:type" content="website">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "artSeries": "Pinology",
+        "artist": { "@type": "Person", "name": "Loh Ek Sem" },
+        "description": "Cultural Pin Carnival — Malaysian Book of Records pin art installation depicting Peranakan culture using 3.7 million map pins.",
+        "artMedium": "Map pins on board",
+        "artform": "Installation",
+        "size": "9.35m × 6.7m",
+        "dateCreated": "2009"
+    }
+    </script>
+
+    <style>
+        :root {
+            --ink: #000000;
+            --paper: #ffffff;
+            --charcoal: #1a1a1a;
+            --warm-gray: #f5f3f0;
+            --terracotta: #b85c38;
+            --clay: #c9a97e;
+            --pin-red: #c41e3a;
+            --font-display: 'Georgia', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+            --container-max: 1400px;
+            --nav-height: 80px;
+            --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--paper); color: var(--ink); line-height: 1.6; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--nav-height);
+            background: var(--paper);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        nav .logo { display: flex; align-items: center; gap: 1.5rem; }
+        nav .logo img { height: 35px; width: auto; opacity: 0.9; }
+        nav .logo-text { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--charcoal); }
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav a { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--charcoal); transition: color 0.3s var(--ease-fluid); }
+        nav a:hover, nav a.active { color: var(--terracotta); }
+        nav a.active { border-bottom: 1px solid var(--terracotta); }
+
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+        .nav-toggle span { width: 24px; height: 2px; background: var(--ink); transition: 0.3s; }
+
+        @media (max-width: 1024px) {
+            nav ul { display: none; }
+            .nav-toggle { display: flex; }
+            nav.mobile-open ul {
+                display: flex; flex-direction: column; position: absolute;
+                top: var(--nav-height); left: 0; right: 0;
+                background: var(--paper); padding: 1rem 2rem;
+                border-bottom: 1px solid rgba(0,0,0,0.1); gap: 1rem;
+                max-height: calc(100dvh - var(--nav-height));
+                overflow-y: auto; -webkit-overflow-scrolling: touch;
+            }
+        }
+        @media (max-width: 1024px) and (orientation: landscape) {
+            nav.mobile-open ul {
+                max-height: calc(100dvh - var(--nav-height) - 1rem);
+            }
+        }
+
+        .series-hero {
+            position: relative;
+            min-height: 70dvh;
+            display: grid;
+            place-items: center;
+            padding: calc(var(--nav-height) + 4rem) 2rem 4rem;
+            background: var(--warm-gray);
+            text-align: center;
+        }
+
+        .series-hero-backdrop {
+            position: absolute;
+            inset: 0;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .series-hero-backdrop img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .series-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .series-hero-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--terracotta);
+            margin-bottom: 1.5rem;
+            padding: 0.25rem 1rem;
+            border: 1px solid var(--terracotta);
+            border-radius: 50px;
+        }
+
+        .series-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .series-hero p {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            line-height: 1.8;
+        }
+
+        .series-intro {
+            padding: 6rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .series-intro-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--charcoal);
+        }
+
+        .series-intro-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .series-intro-content strong {
+            color: var(--ink);
+        }
+
+        .record-info {
+            background: var(--warm-gray);
+            padding: 2rem;
+            border-left: 4px solid var(--pin-red);
+            margin: 2rem 0;
+        }
+
+        .record-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--pin-red);
+        }
+
+        .record-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--terracotta);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--charcoal);
+            margin-top: 0.5rem;
+        }
+
+        .gallery {
+            padding: 4rem 2rem 6rem;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+        }
+
+        .gallery-item-image {
+            position: relative;
+            aspect-ratio: 4/3;
+            background: var(--warm-gray);
+            overflow: hidden;
+            border: 2px solid var(--ink);
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.08);
+            cursor: pointer;
+        }
+
+        .gallery-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s var(--ease-fluid);
+        }
+
+        .gallery-item-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .gallery-item-info {
+            padding-top: 1rem;
+        }
+
+        .gallery-item-title {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-item-meta {
+            font-size: 0.8rem;
+            color: var(--charcoal);
+            font-family: var(--font-mono);
+        }
+
+        .press-section {
+            padding: 4rem 2rem;
+            background: var(--warm-gray);
+        }
+
+        .press-section .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--terracotta);
+            margin-bottom: 2rem;
+        }
+
+        .section-label::before,
+        .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(184, 92, 56, 0.4);
+            min-width: 40px;
+        }
+
+        .press-clippings {
+            margin-top: 2rem;
+        }
+
+        .press-item {
+            padding: 1.5rem;
+            background: var(--paper);
+            border: 1px solid rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+
+        .press-item h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .press-item .meta {
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .press-item p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .series-nav {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        .series-nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .series-nav-links a {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--clay);
+            border: 1px solid var(--clay);
+            padding: 0.75rem 1.5rem;
+            transition: all 0.3s var(--ease-fluid);
+        }
+
+        .series-nav-links a:hover {
+            background: var(--clay);
+            color: var(--ink);
+        }
+
+        footer {
+            padding: 4rem 2rem;
+            background: var(--ink);
+            color: var(--paper);
+            text-align: center;
+        }
+
+        footer .signature img {
+            height: 50px;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            margin: 0 auto 1.5rem;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            opacity: 0.75;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 768px) {
+            .series-hero {
+                padding: calc(var(--nav-height) + 2rem) 1.5rem 2rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .series-intro,
+            .series-nav .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            nav {
+                padding: 0 1rem;
+            }
+        }
+
+        .image-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            cursor: zoom-out;
+        }
+
+        .image-modal.active {
+            display: flex;
+        }
+
+        .image-modal img {
+            max-width: 95vw;
+            max-height: 95vh;
+            object-fit: contain;
+            box-shadow: 0 0 40px rgba(0,0,0,0.8);
+        }
+
+        .image-modal-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--paper);
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .image-modal-caption h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--clay);
+        }
+
+        .image-modal-caption p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--terracotta);
+            color: var(--paper);
+            border: none;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            border-radius: 4px;
+            z-index: 10001;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature"><span class="logo-text">Loh Ek Sem</span></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="series-malay-kampung.html">Malay Kampung</a></li>
+            <li><a href="series-peranakan.html">Peranakan</a></li>
+            <li><a href="series-watercolour.html">Watercolour</a></li>
+            <li><a href="series-paper-cast.html">Paper Cast</a></li>
+            <li><a href="series-bali.html">Bali</a></li>
+            <li><a href="series-borneo.html">Borneo</a></li>
+            <li><a href="series-sculpture.html">Sculpture</a></li>
+            <li><a href="series-ink-sketch.html">Ink &amp; Sketch</a></li>
+            <li><a href="series-bible.html">Bible</a></li>
+            <li><a href="series-furniture.html">Furniture</a></li>
+            <li><a href="series-pinology.html" class="active">Pinology</a></li>
+            <li><a href="exhibitions.html">Exhibitions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('mobile-open')"><span></span><span></span><span></span></div>
+    </nav>
+
+    <section class="series-hero">
+        <div class="series-hero-backdrop"><img src="assets/Pinology/jci foon yew.JPG" alt="Pinology backdrop" loading="eager"></div>
+        <div class="series-hero-content">
+            <span class="series-hero-label">Installation Art &amp; Record Holder</span>
+            <h1>Cultural Pin Carnival</h1>
+            <p>A monumental pin art installation depicting Peranakan culture using 3.7 million map pins — recognized by the Malaysian Book of Records. Created for JCI Foon Yew at Persada Johor in 2009.</p>
+        </div>
+    </section>
+
+    <section class="series-intro">
+        <div class="series-intro-content">
+            <div class="record-info">
+                <h3>Malaysian Book of Records</h3>
+                <p><strong>"Pinology" — Cultural Pin Carnival</strong> holds the record for the largest pin art installation in Malaysia. The artwork measures 9.35 meters by 6.7 meters and consists of <strong>3.7 million map pins</strong> meticulously placed to form figures in traditional Peranakan attire.</p>
+
+                <div class="record-stats">
+                    <div class="stat">
+                        <div class="stat-value">9.35m × 6.7m</div>
+                        <div class="stat-label">Dimensions</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">3.7M</div>
+                        <div class="stat-label">Map Pins</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">2009</div>
+                        <div class="stat-label">Year Created</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">Persada</div>
+                        <div class="stat-label">Location</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>The <strong>Cultural Pin Carnival</strong> represents one of the most ambitious installation art projects in Johor — a massive pin art mural created for the JCI Foon Yew charity fundraiser. The work depicts figures in traditional Nyonya and Baba attire, celebrating the Peranakan heritage of Malaysia.</p>
+
+            <p>Each pin was placed by hand — a labor-intensive process that required hundreds of hours of meticulous work. The resulting image emerges from thousands of colored dots, similar to pointillism but executed with map pins instead of paint. The technique creates a unique texture and depth that changes when viewed from different distances.</p>
+
+            <p>The installation was displayed at <strong>Persada Johor</strong> and documented by <em>New Straits Times</em> in June 2009, which reported on the record-breaking achievement and the charitable purpose behind the project.</p>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <span class="section-label" style="display:inline-block;margin-bottom:2rem">Event Documentation</span>
+        <div class="gallery-grid">
+            <!-- Main documentation photos -->
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'JCI Foon Yew Pin Art - 2009','Main documentation photo','The 9.35m × 6.7m pin art installation at Persada Johor with participating Foon Yew High School students. Created for JCI Foon Yew charity fundraiser, 2009.')">
+                    <img src="assets/Pinology/jci foon yew.JPG" alt="JCI Foon Yew Pin Art - 2009" loading="eager">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">JCI Foon Yew Pin Art - 2009</h3>
+                    <p class="gallery-item-meta">Main documentation with 150 participating students</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Stage','Event documentation','Stage performance at the Cultural Pin Carnival with the pin art mural as backdrop. Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/jci foon yew1.JPG" alt="Cultural Pin Carnival Stage" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Cultural Pin Carnival Stage</h3>
+                    <p class="gallery-item-meta">Stage performance with pin art backdrop</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Malaysia Book of Records Presentation','Certificate presentation','Malaysian Book of Records certificate presentation at the Cultural Pin Carnival. Persada Johor, 2009.')">
+                    <img src="assets/Pinology/jci foon yew2.JPG" alt="Malaysia Book of Records Presentation" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Malaysia Book of Records Presentation</h3>
+                    <p class="gallery-item-meta">Certificate presentation ceremony</p>
+                </div>
+            </div>
+            <!-- Camerapix 2010 documentation -->
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'JCI Event Overview','Camerapix 2010 documentation','JCI Cultural Pin Carnival event overview at Persada Johor.')">
+                    <img src="assets/Pinology/jci.JPG" alt="JCI Event Overview" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">JCI Event Overview</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Pin Art Installation View','Camerapix 2010 documentation','Pin art installation display at Persada Johor.')">
+                    <img src="assets/Pinology/jci1.JPG" alt="Pin Art Installation View" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Pin Art Installation View</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Event Participants','Camerapix 2010 documentation','Participants at the JCI Cultural Pin Carnival.')">
+                    <img src="assets/Pinology/jci2.JPG" alt="Event Participants" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Participants</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Artist with Pin Art','Camerapix 2010 documentation','Artist Loh Ek Sem with the pin art installation.')">
+                    <img src="assets/Pinology/jci3.JPG" alt="Artist with Pin Art" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Artist with Pin Art</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Pin Art Detail Section','Camerapix 2010 documentation','Close-up detail of the pin art work showing the 3.7 million pins.')">
+                    <img src="assets/Pinology/jci4.JPG" alt="Pin Art Detail Section" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Pin Art Detail Section</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Students at Work','Camerapix 2010 documentation','Foon Yew High School students working on the pin art installation.')">
+                    <img src="assets/Pinology/jci5.JPG" alt="Students at Work" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Students at Work</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Crowd Viewing Installation','Camerapix 2010 documentation','Visitors viewing the pin art at Persada Johor.')">
+                    <img src="assets/Pinology/jci6.JPG" alt="Crowd Viewing Installation" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Crowd Viewing Installation</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Event Stage Setup','Camerapix 2010 documentation','Stage setup for the Cultural Pin Carnival performances.')">
+                    <img src="assets/Pinology/jci7.JPG" alt="Event Stage Setup" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Stage Setup</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Guinness Record Attempt','Camerapix 2010 documentation','Documentation of the Guinness World Record attempt.')">
+                    <img src="assets/Pinology/jci8.JPG" alt="Guinness Record Attempt" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Guinness Record Attempt</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Full Installation View','Camerapix 2010 documentation','Full view of the 9.35m × 6.7m pin art installation.')">
+                    <img src="assets/Pinology/jci9.JPG" alt="Full Installation View" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Full Installation View</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Event Ceremony','Camerapix 2010 documentation','Opening ceremony of the Cultural Pin Carnival.')">
+                    <img src="assets/Pinology/jci10.JPG" alt="Event Ceremony" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Ceremony</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'VIP Attendees','Camerapix 2010 documentation','VIP guests at the JCI Cultural Pin Carnival.')">
+                    <img src="assets/Pinology/jci11.JPG" alt="VIP Attendees" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">VIP Attendees</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Pin Art Close-up','Camerapix 2010 documentation','Close-up showing individual map pins in the artwork.')">
+                    <img src="assets/Pinology/jci12.JPG" alt="Pin Art Close-up" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Pin Art Close-up</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Performance','Camerapix 2010 documentation','Traditional cultural performance at the carnival.')">
+                    <img src="assets/Pinology/jci13.JPG" alt="Cultural Performance" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Cultural Performance</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Group Photo Session','Camerapix 2010 documentation','Group photo with participants and organizers.')">
+                    <img src="assets/Pinology/jci14.JPG" alt="Group Photo Session" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Group Photo Session</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Award Presentation','Camerapix 2010 documentation','Award or certificate presentation ceremony.')">
+                    <img src="assets/Pinology/jci15.JPG" alt="Award Presentation" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Award Presentation</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Venue Overview','Camerapix 2010 documentation','Persada Johor convention centre venue overview.')">
+                    <img src="assets/Pinology/jci17.JPG" alt="Venue Overview" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Venue Overview</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Installation Progress','Camerapix 2010 documentation','Work in progress on the pin art installation.')">
+                    <img src="assets/Pinology/jci18.JPG" alt="Installation Progress" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Installation Progress</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Media Coverage','Camerapix 2010 documentation','Media and press coverage of the event.')">
+                    <img src="assets/Pinology/jci19.JPG" alt="Media Coverage" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Media Coverage</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Charity Fundraiser','Camerapix 2010 documentation','JCI Foon Yew charity fundraiser activities.')">
+                    <img src="assets/Pinology/jci20.JPG" alt="Charity Fundraiser" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Charity Fundraiser</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Peranakan Figures Detail','Camerapix 2010 documentation','Detail of Peranakan figures in the pin art.')">
+                    <img src="assets/Pinology/jci21.JPG" alt="Peranakan Figures Detail" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Peranakan Figures Detail</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Event Banner Display','Camerapix 2010 documentation','JCI banner and event signage at Persada Johor.')">
+                    <img src="assets/Pinology/jci22.JPG" alt="Event Banner Display" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Banner Display</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Closing Ceremony','Camerapix 2010 documentation','Closing ceremony of the Cultural Pin Carnival.')">
+                    <img src="assets/Pinology/jci23.JPG" alt="Closing Ceremony" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Closing Ceremony</h3>
+                    <p class="gallery-item-meta">Camerapix 2010 documentation</p>
+                </div>
+            </div>
+            <!-- Image0031-0057 series documentation -->
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 1','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0031.jpg" alt="Cultural Pin Carnival Documentation 1" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0031</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 2','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0032.jpg" alt="Cultural Pin Carnival Documentation 2" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0032</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 3','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0035.jpg" alt="Cultural Pin Carnival Documentation 3" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0035</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 4','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0036.jpg" alt="Cultural Pin Carnival Documentation 4" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0036</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 5','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0037.jpg" alt="Cultural Pin Carnival Documentation 5" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0037</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 6','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0038.jpg" alt="Cultural Pin Carnival Documentation 6" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0038</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 7','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0039.jpg" alt="Cultural Pin Carnival Documentation 7" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0039</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 8','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0040.jpg" alt="Cultural Pin Carnival Documentation 8" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0040</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 9','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0041.jpg" alt="Cultural Pin Carnival Documentation 9" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0041</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 10','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0042.jpg" alt="Cultural Pin Carnival Documentation 10" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0042</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 11','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0043.jpg" alt="Cultural Pin Carnival Documentation 11" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0043</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 12','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0044.jpg" alt="Cultural Pin Carnival Documentation 12" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0044</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 13','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0045.jpg" alt="Cultural Pin Carnival Documentation 13" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0045</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 14','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0046.jpg" alt="Cultural Pin Carnival Documentation 14" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0046</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 15','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0047.jpg" alt="Cultural Pin Carnival Documentation 15" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0047</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 16','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0048.jpg" alt="Cultural Pin Carnival Documentation 16" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0048</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 17','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0049.jpg" alt="Cultural Pin Carnival Documentation 17" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0049</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 18','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0050.jpg" alt="Cultural Pin Carnival Documentation 18" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0050</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 19','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0051.jpg" alt="Cultural Pin Carnival Documentation 19" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0051</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 20','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0053.jpg" alt="Cultural Pin Carnival Documentation 20" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0053</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 21','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0054.jpg" alt="Cultural Pin Carnival Documentation 21" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0054</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 22','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0055.jpg" alt="Cultural Pin Carnival Documentation 22" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0055</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 23','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0056.jpg" alt="Cultural Pin Carnival Documentation 23" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0056</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-item-image" onclick="openModal(this,'Cultural Pin Carnival Documentation 24','Event photo series','Cultural Pin Carnival at Persada Johor, June 2009.')">
+                    <img src="assets/Pinology/Image0057.jpg" alt="Cultural Pin Carnival Documentation 24" loading="lazy">
+                </div>
+                <div class="gallery-item-info">
+                    <h3 class="gallery-item-title">Event Documentation 0057</h3>
+                    <p class="gallery-item-meta">Persada Johor, June 2009</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="press-section">
+        <div class="container">
+            <span class="section-label">Press Coverage</span>
+            <div class="press-clippings">
+                <div class="press-item">
+                    <h4>Largest Cultural Pin Art in the Country</h4>
+                    <p class="meta"><strong>New Straits Times</strong> — June 12, 2009 | By Chuah Bee Kim</p>
+                    <p>This article details the creation of "Peranakan," a 9.35m × 6.7m artwork made of 3.7 million map pins. The project was inspired by Loh Ek Sem and created to raise funds for six charities. The installation features figures in traditional Peranakan attire, showcasing the hybrid Chinese-Malay culture that defines the Nyonya heritage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="series-nav">
+        <p style="font-size:1.05rem;margin-bottom:1.5rem">Explore other series</p>
+        <div class="series-nav-links">
+            <a href="series-peranakan.html">Peranakan</a>
+            <a href="series-malay-kampung.html">Malay Kampung</a></p>
+            <a href="series-sculpture.html">Sculpture</a>
+            <a href="series-ink-sketch.html">Ink &amp; Sketch</a>
+            <a href="series-bible.html">Bible</a>
+            <a href="index.html">Home</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="signature"><img src="browser_sessions/signature_transparent.png" alt="Loh Ek Sem signature"></div>
+        <p>loheksem@gmail.com</p>
+        <p>Johor Bahru, Malaysia</p>
+        <p style="margin-top:2rem;opacity:0.5;font-size:0.75rem">© 2026 Loh Ek Sem. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link=>{link.addEventListener('click',()=>{document.querySelector('nav').classList.remove('mobile-open')})});
+
+        function openModal(imgEl, title, meta, description) {
+            const modal = document.createElement('div');
+            modal.className = 'image-modal active';
+            modal.innerHTML = `
+                <button class="image-modal-close">Close</button>
+                <img src="${imgEl.querySelector('img').src}" alt="${title}">
+                <div class="image-modal-caption">
+                    <h4>${title}</h4>
+                    <p>${meta}</p>
+                    ${description ? `<p style="margin-top:0.5rem;font-style:italic">${description}</p>` : ''}
+                </div>
+            `;
+            document.body.appendChild(modal);
+            const closeModal = () => modal.remove();
+            modal.querySelector('.image-modal-close').addEventListener('click', (e) => { e.stopPropagation(); closeModal(); });
+            modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+            document.addEventListener('keydown', function closeOnEscape(ev) {
+                if (ev.key === 'Escape') { closeModal(); document.removeEventListener('keydown', closeOnEscape); }
+            });
+        }
+    </script>
+</body>
+</html>
