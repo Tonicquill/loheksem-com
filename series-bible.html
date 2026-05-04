@@ -30,6 +30,9 @@
     }
     </script>
 
+    <!-- Image Protection Script -->
+    <script src="assets/protect.js"></script>
+
     <style>
         :root {
             --ink: #000000;
@@ -794,73 +797,6 @@
             }
         });
 
-        // Right-click protection
-        document.addEventListener('contextmenu', function(e) {
-            if (e.target.tagName === 'IMG') {
-                e.preventDefault();
-                return false;
-            }
-        });
-
-        // Drag protection
-        document.addEventListener('dragstart', function(e) {
-            if (e.target.tagName === 'IMG') {
-                e.preventDefault();
-                return false;
-            }
-        });
-
-        // Keyboard screenshot protection (PrintScreen)
-        document.addEventListener('keyup', function(e) {
-            if (e.key === 'PrintScreen') {
-                navigator.clipboard.writeText('');
-                alert('Screenshots are disabled on this website.');
-            }
-        });
-
-        // Disable PrintScreen key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'PrintScreen') {
-                e.preventDefault();
-            }
-        });
-    </script>
-</body>
-</html>
-
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Right-click protection
-        document.addEventListener('contextmenu', function(e) {
-            if (e.target.tagName === 'IMG') {
-                e.preventDefault();
-                return false;
-            }
-        });
-
-        // Drag protection
-        document.addEventListener('dragstart', function(e) {
-            if (e.target.tagName === 'IMG') {
-                e.preventDefault();
-                return false;
-            }
-        });
-
-        // Keyboard screenshot protection (PrintScreen)
-        document.addEventListener('keyup', function(e) {
-            if (e.key === 'PrintScreen') {
-                navigator.clipboard.writeText('');
-                alert('Screenshots are disabled on this website.');
-            }
-        });
-
-        // Disable PrintScreen key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'PrintScreen') {
-                e.preventDefault();
-            }
-        });
     </script>
 </body>
 </html>
